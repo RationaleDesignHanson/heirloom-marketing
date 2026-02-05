@@ -6,8 +6,8 @@ export default function Steps({ title, items }: { title: string; items: StepItem
       <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
         {items.map((it, idx) => (
-          <div key={idx} className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
-            <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[#3A2F22] text-sm font-semibold text-[#FBF7EF]">
+          <div key={idx} className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm backdrop-blur">
+            <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--tomato)] text-sm font-semibold text-white">
               {idx + 1}
             </div>
             <div className="text-base font-semibold">{it.title}</div>

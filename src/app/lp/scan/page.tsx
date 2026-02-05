@@ -4,10 +4,11 @@ import { resolvePage } from "@/components/marketing/resolvePage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: pages.home.meta.title,
-  description: pages.home.meta.description,
+  title: pages.lpScan.meta.title,
+  description: pages.lpScan.meta.description,
 };
 
-export default function HomePage({ searchParams }: { searchParams?: { v?: string } }) {
-  return <MarketingPage page={resolvePage(pages.home, searchParams?.v)} />;
+export default function ScanLanding({ searchParams }: { searchParams?: { v?: string } }) {
+  return <MarketingPage page={resolvePage(pages.lpScan, searchParams?.v)} />;
 }
+

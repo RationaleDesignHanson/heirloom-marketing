@@ -1,11 +1,14 @@
 import type { PageSection } from "@/content/content";
 import Section from "./Section";
 import Steps from "./Steps";
+import ProblemSolution from "./ProblemSolution";
 import FeatureGrid from "./FeatureGrid";
 import FAQ from "./FAQ";
 import TrustBar from "./TrustBar";
 import PageCTA from "./PageCTA";
 import TestimonialStrip from "./TestimonialStrip";
+import SocialProof from "./SocialProof";
+import PricingCredits from "./PricingCredits";
 
 export function renderSection(section: PageSection) {
   switch (section.kind) {
@@ -16,10 +19,32 @@ export function renderSection(section: PageSection) {
         </Section>
       );
 
+    case "problemSolution":
+      return (
+        <Section id={section.id}>
+          <ProblemSolution
+            title={section.title}
+            problem={section.problem}
+            solution={section.solution}
+          />
+        </Section>
+      );
+
     case "featureGrid":
       return (
         <Section id={section.id}>
           <FeatureGrid title={section.title} items={section.items} columns={section.columns ?? 3} />
+        </Section>
+      );
+
+    case "socialProof":
+      return (
+        <Section id={section.id}>
+          <SocialProof
+            title={section.title}
+            ratingLabel={section.ratingLabel}
+            items={section.items}
+          />
         </Section>
       );
 
@@ -44,10 +69,28 @@ export function renderSection(section: PageSection) {
         </Section>
       );
 
+    case "pricingCredits":
+      return (
+        <Section id={section.id}>
+          <PricingCredits
+            title={section.title}
+            subtitle={section.subtitle}
+            dailyCredits={section.dailyCredits}
+            creditExamples={section.creditExamples}
+            plans={section.plans}
+          />
+        </Section>
+      );
+
     case "cta":
       return (
         <Section id={section.id}>
-          <PageCTA title={section.title} body={section.body} cta={section.cta} />
+          <PageCTA
+            title={section.title}
+            body={section.body}
+            cta={section.cta}
+            emailCapture={section.emailCapture}
+          />
         </Section>
       );
 

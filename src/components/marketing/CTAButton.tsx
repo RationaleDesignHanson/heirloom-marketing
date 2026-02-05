@@ -19,11 +19,11 @@ export default function CTAButton({
   eventProps?: Record<string, string | number | boolean | undefined>;
 }) {
   const base =
-    "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium shadow-sm transition";
+    "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20";
   const styles =
     variant === "primary"
-      ? "bg-[#3A2F22] text-[#FBF7EF] hover:opacity-95"
-      : "border border-black/10 bg-white text-[#3A2F22] hover:bg-black/[0.03]";
+      ? "bg-[var(--charcoal)] text-[var(--cream)] hover:opacity-95"
+      : "border border-black/10 bg-white/80 text-[#3A2F22] backdrop-blur hover:bg-black/[0.03]";
 
   return (
     <Link

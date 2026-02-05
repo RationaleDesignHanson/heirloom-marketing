@@ -1,7 +1,16 @@
-import MarketingPage from "@/components/marketing/MarketingPage";
-import { pages } from "@/content/content";
-import { resolvePage } from "@/components/marketing/resolvePage";
+import type { Metadata } from "next";
+import LegalPage from "@/components/legal/LegalPage";
+import PrivacyDoc, { meta } from "@/content/policy/privacy.mdx";
 
-export default function PrivacyPage({ searchParams }: { searchParams?: { v?: string } }) {
-  return <MarketingPage page={resolvePage(pages.privacy, searchParams?.v)} />;
+export const metadata: Metadata = {
+  title: `${meta.title} — Heirloom Recipe Box`,
+  description: meta.description,
+};
+
+export default function PrivacyPage() {
+  return (
+    <LegalPage title={meta.title}>
+      <PrivacyDoc />
+    </LegalPage>
+  );
 }

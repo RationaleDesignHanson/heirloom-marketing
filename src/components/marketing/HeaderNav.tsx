@@ -14,10 +14,10 @@ export default function HeaderNav({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-[#FBF7EF]/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-[var(--cream)]/70 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-xl border border-black/10 bg-white shadow-sm" />
+          <div className="h-8 w-8 rounded-xl border border-black/10 bg-white/80 shadow-sm backdrop-blur" />
           <span className="text-sm font-semibold tracking-tight">Heirloom</span>
         </Link>
 
@@ -74,7 +74,7 @@ export default function HeaderNav({
             onClick={() => setMobileMenuOpen(false)}
           />
           {/* Drawer */}
-          <div className="fixed top-[57px] right-0 bottom-0 w-64 border-l border-black/10 bg-[#FBF7EF] p-6 shadow-lg md:hidden">
+          <div className="fixed top-[57px] right-0 bottom-0 w-64 border-l border-black/10 bg-[var(--cream)] p-6 shadow-lg md:hidden">
             <nav className="flex flex-col gap-4">
               {items.map((item) => (
                 <Link

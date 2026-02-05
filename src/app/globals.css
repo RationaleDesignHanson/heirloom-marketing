@@ -2,6 +2,12 @@
 
 :root {
   color-scheme: light;
+  --cream: #faf5f0;
+  --terracotta: #f2d1c5;
+  --tomato: #e05a3a;
+  --green: #4caf50;
+  --charcoal: #2c2c2c;
+  --ink: #3a2f22;
 }
 
 html,
@@ -10,5 +16,57 @@ body {
 }
 
 body {
-  @apply bg-[#FBF7EF] text-[#3A2F22] antialiased;
+  @apply antialiased;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+@layer base {
+  .legal {
+    @apply text-[15px] leading-7 text-[#3A2F22];
+  }
+
+  .legal h1 {
+    @apply text-3xl font-semibold tracking-tight text-black;
+  }
+
+  .legal h2 {
+    @apply mt-10 text-xl font-semibold tracking-tight text-black;
+  }
+
+  .legal h3 {
+    @apply mt-6 text-lg font-semibold tracking-tight text-black;
+  }
+
+  .legal p {
+    @apply mt-4;
+  }
+
+  .legal ul {
+    @apply mt-4 list-disc pl-5;
+  }
+
+  .legal ol {
+    @apply mt-4 list-decimal pl-5;
+  }
+
+  .legal li {
+    @apply mt-2;
+  }
+
+  .legal a {
+    @apply underline underline-offset-4 hover:opacity-80;
+  }
+
+  .legal code {
+    @apply rounded bg-black/5 px-1 py-0.5 font-mono text-[0.9em];
+  }
+
+  .legal blockquote {
+    @apply mt-4 border-l-2 border-black/10 pl-4 text-[#3A2F22]/80;
+  }
+
+  .legal hr {
+    @apply my-10 border-black/10;
+  }
 }

@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/legal/LegalPage";
-import TermsDoc, { meta } from "@/content/policy/terms.mdx";
+import SupportDoc, { meta } from "@/content/policy/support.mdx";
 
 export const metadata: Metadata = {
   title: `${meta.title} — Heirloom Recipe Box`,
   description: meta.description,
 };
 
-export default function TermsPage() {
+export default function SupportPage() {
   return (
     <LegalPage title={meta.title}>
-      <TermsDoc />
+      <SupportDoc />
     </LegalPage>
   );
 }
+

@@ -1,13 +1,16 @@
 import CTAButton from "./CTAButton";
+import EmailCapture from "./EmailCapture";
 
 export default function PageCTA({
   title,
   body,
   cta,
+  emailCapture,
 }: {
   title: string;
   body?: string;
   cta: { label: string; href: string };
+  emailCapture?: { formName: string; placeholder?: string; buttonLabel?: string };
 }) {
   return (
     <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
@@ -22,6 +25,16 @@ export default function PageCTA({
           eventProps={{ location: "section_cta", sectionTitle: title }}
         />
       </div>
+
+      {emailCapture && (
+        <div className="mt-6">
+          <EmailCapture
+            formName={emailCapture.formName}
+            placeholder={emailCapture.placeholder}
+            buttonLabel={emailCapture.buttonLabel}
+          />
+        </div>
+      )}
     </div>
   );
 }
