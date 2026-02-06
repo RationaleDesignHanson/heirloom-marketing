@@ -126,11 +126,11 @@ const sharedFAQs: FAQItem[] = [
   },
   {
     q: "How do credits and Premium work?",
-    a: "You get 25 free credits daily for imports. Premium unlocks web import, cookbook scan, cloud sync, and more. You can also buy credit packs when you need a burst.",
+    a: "You get 25 free credits daily for imports. Premium unlocks advanced features like cookbook scanning, cloud sync, and more. You can also buy credit packs when you need a burst.",
   },
   {
     q: "Is saving from websites free?",
-    a: "Web/URL import is a Premium feature. You can still use credits for PDFs and video imports, and manually enter recipes for free.",
+    a: "Yes. Save from Safari with one tap using the Share Sheet. Premium unlocks advanced imports and extras like cookbook scanning and cloud sync.",
   },
 ];
 
@@ -139,7 +139,7 @@ const sharedPricingSection: PageSection = {
   id: "pricing",
   title: "Free to start. Upgrade when you’re ready.",
   subtitle:
-    "Use daily credits for imports. Premium unlocks web import, cookbook scan, cloud sync, and more.",
+    "Use daily credits for imports. Premium unlocks cookbook scan, cloud sync, and more.",
   dailyCredits: 25,
   creditExamples: [
     { label: "Text-rich PDF import", cost: 1, note: "Fast processing" },
@@ -152,19 +152,19 @@ const sharedPricingSection: PageSection = {
       title: "Monthly",
       price: "$4.99 / month",
       trial: "7-day trial",
-      bullets: ["Web import + scan + sync", "Cancel anytime", "Best for short bursts"],
+      bullets: ["Cookbook scan + sync", "Cancel anytime", "Best for short bursts"],
     },
     {
       title: "Annual",
       price: "$29.99 / year",
       trial: "14-day trial",
       highlight: true,
-      bullets: ["Web import + scan + sync", "Best value", "Cancel anytime"],
+      bullets: ["Cookbook scan + sync", "Best value", "Cancel anytime"],
     },
     {
       title: "Lifetime",
       price: "$99 once",
-      bullets: ["Web import + scan + sync", "No subscription", "Founding member"],
+      bullets: ["Cookbook scan + sync", "No subscription", "Founding member"],
     },
   ],
 };

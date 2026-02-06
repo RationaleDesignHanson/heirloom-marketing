@@ -11,7 +11,7 @@
 
 - **Credit packages corrected**: Actual StoreKit products are 25 credits ($5) and 100 credits ($15) — not the 3-tier model from V2.0
 - **Free tier limits corrected**: No 25-recipe limit or 5-connection limit exists in code — removed
-- **URL import gating added**: URL/web import requires premium (hard paywall)
+- **URL import gating removed**: URL/web import is **not** paywalled (aligns with Share Extension as the hero feature)
 - **3-strike rule corrected**: When active, blocks ALL paywalls (soft AND hard), not just soft walls
 - **Ads removed**: No ad system exists in the codebase — removed from free tier
 - **Recipe Scaling removed**: Not yet implemented — removed from feature matrix
@@ -24,7 +24,7 @@
 
 Heirloom uses a **hybrid monetization model** combining:
 
-1. **Premium Subscription** — Unlocks features (video import, web import, cookbook scan, cloud sync)
+1. **Premium Subscription** — Unlocks features (video ASMR import, cookbook scan, cloud sync)
 2. **Credits System** — Pay-per-use for PDF and video imports (with daily free quota)
 3. **Trial Period** — 14-day trial with daily heritage recipe unlocks
 
@@ -106,7 +106,6 @@ When importing PDFs, users can enable AI-generated images instead of page screen
 
 | Feature | Description | Paywall Trigger |
 |---------|-------------|-----------------|
-| **URL/Web Import** | Import recipes from websites | `urlImport` |
 | **Video Import (ASMR)** | 5-pass visual extraction for silent videos | `visualVideoExtraction` |
 | **Cookbook Scanning** | OCR from photos, handwriting digitization | `cookbookScan` |
 | **Cloud Sync** | Sync across iPhone, iPad, Mac | `sync` |
@@ -140,7 +139,7 @@ Premium statuses: `.trial`, `.monthly`, `.annual`, `.lifetime`, `.grace`
 | Feature | Free | Premium | Credits |
 |---------|------|---------|---------|
 | Manual Recipe Entry | Yes | Yes | N/A |
-| Web URL Import | **No** (hard paywall) | Yes | N/A |
+| Web URL Import | Yes | Yes | N/A |
 | PDF Import (< 50 pages) | Within daily quota | Yes | Uses credits |
 | PDF Import (50+ pages) | **No** (hard paywall) | Yes | Uses credits |
 | Video Import (audio mode) | Yes | Yes | 1 credit |
@@ -193,7 +192,6 @@ Premium statuses: `.trial`, `.monthly`, `.annual`, `.lifetime`, `.grace`
 Cannot be dismissed. Block access to premium features.
 
 **Triggers**:
-- `urlImport` — Web recipe import
 - `cookbookScan` — OCR scanning
 - `sync` — Cloud sync
 - `largePDFImport(pageCount)` — PDFs 50+ pages
@@ -457,7 +455,8 @@ For TestFlight builds:
 **Do:**
 - Show progress ("Day 7 of 14") to create urgency
 - Respect 3-strike rule (don't annoy users)
-- Use hard walls for high-value features (web import, video, scan, sync)
+- Use hard walls for high-value features (ASMR video, scan, sync, large PDFs)
+- Use hard walls for high-value features (ASMR video, scan, sync, large PDFs)
 - Default to Annual plan (better value, higher LTV)
 - Show feature list (clear value prop)
 - Let users import within daily credit quota for free
@@ -485,7 +484,7 @@ User Explores Heritage Recipes (daily unlocks via ThemeUnlockTracker)
     ↓
 Trial Expires (Day 14)
     ↓
-User Hits Premium Feature Wall (web import, video, scan, sync)
+User Hits Premium Feature Wall (ASMR video, scan, sync, large PDF)
     OR
 User Exceeds Daily Credit Quota (needs more credits)
     ↓
@@ -504,7 +503,7 @@ Conversion Decision:
 
 3. **Free Tier Connection Limit**: V2.0 documented a 5-connection limit, but this is **not enforced in code**. Should this be implemented?
 
-4. **URL Import Gating**: Web URL import currently requires premium. This gates the Share Extension hero feature behind a paywall. Consider whether this aligns with acquisition strategy (Share Extension is the primary marketing message).
+4. **URL Import Gating**: Web URL import is not paywalled. Keep it free to align with acquisition strategy (Share Extension is the primary marketing message).
 
 5. **RevenueCat**: Integration stub exists but is disabled (`isRevenueCatEnabled = false`). Decide whether to ship with StoreKit 2 only or enable RevenueCat for analytics.
 
@@ -524,7 +523,7 @@ Conversion Decision:
 - $29.99/year (Annual, 14-day trial) — BEST VALUE
 - $4.99/month (Monthly, 7-day trial)
 - $99 once (Lifetime) — FOUNDING MEMBER
-- Unlocks: Web import, video ASMR, cookbook scan, cloud sync, sharing, publishing
+- Unlocks: Video ASMR, cookbook scan, cloud sync, sharing, publishing
 
 **Actual Free Tier** (what's enforced in code):
 - Manual recipe entry — unlimited
