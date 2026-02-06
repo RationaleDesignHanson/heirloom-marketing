@@ -133,7 +133,8 @@ Your creative docs include pricing references (e.g., `CAP_21_PREMIUM_PAYWALL.png
 - Monthly: **$4.99/month** (7‑day trial)
 - Annual: **$29.99/year** (14‑day trial)
 - Lifetime: **$99 once**
-- Daily credits: **25/day**
+- Trial credits: **50 credits once** (granted at trial start)
+- Premium credits: **100 credits/month** (monthly reset)
 - Credit packs: **$5 for 25** and **$15 for 100**
 
 **Action:** ensure:

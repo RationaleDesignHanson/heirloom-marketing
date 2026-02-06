@@ -25,18 +25,24 @@
 Heirloom uses a **hybrid monetization model** combining:
 
 1. **Premium Subscription** — Unlocks features (video ASMR import, cookbook scan, cloud sync)
-2. **Credits System** — Pay-per-use for PDF and video imports (with daily free quota)
+2. **Credits System** — Pay-per-use for PDF and video imports (using included credits + purchasable credits)
 3. **Trial Period** — 14-day trial with daily heritage recipe unlocks
 
-This hybrid approach allows casual users to import recipes for free (within daily quotas) while power users can subscribe for unlimited access or purchase credits for burst usage.
+This hybrid approach gives new users a starter set of credits during the trial, gives Premium users a monthly credit allotment, and lets anyone buy additional credits for burst usage.
 
 ---
 
 ## Part 1: Credits System (Primary Economy)
 
-### Daily Free Quota
+### Included credits (Trial + Premium)
 
-Every user receives **25 free credits per day** that reset at midnight:
+Credits can come from three sources:
+
+- **Trial credits**: **50 credits once** granted at trial start (no daily reset)
+- **Premium credits**: **100 credits/month** (monthly reset)
+- **Purchased credits**: Never expire, roll over indefinitely
+
+Credits are then spent on imports:
 
 | Credit Usage | Cost | Description |
 |--------------|------|-------------|
@@ -59,9 +65,10 @@ When importing PDFs, users can enable AI-generated images instead of page screen
 
 ### Credit Balance
 
-- **Daily Quota**: 25 credits (resets at midnight)
+- **Trial credits**: 50 credits once (granted at trial start)
+- **Premium credits**: 100 credits/month (monthly reset)
 - **Purchased Credits**: Never expire, roll over indefinitely
-- **Deduction Order**: Uses daily quota first, then purchased credits
+- **Deduction Order**: Uses included credits first, then purchased credits
 
 ### Purchasing Credits
 
@@ -72,8 +79,7 @@ When importing PDFs, users can enable AI-generated images instead of page screen
 
 **Key Points**:
 - Credits never expire
-- Roll over to the next day
-- Purchased credits only used after daily quota exhausted
+- Purchased credits only used after included credits are exhausted
 - Credits are persisted via SwiftData (`UserCredits` model)
 - `canAfford(credits:)` checks availability before import
 - `deductCredits(_:)` handles deduction with quota prioritization
@@ -140,7 +146,7 @@ Premium statuses: `.trial`, `.monthly`, `.annual`, `.lifetime`, `.grace`
 |---------|------|---------|---------|
 | Manual Recipe Entry | Yes | Yes | N/A |
 | Web URL Import | Yes | Yes | N/A |
-| PDF Import (< 50 pages) | Within daily quota | Yes | Uses credits |
+| PDF Import (< 50 pages) | Yes | Yes | Uses credits |
 | PDF Import (50+ pages) | **No** (hard paywall) | Yes | Uses credits |
 | Video Import (audio mode) | Yes | Yes | 1 credit |
 | Video Import (ASMR mode) | **No** (hard paywall) | Yes | 5 credits |
@@ -306,7 +312,7 @@ When importing PDFs, users see a cost confirmation sheet:
 ║    Import right away                 ║
 ║                                      ║
 ║  [ Queue for Tomorrow ]             ║
-║    Free - Quota resets at midnight   ║
+║    Wait (if you expect more included credits later) ║
 ╚══════════════════════════════════════╝
 ```
 
@@ -394,7 +400,7 @@ Shown in Settings and import sheets:
 ```
 ╔══════════════════════════════════════╗
 ║ 🎁 Credits                           ║
-║    Daily quota: 18/25 remaining      ║
+║    Included credits: 18 remaining     ║
 ║    Purchased: 50 credits             ║
 ║    [Buy More Credits]                ║
 ╚══════════════════════════════════════╝
@@ -467,7 +473,7 @@ For TestFlight builds:
 - Block basic features (manual entry, recipe editing, collections, shopping lists)
 - Hide quota information (transparency builds trust)
 - Use dark patterns (make "Maybe later" easy to find)
-- Force purchases for small imports (daily quota covers most casual users)
+- Force purchases too early (starter credits + included monthly credits should cover most casual users)
 
 ### Conversion Funnel
 
@@ -491,7 +497,7 @@ User Exceeds Daily Credit Quota (needs more credits)
 Conversion Decision:
   - Subscribe for unlimited access ($29.99/yr or $4.99/mo)
   - Buy credits for burst usage ($5 for 25 or $15 for 100)
-  - Wait for daily quota reset (free, patience = free)
+  - Wait (if you expect more included credits later)
   - Hit 3-strike → all gates open (current behavior — review this)
 ```
 
@@ -512,7 +518,8 @@ Conversion Decision:
 ## Summary
 
 **Credits System**:
-- 25 free credits/day (resets at midnight)
+- Trial includes **50 credits once** (at trial start)
+- Premium includes **100 credits/month** (monthly reset)
 - PDF: 1-5 credits based on type
 - Video: 1-5 credits based on mode
 - AI images: 0-15 credits based on recipe count

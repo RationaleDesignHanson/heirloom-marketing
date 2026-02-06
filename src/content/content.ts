@@ -45,7 +45,8 @@ export type PageSection =
       id: string;
       title: string;
       subtitle?: string;
-      dailyCredits: number;
+      trialCreditsIncluded?: number;
+      premiumMonthlyCredits?: number;
       creditExamples: { label: string; cost: number; note?: string }[];
       plans: {
         title: string;
@@ -126,7 +127,7 @@ const sharedFAQs: FAQItem[] = [
   },
   {
     q: "How do credits and Premium work?",
-    a: "You get 25 free credits daily for imports. Premium unlocks advanced features like cookbook scanning, cloud sync, and more. You can also buy credit packs when you need a burst.",
+    a: "Some imports use credits. Your trial starts with 50 credits, and Premium includes 100 credits/month. You can also buy credit packs when you need a burst.",
   },
   {
     q: "Is saving from websites free?",
@@ -139,8 +140,9 @@ const sharedPricingSection: PageSection = {
   id: "pricing",
   title: "Free to start. Upgrade when you’re ready.",
   subtitle:
-    "Use daily credits for imports. Premium unlocks cookbook scan, cloud sync, and more.",
-  dailyCredits: 25,
+    "Your trial starts with 50 credits. Premium includes 100 credits/month — and you can buy more any time.",
+  trialCreditsIncluded: 50,
+  premiumMonthlyCredits: 100,
   creditExamples: [
     { label: "Text-rich PDF import", cost: 1, note: "Fast processing" },
     { label: "Scanned PDF import", cost: 5, note: "Vision OCR" },

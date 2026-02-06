@@ -4,13 +4,15 @@ import { urls } from "@/content/content";
 export default function PricingCredits({
   title,
   subtitle,
-  dailyCredits,
+  trialCreditsIncluded,
+  premiumMonthlyCredits,
   creditExamples,
   plans,
 }: {
   title: string;
   subtitle?: string;
-  dailyCredits: number;
+  trialCreditsIncluded?: number;
+  premiumMonthlyCredits?: number;
   creditExamples: { label: string; cost: number; note?: string }[];
   plans: {
     title: string;
@@ -27,8 +29,18 @@ export default function PricingCredits({
           <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
           {subtitle && <p className="mt-2 text-sm text-black/70">{subtitle}</p>}
         </div>
-        <div className="text-sm text-black/70">
-          Daily credits: <span className="font-semibold text-black">{dailyCredits}</span>
+        <div className="flex flex-wrap items-center justify-start gap-2 text-xs text-black/70 sm:justify-end">
+          {typeof trialCreditsIncluded === "number" && (
+            <div className="rounded-full border border-black/10 bg-[#FBF7EF] px-3 py-1">
+              Trial: <span className="font-semibold text-black">{trialCreditsIncluded}</span> credits
+            </div>
+          )}
+          {typeof premiumMonthlyCredits === "number" && (
+            <div className="rounded-full border border-black/10 bg-[#FBF7EF] px-3 py-1">
+              Premium:{" "}
+              <span className="font-semibold text-black">{premiumMonthlyCredits}</span> credits/mo
+            </div>
+          )}
         </div>
       </div>
 
@@ -36,7 +48,8 @@ export default function PricingCredits({
         <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm backdrop-blur lg:col-span-1">
           <div className="text-sm font-semibold">Credits (pay-per-use)</div>
           <p className="mt-2 text-sm text-black/70">
-            Use daily credits for imports. Power users can subscribe or purchase credits in-app.
+            Use credits for certain imports. Subscribe for more monthly credits, or purchase credit packs
+            for burst usage.
           </p>
           <div className="mt-4 space-y-2 text-sm text-black/70">
             {creditExamples.map((ex) => (

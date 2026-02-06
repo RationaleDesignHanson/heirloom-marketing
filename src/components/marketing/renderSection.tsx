@@ -75,7 +75,8 @@ export function renderSection(section: PageSection) {
           <PricingCredits
             title={section.title}
             subtitle={section.subtitle}
-            dailyCredits={section.dailyCredits}
+            trialCreditsIncluded={section.trialCreditsIncluded}
+            premiumMonthlyCredits={section.premiumMonthlyCredits}
             creditExamples={section.creditExamples}
             plans={section.plans}
           />

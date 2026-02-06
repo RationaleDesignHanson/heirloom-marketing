@@ -453,7 +453,7 @@ For each capture:
 **Setup Steps:**
 1. Use some credits (save a few recipes)
 2. Find credits display (Settings or home)
-3. Capture showing "15/25 credits" or similar
+3. Capture showing remaining included credits (e.g., "15/50 trial credits" or "85/100 credits this month")
 
 **Used In:** Credits explanation
 
@@ -464,7 +464,7 @@ For each capture:
 **Filename:** `CAP_23_BUY_CREDITS.png`
 **App State:** Credit pack purchase options
 **Setup Steps:**
-1. Exhaust daily credits (or simulate)
+1. Use up included credits (trial or monthly) (or simulate)
 2. Tap "Get more" or trigger purchase sheet
 3. Capture credit pack options (if applicable)
 
@@ -851,7 +851,8 @@ casual, playful, busy, cold colors
 | Annual trial | 14 days |
 | Monthly trial | 7 days |
 | Lifetime | $99 (optional) |
-| Free credits | 25/day |
+| Trial credits | 50 credits once (at trial start) |
+| Premium credits | 100 credits/month |
 | Credit packs | $5 for 25 credits; $15 for 100 credits |
 
 ### Beta User Testimonials
