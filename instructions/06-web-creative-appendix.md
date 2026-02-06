@@ -124,13 +124,22 @@ Recommended minimum:
 
 ---
 
-## 7) Pricing capture alignment (TBD)
+## 7) Pricing capture alignment (source of truth)
 
 Your creative docs include pricing references (e.g., `CAP_21_PREMIUM_PAYWALL.png` and pricing table in `04-manual-tasks-and-creative.md`).
 
-**Action:** once you confirm the pricing model, we should:
-- ensure `CAP_21` (paywall capture) matches the marketing site
-- ensure website pricing section matches App Store copy
+**Source of truth:** `PREMIUM_FEATURES_AND_TRIAL_UPSELLSv2.md` (v2.1, Feb 2026)
 
-**Owner:** awaiting your pricing corrections.
+- Monthly: **$4.99/month** (7‑day trial)
+- Annual: **$29.99/year** (14‑day trial)
+- Lifetime: **$99 once**
+- Daily credits: **25/day**
+- Credit packs: **$5 for 25** and **$15 for 100**
+
+**Action:** ensure:
+- `CAP_21` (paywall capture) matches the above pricing
+- website pricing section matches the above pricing
+- any on-site credit pack mentions match $5/25 and $15/100
+
+**Owner:** web + app store copy must stay in sync with the monetization doc above.
 

@@ -439,7 +439,7 @@ For each capture:
 1. As free user, trigger paywall (try premium feature)
 2. Capture upgrade screen showing:
    - Features list
-   - Pricing ($5.99/mo, $39.99/yr)
+   - Pricing ($4.99/mo, $29.99/yr, $99 lifetime)
    - Start trial CTA
 
 **Used In:** SS_10
@@ -846,11 +846,13 @@ casual, playful, busy, cold colors
 
 | Item | Value |
 |------|-------|
-| Monthly | $5.99/month |
-| Annual | $39.99/year |
+| Monthly | $4.99/month |
+| Annual | $29.99/year |
 | Annual trial | 14 days |
-| Lifetime | $99.99 (optional) |
+| Monthly trial | 7 days |
+| Lifetime | $99 (optional) |
 | Free credits | 25/day |
+| Credit packs | $5 for 25 credits; $15 for 100 credits |
 
 ### Beta User Testimonials
 

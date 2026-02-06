@@ -124,13 +124,22 @@ const sharedFAQs: FAQItem[] = [
     q: "Can I share recipes with friends?",
     a: "Yes—send recipes directly, and they can tap to accept into their Recipe Box.",
   },
+  {
+    q: "How do credits and Premium work?",
+    a: "You get 25 free credits daily for imports. Premium unlocks web import, cookbook scan, cloud sync, and more. You can also buy credit packs when you need a burst.",
+  },
+  {
+    q: "Is saving from websites free?",
+    a: "Web/URL import is a Premium feature. You can still use credits for PDFs and video imports, and manually enter recipes for free.",
+  },
 ];
 
 const sharedPricingSection: PageSection = {
   kind: "pricingCredits",
   id: "pricing",
   title: "Free to start. Upgrade when you’re ready.",
-  subtitle: "Use daily credits for imports. Subscribe for premium features and unlimited access.",
+  subtitle:
+    "Use daily credits for imports. Premium unlocks web import, cookbook scan, cloud sync, and more.",
   dailyCredits: 25,
   creditExamples: [
     { label: "Text-rich PDF import", cost: 1, note: "Fast processing" },
@@ -143,19 +152,19 @@ const sharedPricingSection: PageSection = {
       title: "Monthly",
       price: "$4.99 / month",
       trial: "7-day trial",
-      bullets: ["Premium features", "Cancel anytime", "Best for short bursts"],
+      bullets: ["Web import + scan + sync", "Cancel anytime", "Best for short bursts"],
     },
     {
       title: "Annual",
       price: "$29.99 / year",
       trial: "14-day trial",
       highlight: true,
-      bullets: ["Premium features", "Best value", "Cancel anytime"],
+      bullets: ["Web import + scan + sync", "Best value", "Cancel anytime"],
     },
     {
       title: "Lifetime",
       price: "$99 once",
-      bullets: ["Premium features", "No subscription", "Founding member"],
+      bullets: ["Web import + scan + sync", "No subscription", "Founding member"],
     },
   ],
 };
