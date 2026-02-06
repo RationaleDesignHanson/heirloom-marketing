@@ -2,12 +2,6 @@
 
 import { useMemo, useState } from "react";
 
-function encode(data: Record<string, string>) {
-  return Object.entries(data)
-    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
-    .join("&");
-}
-
 export default function EmailCapture({
   formName,
   placeholder = "you@domain.com",
@@ -31,16 +25,10 @@ export default function EmailCapture({
 
     setStatus("loading");
     try {
-      const body = encode({
-        "form-name": formName,
-        email: email.trim(),
-        "bot-field": hp,
-      });
-
-      const res = await fetch("/", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim(), formName }),
       });
 
       if (!res.ok) throw new Error(`Bad response: ${res.status}`);
@@ -52,22 +40,16 @@ export default function EmailCapture({
   }
 
   return (
-    <form
-      name={formName}
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      onSubmit={onSubmit}
-      className="w-full max-w-xl"
-    >
-      <input type="hidden" name="form-name" value={formName} />
-
+    <form onSubmit={onSubmit} className="w-full max-w-xl">
       {/* honeypot */}
-      <p className="hidden">
-        <label>
-          Don’t fill this out: <input name="bot-field" value={hp} onChange={(e) => setHp(e.target.value)} />
-        </label>
-      </p>
+      <input
+        aria-hidden="true"
+        tabIndex={-1}
+        className="hidden"
+        value={hp}
+        onChange={(e) => setHp(e.target.value)}
+        autoComplete="off"
+      />
 
       <div className="flex flex-col gap-3 sm:flex-row">
         <input
