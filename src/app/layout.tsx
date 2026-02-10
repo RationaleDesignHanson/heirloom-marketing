@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomrecipebox.app";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,7 +16,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Heirloom Recipe Box",
-  description: "Save & share recipes in one tap.",
+  description: "Preserve your family's recipes forever.",
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: "Heirloom Recipe Box",
+    description: "Preserve your family's recipes forever.",
+    images: ["/og/default.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Heirloom Recipe Box",
+    description: "Preserve your family's recipes forever.",
+    images: ["/og/default.png"],
+  },
 };
 
 export default function RootLayout({

@@ -9,6 +9,15 @@ export default function Footer() {
             <span className="font-semibold text-black">Heirloom</span> — Recipe Box
           </div>
           <div className="flex gap-5 text-sm text-black/70">
+            <Link className="hover:text-black" href="/about">
+              About
+            </Link>
+            <Link className="hover:text-black" href="/technology">
+              Technology
+            </Link>
+            <Link className="hover:text-black" href="/presskit">
+              Press kit
+            </Link>
             <Link className="hover:text-black" href="/support">
               Support
             </Link>

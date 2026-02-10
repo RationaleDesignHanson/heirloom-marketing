@@ -8,6 +8,8 @@ const routes = [
   "/lp/scan",
   "/lp/generate",
   "/lp/share",
+  "/about",
+  "/technology",
   "/support",
   "/community",
   "/presskit",

@@ -141,7 +141,7 @@ const sharedFAQs: FAQItem[] = [
   },
   {
     q: "Is saving from websites free?",
-    a: "Yes. Save from Safari with one tap using the Share Sheet. Heritage unlocks advanced preservation features like cookbook scanning and cloud sync. Voice capture is free.",
+    a: "Yes. Save from Safari with one tap using the Share Sheet. Heritage unlocks advanced preservation features like cookbook scanning, cloud sync, and voice capture.",
   },
 ];
 
@@ -493,7 +493,7 @@ export const pages: Record<
   lpShare: {
     meta: {
       title: "Share recipes that stick — Heirloom Recipe Box",
-      description: "Send recipes to friends and family. They’ll keep them forever—organized.",
+      description: "Privacy information for Heirloom Recipe Box.",
     },
     nav: sharedNav,
     hero: {
@@ -610,7 +610,7 @@ export const pages: Record<
     meta: {
       title: "About — Heirloom Recipe Box | The System of Record for Family Food Culture",
       description:
-        "The story behind Heirloom Recipe Box. Built by Rationale Studio to preserve family food culture.",
+        "The story behind Heirloom Recipe Box. Built by Rationale Studio to preserve family food culture for generations.",
     },
     nav: sharedNav,
     hero: {
