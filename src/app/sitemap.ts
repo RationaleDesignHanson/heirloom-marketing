@@ -14,6 +14,7 @@ const routes = [
   "/community",
   "/presskit",
   "/privacy",
+  "/privacy-choices",
   "/terms",
 ];
 
