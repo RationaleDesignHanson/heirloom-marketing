@@ -7,9 +7,9 @@ export default function PhoneDemo({
 
   return (
     <div className="overflow-hidden rounded-3xl border border-black/10 bg-white/70 shadow-sm backdrop-blur">
-      <div className={`overflow-hidden bg-black/5 ${ratio}`}>
+      <div className={`relative overflow-hidden bg-black/5 ${ratio}`}>
         <video
-          className="h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           autoPlay
           muted
           loop
