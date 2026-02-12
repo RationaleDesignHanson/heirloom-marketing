@@ -354,8 +354,8 @@ export const pages: Record<
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
-        video: "/assets/video/lp1-save-hero-16x9.mp4",
-        poster: "/assets/posters/lp1-save-hero.jpg",
+        video: "/assets/video/lp-video-hero-16x9.mp4",
+        poster: "/assets/posters/lp-video-hero.jpg",
         alt: "Turning a cooking video into a recipe in Heirloom Recipe Box",
         aspect: "16:9",
       },
@@ -408,8 +408,8 @@ export const pages: Record<
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
-        video: "/assets/video/lp1-save-hero-16x9.mp4",
-        poster: "/assets/posters/lp1-save-hero.jpg",
+        video: "/assets/video/lp-scan-hero-16x9.mp4",
+        poster: "/assets/posters/lp-scan-hero.jpg",
         alt: "Scanning a cookbook page into Heirloom Recipe Box",
         aspect: "16:9",
       },
@@ -462,8 +462,8 @@ export const pages: Record<
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Your Recipe Box stays yours",
       demo: {
-        video: "/assets/video/lp1-save-hero-16x9.mp4",
-        poster: "/assets/posters/lp1-save-hero.jpg",
+        video: "/assets/video/lp-generate-hero-16x9.mp4",
+        poster: "/assets/posters/lp-generate-hero.jpg",
         alt: "Generating a recipe in Heirloom Recipe Box",
         aspect: "16:9",
       },
