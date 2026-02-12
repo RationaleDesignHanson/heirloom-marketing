@@ -282,10 +282,10 @@ export const pages: Record<
       emailCapture: { formName: "notify", placeholder: "you@domain.com", buttonLabel: "Notify me" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
-        video: "/assets/video/lp1-save-hero-16x9.mp4",
-        poster: "/assets/posters/lp1-save-hero.jpg",
+        video: "/assets/video/lp1-save-hero-9x16.mp4",
+        poster: "/assets/posters/lp1-save-hero-9x16.jpg",
         alt: "Saving a recipe to Heirloom Recipe Box from the share sheet",
-        aspect: "16:9",
+        aspect: "9:16",
       },
     },
     variants: {
@@ -354,10 +354,10 @@ export const pages: Record<
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
-        video: "/assets/video/lp-video-hero-16x9.mp4",
-        poster: "/assets/posters/lp-video-hero.jpg",
+        video: "/assets/video/lp-video-hero-9x16.mp4",
+        poster: "/assets/posters/lp-video-hero-9x16.jpg",
         alt: "Turning a cooking video into a recipe in Heirloom Recipe Box",
-        aspect: "16:9",
+        aspect: "9:16",
       },
     },
     sections: [
@@ -502,10 +502,10 @@ export const pages: Record<
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       demo: {
-        video: "/assets/video/lp2-share-hero-16x9.mp4",
-        poster: "/assets/posters/lp2-share-hero.jpg",
+        video: "/assets/video/lp2-share-hero-9x16.mp4",
+        poster: "/assets/posters/lp2-share-hero-9x16.jpg",
         alt: "Sharing a recipe from Heirloom Recipe Box",
-        aspect: "16:9",
+        aspect: "9:16",
       },
     },
     sections: [

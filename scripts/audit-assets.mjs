@@ -127,28 +127,28 @@ function checkFile(relPath, rules) {
 const checks = [
   // Drop-in heroes
   {
-    relPath: "public/assets/video/lp1-save-hero-16x9.mp4",
+    relPath: "public/assets/video/lp1-save-hero-9x16.mp4",
     rules: { kind: "video", warnBytes: 10 * 1024 * 1024, maxBytes: 20 * 1024 * 1024 },
   },
   {
-    relPath: "public/assets/posters/lp1-save-hero.jpg",
+    relPath: "public/assets/posters/lp1-save-hero-9x16.jpg",
     rules: { kind: "image" },
   },
   {
-    relPath: "public/assets/video/lp2-share-hero-16x9.mp4",
+    relPath: "public/assets/video/lp2-share-hero-9x16.mp4",
     rules: { kind: "video", warnBytes: 10 * 1024 * 1024, maxBytes: 20 * 1024 * 1024 },
   },
   {
-    relPath: "public/assets/posters/lp2-share-hero.jpg",
+    relPath: "public/assets/posters/lp2-share-hero-9x16.jpg",
     rules: { kind: "image" },
   },
 
   // Variant heroes (optional but requested in our plan)
   {
-    relPath: "public/assets/video/lp-video-hero-16x9.mp4",
+    relPath: "public/assets/video/lp-video-hero-9x16.mp4",
     rules: { kind: "video", warnBytes: 10 * 1024 * 1024, maxBytes: 20 * 1024 * 1024 },
   },
-  { relPath: "public/assets/posters/lp-video-hero.jpg", rules: { kind: "image" } },
+  { relPath: "public/assets/posters/lp-video-hero-9x16.jpg", rules: { kind: "image" } },
   {
     relPath: "public/assets/video/lp-scan-hero-16x9.mp4",
     rules: { kind: "video", warnBytes: 10 * 1024 * 1024, maxBytes: 20 * 1024 * 1024 },
