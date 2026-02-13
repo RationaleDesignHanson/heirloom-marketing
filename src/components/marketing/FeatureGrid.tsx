@@ -18,10 +18,23 @@ export default function FeatureGrid({
         {items.map((it, idx) => (
           <div
             key={idx}
-            className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm backdrop-blur"
+            className="overflow-hidden rounded-2xl border border-black/10 bg-white/80 shadow-sm backdrop-blur"
           >
-            <div className="text-base font-semibold">{it.title}</div>
-            <div className="mt-2 text-sm text-black/70">{it.body}</div>
+            {it.image && (
+              <div className="aspect-[9/16] max-h-72 overflow-hidden bg-black/5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={it.image}
+                  alt={it.title}
+                  className="h-full w-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div className="p-6">
+              <div className="text-base font-semibold">{it.title}</div>
+              <div className="mt-2 text-sm text-black/70">{it.body}</div>
+            </div>
           </div>
         ))}
       </div>

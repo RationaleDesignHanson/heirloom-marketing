@@ -1,37 +1,53 @@
+"use client";
+
+import { useState } from "react";
+
 export default function PhoneDemo({
   demo,
 }: {
-  demo: {
-    video: string;
-    poster: string;
-    alt: string;
-    aspect: "16:9" | "9:16";
-    /**
-     * Optional presentation knob to accommodate exports with extra safe-area
-     * or inconsistent framing. Values > 1 zoom in (cropping edges).
-     */
-    zoom?: number;
-  };
+  demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" };
 }) {
-  const ratio = demo.aspect === "9:16" ? "aspect-[9/16]" : "aspect-video";
-  const zoom = demo.zoom ?? 1;
+  const [videoFailed, setVideoFailed] = useState(false);
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-black/10 bg-white/70 shadow-sm backdrop-blur">
-      <div className={`relative overflow-hidden bg-black/5 ${ratio}`}>
-        <video
-          className="absolute inset-0 h-full w-full object-cover object-center"
-          style={zoom !== 1 ? { transform: `scale(${zoom})`, transformOrigin: "center" } : undefined}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={demo.poster}
-          aria-label={demo.alt}
-        >
-          <source src={demo.video} type="video/mp4" />
-        </video>
+    <div className="mx-auto w-full max-w-[280px] sm:max-w-[300px]">
+      {/* iPhone frame */}
+      <div className="relative rounded-[2.5rem] border-[6px] border-[#1a1a1a] bg-[#1a1a1a] p-[3px] shadow-xl ring-1 ring-black/10">
+        {/* Dynamic Island notch */}
+        <div className="absolute top-0 left-1/2 z-10 h-[26px] w-[100px] -translate-x-1/2 rounded-b-2xl bg-[#1a1a1a]" />
+
+        {/* Screen */}
+        <div className="relative overflow-hidden rounded-[2rem] bg-black">
+          <div className="aspect-[9/19.5]">
+            {!videoFailed ? (
+              <video
+                className="h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                poster={demo.poster}
+                aria-label={demo.alt}
+                onError={() => setVideoFailed(true)}
+              >
+                <source
+                  src={demo.video}
+                  type="video/mp4"
+                  onError={() => setVideoFailed(true)}
+                />
+              </video>
+            ) : (
+              /* Fallback: show poster image when video is unavailable */
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={demo.poster}
+                alt={demo.alt}
+                className="h-full w-full object-cover"
+              />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

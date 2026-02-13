@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: pages.lpShare.meta.description,
 };
 
-export default function ShareLanding({ searchParams }: { searchParams?: { v?: string } }) {
-  return <MarketingPage page={resolvePage(pages.lpShare, searchParams?.v)} />;
+export default async function ShareLanding({ searchParams }: { searchParams?: Promise<{ v?: string }> }) {
+  const params = await searchParams;
+  return <MarketingPage page={resolvePage(pages.lpShare, params?.v)} />;
 }
-

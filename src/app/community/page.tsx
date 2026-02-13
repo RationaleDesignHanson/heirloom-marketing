@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: pages.community.meta.description,
 };
 
-export default function CommunityPage({ searchParams }: { searchParams?: { v?: string } }) {
-  return <MarketingPage page={resolvePage(pages.community, searchParams?.v)} />;
+export default async function CommunityPage({ searchParams }: { searchParams?: Promise<{ v?: string }> }) {
+  const params = await searchParams;
+  return <MarketingPage page={resolvePage(pages.community, params?.v)} />;
 }
-

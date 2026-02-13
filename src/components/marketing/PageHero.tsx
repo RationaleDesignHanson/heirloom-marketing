@@ -19,15 +19,10 @@ export default function PageHero({
     <section className="px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl py-10 sm:py-12">
         <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-gradient-to-br from-[var(--cream)] via-white to-[var(--terracotta)] p-8 shadow-sm sm:p-10">
-          {/* Subtle brand background image for warmth + balance (keep it very light) */}
+          {/* AI-generated warm kitchen background — soft overlay */}
           <div
-            className="pointer-events-none absolute inset-0 opacity-[0.12]"
-            style={{
-              backgroundImage: "url(/assets/bg/landing-hero.png)",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.08]"
+            style={{ backgroundImage: "url(/assets/bg/landing-hero.png)" }}
           />
           <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[var(--tomato)]/10 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-black/5 blur-3xl" />

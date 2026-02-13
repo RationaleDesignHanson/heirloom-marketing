@@ -6,6 +6,7 @@ const routes = [
   "/",
   "/lp/video",
   "/lp/scan",
+  "/lp/pdf",
   "/lp/generate",
   "/lp/share",
   "/about",

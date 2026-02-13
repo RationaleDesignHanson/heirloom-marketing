@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: pages.presskit.meta.description,
 };
 
-export default function PresskitPage({ searchParams }: { searchParams?: { v?: string } }) {
-  return <MarketingPage page={resolvePage(pages.presskit, searchParams?.v)} />;
+export default async function PresskitPage({ searchParams }: { searchParams?: Promise<{ v?: string }> }) {
+  const params = await searchParams;
+  return <MarketingPage page={resolvePage(pages.presskit, params?.v)} />;
 }
-

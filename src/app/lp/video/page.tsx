@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: pages.lpVideo.meta.description,
 };
 
-export default function VideoLanding({ searchParams }: { searchParams?: { v?: string } }) {
-  return <MarketingPage page={resolvePage(pages.lpVideo, searchParams?.v)} />;
+export default async function VideoLanding({ searchParams }: { searchParams?: Promise<{ v?: string }> }) {
+  const params = await searchParams;
+  return <MarketingPage page={resolvePage(pages.lpVideo, params?.v)} />;
 }
-

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: pages.lpGenerate.meta.description,
 };
 
-export default function GenerateLanding({ searchParams }: { searchParams?: { v?: string } }) {
-  return <MarketingPage page={resolvePage(pages.lpGenerate, searchParams?.v)} />;
+export default async function GenerateLanding({ searchParams }: { searchParams?: Promise<{ v?: string }> }) {
+  const params = await searchParams;
+  return <MarketingPage page={resolvePage(pages.lpGenerate, params?.v)} />;
 }
-

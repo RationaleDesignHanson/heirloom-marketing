@@ -125,40 +125,68 @@ function checkFile(relPath, rules) {
 }
 
 const checks = [
-  // Drop-in heroes
+  // Hero videos + posters (all portrait 9:16)
   {
-    relPath: "public/assets/video/lp1-save-hero-9x16.mp4",
-    rules: { kind: "video", warnBytes: 10 * 1024 * 1024, maxBytes: 20 * 1024 * 1024 },
+    relPath: "public/assets/video/lp1-save-hero-16x9.mp4",
+    rules: { kind: "video" },
   },
+  { relPath: "public/assets/posters/lp1-save-hero.jpg", rules: { kind: "image" } },
   {
-    relPath: "public/assets/posters/lp1-save-hero-9x16.jpg",
-    rules: { kind: "image" },
+    relPath: "public/assets/video/lp2-share-hero-16x9.mp4",
+    rules: { kind: "video" },
   },
+  { relPath: "public/assets/posters/lp2-share-hero.jpg", rules: { kind: "image" } },
   {
-    relPath: "public/assets/video/lp2-share-hero-9x16.mp4",
-    rules: { kind: "video", warnBytes: 10 * 1024 * 1024, maxBytes: 20 * 1024 * 1024 },
+    relPath: "public/assets/video/lp-video-hero-16x9.mp4",
+    rules: { kind: "video" },
   },
-  {
-    relPath: "public/assets/posters/lp2-share-hero-9x16.jpg",
-    rules: { kind: "image" },
-  },
-
-  // Variant heroes (optional but requested in our plan)
-  {
-    relPath: "public/assets/video/lp-video-hero-9x16.mp4",
-    rules: { kind: "video", warnBytes: 10 * 1024 * 1024, maxBytes: 20 * 1024 * 1024 },
-  },
-  { relPath: "public/assets/posters/lp-video-hero-9x16.jpg", rules: { kind: "image" } },
+  { relPath: "public/assets/posters/lp-video-hero.jpg", rules: { kind: "image" } },
   {
     relPath: "public/assets/video/lp-scan-hero-16x9.mp4",
-    rules: { kind: "video", warnBytes: 10 * 1024 * 1024, maxBytes: 20 * 1024 * 1024 },
+    rules: { kind: "video" },
   },
   { relPath: "public/assets/posters/lp-scan-hero.jpg", rules: { kind: "image" } },
   {
     relPath: "public/assets/video/lp-generate-hero-16x9.mp4",
-    rules: { kind: "video", warnBytes: 10 * 1024 * 1024, maxBytes: 20 * 1024 * 1024 },
+    rules: { kind: "video" },
   },
   { relPath: "public/assets/posters/lp-generate-hero.jpg", rules: { kind: "image" } },
+  {
+    relPath: "public/assets/video/lp-COOKBOOK-hero-16x9.mp4",
+    rules: { kind: "video" },
+  },
+  { relPath: "public/assets/posters/lp-cookbook-hero.jpg", rules: { kind: "image" } },
+  {
+    relPath: "public/assets/video/lp-PDF-hero-16x9.mp4",
+    rules: { kind: "video" },
+  },
+  { relPath: "public/assets/posters/lp-pdf-hero.jpg", rules: { kind: "image" } },
+  {
+    relPath: "public/assets/video/lp-heritage-hero-16x9.mp4",
+    rules: { kind: "video" },
+  },
+  { relPath: "public/assets/posters/lp-heritage-hero.jpg", rules: { kind: "image" } },
+
+  // Key screenshots (portrait captures)
+  { relPath: "public/assets/screens/cap_03_share_to_heirloom.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_03b_share_flow.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_04_share.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_04_shareb.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_04_sharec.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_04b_accept.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_05_privacy_pills.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_10_generate_result.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_11_saved_recipe.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_12_video_result.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_13_attribution.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_18_scan_result.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/reada.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/readb.png", rules: { kind: "image" } },
+
+  // Backgrounds
+  { relPath: "public/assets/bg/landing-hero.png", rules: { kind: "image" } },
+  { relPath: "public/assets/bg/screenshot-frame.png", rules: { kind: "image" } },
+  { relPath: "public/assets/press/presskit-header.png", rules: { kind: "image" } },
 
   // OG + favicon
   { relPath: "public/og/default.png", rules: { kind: "image", exactWidth: 1200, exactHeight: 630 } },

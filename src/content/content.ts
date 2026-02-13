@@ -1,5 +1,5 @@
 export type FAQItem = { q: string; a: string };
-export type FeatureItem = { title: string; body: string; icon?: string };
+export type FeatureItem = { title: string; body: string; icon?: string; image?: string };
 export type StepItem = { title: string; body?: string };
 export type TechPillarItem = { title: string; body: string; detail: string; icon: string };
 export type ComparisonRowItem = { feature: string; heirloom: boolean | string; others: boolean | string };
@@ -93,7 +93,7 @@ export const brand = {
   productNameFull: "Heirloom Recipe Box",
   productNameShort: "Heirloom",
   appStoreTitle: "Heirloom: Recipe Box",
-  appStoreSubtitle: "Preserve your family's recipes",
+  appStoreSubtitle: "Save & share recipes in one tap",
 };
 
 export const urls = {
@@ -102,6 +102,7 @@ export const urls = {
   lpVideo: "/lp/video",
   lpScan: "/lp/scan",
   lpGenerate: "/lp/generate",
+  lpPdf: "/lp/pdf",
   lpShare: "/lp/share",
   about: "/about",
   technology: "/technology",
@@ -136,21 +137,21 @@ const sharedFAQs: FAQItem[] = [
     a: "Yes—send recipes directly, and they can tap to accept into their Recipe Box.",
   },
   {
-    q: "How do credits and Heritage work?",
-    a: "Some imports use credits. Your trial starts with 50 credits, and Heritage includes 100 credits/month. You can also buy credit packs ($5 for 25, $15 for 100) when you need a burst.",
+    q: "How do credits and Premium work?",
+    a: "Some imports use credits. Your trial starts with 50 credits, and Premium includes 100 credits/month. You can also buy credit packs when you need a burst.",
   },
   {
     q: "Is saving from websites free?",
-    a: "Yes. Save from Safari with one tap using the Share Sheet. Heritage unlocks advanced preservation features like cookbook scanning and cloud sync. Voice capture is free.",
+    a: "Yes. Save from Safari with one tap using the Share Sheet. Premium unlocks advanced imports and extras like cookbook scanning and cloud sync.",
   },
 ];
 
 const sharedPricingSection: PageSection = {
   kind: "pricingCredits",
   id: "pricing",
-  title: "Heritage-grade preservation. Start free.",
+  title: "Free to start. Upgrade when you’re ready.",
   subtitle:
-    "Your trial starts with 50 credits. Heritage includes 100 credits/month — plus credit packs ($5 for 25, $15 for 100) when you need a burst.",
+    "Your trial starts with 50 credits. Premium includes 100 credits/month — and you can buy more any time.",
   trialCreditsIncluded: 50,
   premiumMonthlyCredits: 100,
   creditExamples: [
@@ -161,22 +162,22 @@ const sharedPricingSection: PageSection = {
   ],
   plans: [
     {
-      title: "Heritage Monthly",
-      price: "$6.99 / month",
+      title: "Monthly",
+      price: "$4.99 / month",
       trial: "7-day trial",
-      bullets: ["Full preservation suite", "Cancel anytime", "Best for short bursts"],
+      bullets: ["Cookbook scan + sync", "Cancel anytime", "Best for short bursts"],
     },
     {
-      title: "Heritage Annual",
-      price: "$39.99 / year",
+      title: "Annual",
+      price: "$29.99 / year",
       trial: "14-day trial",
       highlight: true,
-      bullets: ["Full preservation suite", "Best value — save 52%", "Cancel anytime"],
+      bullets: ["Cookbook scan + sync", "Best value", "Cancel anytime"],
     },
     {
-      title: "Founding Member Lifetime",
-      price: "$149 once",
-      bullets: ["Full preservation suite forever", "No subscription ever", "Founding Member pricing"],
+      title: "Lifetime",
+      price: "$99 once",
+      bullets: ["Cookbook scan + sync", "No subscription", "Founding member"],
     },
   ],
 };
@@ -184,23 +185,23 @@ const sharedPricingSection: PageSection = {
 const sharedProblemSolution: PageSection = {
   kind: "problemSolution",
   id: "problem-solution",
-  title: "73% of family recipes are lost within one generation",
+  title: "Stop losing recipes to bookmarks",
   problem: {
-    title: "The crisis",
-    body: "Family recipes are scattered across 8+ surfaces — screenshots, texts, bookmarks, handwritten cards, and saved videos. When the keeper passes, the recipes vanish.",
-    bullets: ["Recipes lost when platforms change", "Handwritten cards fade and get lost", "No backup for grandma's instructions"],
+    title: "The problem",
+    body: "Recipes end up scattered across Safari tabs, Notes, screenshots, and saved videos.",
+    bullets: ["You can’t find what you saved", "Copy/paste breaks your flow", "Sharing becomes link-chasing"],
   },
   solution: {
     title: "The Heirloom way",
-    body: "One tap from wherever you find recipes — then preserve them forever with attribution, provenance, and heritage-grade archiving.",
-    bullets: ["Capture → Preserve → Share", "Track where every recipe comes from", "Private by default, always"],
+    body: "One tap from wherever you find recipes—then cook from clean, structured cards.",
+    bullets: ["Share → Heirloom", "Imports in the background", "Private by default"],
   },
 };
 
 const sharedSocialProof: PageSection = {
   kind: "socialProof",
   id: "social-proof",
-  title: "Made for families who cook",
+  title: "Made for calm cooking",
   ratingLabel: "Add App Store ratings and testimonials when ready.",
   items: [],
 };
@@ -263,37 +264,37 @@ const sharedComparisonTable: PageSection = {
 };
 
 export const pages: Record<
-  "home" | "lpVideo" | "lpScan" | "lpGenerate" | "lpShare" | "community" | "presskit" | "about" | "technology",
+  "home" | "lpVideo" | "lpScan" | "lpPdf" | "lpGenerate" | "lpShare" | "community" | "presskit" | "about" | "technology",
   MarketingPage
 > = {
   home: {
     meta: {
-      title: "Heirloom Recipe Box — Preserve your family's recipes",
+      title: "Heirloom Recipe Box — Save recipes in one tap",
       description:
-        "Preserve your family's recipes forever. Capture from links, videos, cookbooks, and voice — heritage-grade archiving, private by default.",
+        "Save recipes from anywhere in one tap. Turn links, PDFs, and videos into clean recipes you'll actually cook.",
     },
     nav: sharedNav,
     hero: {
-      h1: "Preserve your family's recipes forever",
+      h1: "Save recipes from anywhere in one tap",
       subhead:
-        "Heirloom captures recipes from links, videos, cookbooks, and voice — preserving them as heritage, not just bookmarks.",
+        "Heirloom Recipe Box turns links, PDFs, and videos into clean recipes you'll actually cook.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       emailCapture: { formName: "notify", placeholder: "you@domain.com", buttonLabel: "Notify me" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
-        video: "/assets/video/lp1-save-hero-9x16.mp4",
-        poster: "/assets/posters/lp1-save-hero-9x16.jpg",
-        alt: "Saving a recipe to Heirloom Recipe Box from the share sheet",
+        video: "/assets/video/CardCapture.mp4",
+        poster: "/assets/posters/card-capture-hero.jpg",
+        alt: "Saving a recipe to Heirloom Recipe Box",
         aspect: "9:16",
       },
     },
     variants: {
       b: {
         hero: {
-          h1: "Your family's recipe archive",
+          h1: "Your Recipe Box, finally",
           subhead:
-            "Capture from links, videos, cookbooks, and voice — then preserve and share the recipes that matter most.",
+            "Save from links, PDFs, and videos—then cook from clean recipes you'll actually use.",
         },
       },
     },
@@ -302,7 +303,7 @@ export const pages: Record<
       {
         kind: "steps",
         id: "how-it-works",
-        title: "The fastest way to preserve recipes",
+        title: "The fastest way to save recipes",
         items: [
           { title: "Tap Share", body: "On a recipe anywhere—web, PDF, or video." },
           { title: "Save to Heirloom", body: 'Choose "Save to Heirloom Recipe Box".' },
@@ -312,15 +313,47 @@ export const pages: Record<
       {
         kind: "featureGrid",
         id: "sources",
-        title: "Capture recipes from everywhere they live",
+        title: "Save recipes from the internet you already use",
         columns: 3,
         items: [
-          { title: "From the web", body: "Articles, blogs, newsletters—save and move on." },
+          {
+            title: "From the web",
+            body: "Articles, blogs, newsletters—save and move on.",
+            image: "/assets/screens/cap_03_share_to_heirloom.png",
+          },
           {
             title: "From PDFs",
             body: "Cookbooks, printables, family recipes—clean and readable.",
+            image: "/assets/screens/cap_18_scan_result.png",
           },
-          { title: "From videos", body: "Keep the recipe, not the scrolling." },
+          {
+            title: "From videos",
+            body: "Keep the recipe, not the scrolling.",
+            image: "/assets/screens/cap_12_video_result.png",
+          },
+        ],
+      },
+      {
+        kind: "featureGrid",
+        id: "more-ways",
+        title: "Even more ways to capture recipes",
+        columns: 3,
+        items: [
+          {
+            title: "Read it aloud",
+            body: "Dictate a recipe from memory — Heirloom transcribes and structures it.",
+            image: "/assets/screens/reada.png",
+          },
+          {
+            title: "Generate with AI",
+            body: "Describe ingredients or a craving. Get a recipe you'll actually cook.",
+            image: "/assets/screens/cap_10_generate_result.png",
+          },
+          {
+            title: "Share with family",
+            body: "Send recipes to anyone. They tap Accept and it's in their box.",
+            image: "/assets/screens/cap_04_share.png",
+          },
         ],
       },
       sharedTechShowcase,
@@ -331,8 +364,8 @@ export const pages: Record<
       {
         kind: "cta",
         id: "download",
-        title: "Start preserving your family's recipes today",
-        body: "Don't let another recipe disappear. Join the list for launch updates.",
+        title: "Start your Recipe Box today",
+        body: "Want launch updates? Join the list.",
         cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
         emailCapture: { formName: "notify", placeholder: "you@domain.com", buttonLabel: "Notify me" },
       },
@@ -354,8 +387,8 @@ export const pages: Record<
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
-        video: "/assets/video/lp-video-hero-9x16.mp4",
-        poster: "/assets/posters/lp-video-hero-9x16.jpg",
+        video: "/assets/video/lp-video-hero-16x9.mp4",
+        poster: "/assets/posters/lp-video-hero.jpg",
         alt: "Turning a cooking video into a recipe in Heirloom Recipe Box",
         aspect: "9:16",
       },
@@ -378,9 +411,21 @@ export const pages: Record<
         title: "Built for video recipes",
         columns: 3,
         items: [
-          { title: "Works across platforms", body: "TikTok, Instagram, YouTube—save what you find." },
-          { title: "No copy/paste", body: "Keep browsing while the import runs in the background." },
-          { title: "Organized automatically", body: "A Recipe Box you’ll actually use." },
+          {
+            title: "Works across platforms",
+            body: "TikTok, Instagram, YouTube—save what you find.",
+            image: "/assets/screens/cap_12_video_result.png",
+          },
+          {
+            title: "No copy/paste",
+            body: "Keep browsing while the import runs in the background.",
+            image: "/assets/screens/cap_03b_share_flow.png",
+          },
+          {
+            title: "Organized automatically",
+            body: "A Recipe Box you'll actually use.",
+            image: "/assets/screens/cap_13_attribution.png",
+          },
         ],
       },
       sharedPricingSection,
@@ -408,10 +453,10 @@ export const pages: Record<
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
-        video: "/assets/video/lp-scan-hero-16x9.mp4",
-        poster: "/assets/posters/lp-scan-hero.jpg",
-        alt: "Scanning a cookbook page into Heirloom Recipe Box",
-        aspect: "16:9",
+        video: "/assets/video/read.mp4",
+        poster: "/assets/posters/read-hero.jpg",
+        alt: "Reading a recipe into Heirloom Recipe Box",
+        aspect: "9:16",
       },
     },
     sections: [
@@ -432,9 +477,21 @@ export const pages: Record<
         title: "Perfect for cookbooks and handwriting",
         columns: 3,
         items: [
-          { title: "Cookbook pages", body: "Turn printed recipes into clean steps." },
-          { title: "Handwritten cards", body: "Capture the recipes you don’t want to lose." },
-          { title: "Private by default", body: "Your Recipe Box stays yours." },
+          {
+            title: "Cookbook pages",
+            body: "Turn printed recipes into clean steps.",
+            image: "/assets/screens/cap_18_scan_result.png",
+          },
+          {
+            title: "Handwritten cards",
+            body: "Capture the recipes you don't want to lose.",
+            image: "/assets/screens/cap_11_saved_recipe.png",
+          },
+          {
+            title: "Private by default",
+            body: "Your Recipe Box stays yours.",
+            image: "/assets/screens/cap_05_privacy_pills.png",
+          },
         ],
       },
       sharedPricingSection,
@@ -443,6 +500,72 @@ export const pages: Record<
         kind: "cta",
         id: "download",
         title: "Digitize your cookbook shelf",
+        cta: { label: "Download on the App Store", href: urls.appStore },
+      },
+    ],
+  },
+
+  lpPdf: {
+    meta: {
+      title: "Import recipes from PDFs — Heirloom Recipe Box",
+      description:
+        "Drop a PDF cookbook, family recipe printout, or scanned page. Heirloom extracts clean recipes automatically.",
+    },
+    nav: sharedNav,
+    hero: {
+      h1: "Import recipes from any PDF",
+      subhead: "Cookbooks, printouts, scanned pages—drop a PDF and get clean recipes in your Recipe Box.",
+      primaryCta: { label: "Download on the App Store", href: urls.appStore },
+      secondaryCta: { label: "See how it works", href: "#how-it-works" },
+      trustLine: "Private by default — Share only when you choose",
+      demo: {
+        video: "/assets/video/lp-PDF-hero-16x9.mp4",
+        poster: "/assets/posters/lp-pdf-hero.jpg",
+        alt: "Importing a recipe from a PDF into Heirloom Recipe Box",
+        aspect: "9:16",
+      },
+    },
+    sections: [
+      sharedProblemSolution,
+      {
+        kind: "steps",
+        id: "how-it-works",
+        title: "From PDF to recipe card",
+        items: [
+          { title: "Open or share a PDF", body: "Any cookbook PDF, printout, or scanned page." },
+          { title: "Heirloom extracts the recipe", body: "AI reads the PDF and structures everything." },
+          { title: "Cook from clean steps", body: "Ingredients and instructions, ready to use." },
+        ],
+      },
+      {
+        kind: "featureGrid",
+        id: "features",
+        title: "Works with any PDF",
+        columns: 3,
+        items: [
+          {
+            title: "Digital cookbooks",
+            body: "Import from ebook and PDF cookbooks.",
+            image: "/assets/screens/cap_18_scan_result.png",
+          },
+          {
+            title: "Scanned pages",
+            body: "Even photographed or scanned recipe pages work.",
+            image: "/assets/screens/cap_11_saved_recipe.png",
+          },
+          {
+            title: "Batch-friendly",
+            body: "Import multiple recipes from a single PDF.",
+            image: "/assets/screens/cap_03b_share_flow.png",
+          },
+        ],
+      },
+      sharedPricingSection,
+      { kind: "faq", id: "faq", title: "FAQ", items: sharedFAQs },
+      {
+        kind: "cta",
+        id: "download",
+        title: "Turn your PDF cookbooks into a Recipe Box",
         cta: { label: "Download on the App Store", href: urls.appStore },
       },
     ],
@@ -457,7 +580,7 @@ export const pages: Record<
     nav: sharedNav,
     hero: {
       h1: "Tell us what you have. Get a recipe.",
-      subhead: "Describe ingredients or a craving. Get a recipe you’ll actually cook.",
+      subhead: "Describe ingredients or a craving. Get a recipe you'll actually cook.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Your Recipe Box stays yours",
@@ -465,7 +588,7 @@ export const pages: Record<
         video: "/assets/video/lp-generate-hero-16x9.mp4",
         poster: "/assets/posters/lp-generate-hero.jpg",
         alt: "Generating a recipe in Heirloom Recipe Box",
-        aspect: "16:9",
+        aspect: "9:16",
       },
     },
     sections: [
@@ -478,6 +601,29 @@ export const pages: Record<
           { title: "Describe what you want", body: "Ingredients, a cuisine, or a craving." },
           { title: "Heirloom writes a recipe", body: "Ingredients and steps, structured and clear." },
           { title: "Save it to your Recipe Box", body: "Edit, cook, and share when you choose." },
+        ],
+      },
+      {
+        kind: "featureGrid",
+        id: "features",
+        title: "AI that actually helps you cook",
+        columns: 3,
+        items: [
+          {
+            title: "Describe and generate",
+            body: "Tell Heirloom what you have. Get a structured recipe back.",
+            image: "/assets/screens/cap_10_generate_result.png",
+          },
+          {
+            title: "Read it aloud",
+            body: "Dictate a recipe from memory and let AI turn it into clean steps.",
+            image: "/assets/screens/reada.png",
+          },
+          {
+            title: "Clean recipe card",
+            body: "Every generated recipe is structured, editable, and ready to cook.",
+            image: "/assets/screens/readb.png",
+          },
         ],
       },
       sharedPricingSection,
@@ -493,7 +639,7 @@ export const pages: Record<
   lpShare: {
     meta: {
       title: "Share recipes that stick — Heirloom Recipe Box",
-      description: "Send recipes to friends and family. They’ll keep them forever—organized.",
+      description: "Privacy information for Heirloom Recipe Box.",
     },
     nav: sharedNav,
     hero: {
@@ -502,8 +648,8 @@ export const pages: Record<
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       demo: {
-        video: "/assets/video/lp2-share-hero-9x16.mp4",
-        poster: "/assets/posters/lp2-share-hero-9x16.jpg",
+        video: "/assets/video/lp2-share-hero-16x9.mp4",
+        poster: "/assets/posters/lp2-share-hero.jpg",
         alt: "Sharing a recipe from Heirloom Recipe Box",
         aspect: "9:16",
       },
@@ -516,8 +662,31 @@ export const pages: Record<
         title: "Sharing that actually lands",
         items: [
           { title: "You send a recipe", body: "Directly from your Recipe Box." },
-          { title: "They tap Accept", body: "It’s added instantly—no chasing links." },
+          { title: "They tap Accept", body: "It's added instantly—no chasing links." },
           { title: "You both keep it organized", body: "A shared Recipe Box, built over time." },
+        ],
+      },
+      {
+        kind: "featureGrid",
+        id: "sharing-ways",
+        title: "Two ways to share",
+        columns: 3,
+        items: [
+          {
+            title: "Send to a friend",
+            body: "Share directly — they tap Accept and it's in their Recipe Box.",
+            image: "/assets/screens/cap_04_share.png",
+          },
+          {
+            title: "Share a link",
+            body: "Send a link anyone can open — even if they don't have the app yet.",
+            image: "/assets/screens/cap_04_shareb.png",
+          },
+          {
+            title: "Accept & save",
+            body: "Tap Accept and the recipe is yours — organized and ready to cook.",
+            image: "/assets/screens/cap_04b_accept.png",
+          },
         ],
       },
       sharedPricingSection,
@@ -545,7 +714,7 @@ export const pages: Record<
         video: "/assets/video/lp1-save-hero-16x9.mp4",
         poster: "/assets/posters/lp1-save-hero.jpg",
         alt: "Heirloom community",
-        aspect: "16:9",
+        aspect: "9:16",
       },
     },
     sections: [
@@ -580,10 +749,10 @@ export const pages: Record<
       subhead: "Logos, screenshots, and product info for press and partners.",
       primaryCta: { label: "Contact", href: "mailto:admin@rationale.work" },
       demo: {
-        video: "/assets/video/lp1-save-hero-16x9.mp4",
-        poster: "/assets/posters/lp1-save-hero.jpg",
+        video: "/assets/video/lp-heritage-hero-16x9.mp4",
+        poster: "/assets/posters/lp-heritage-hero.jpg",
         alt: "Heirloom Recipe Box press kit",
-        aspect: "16:9",
+        aspect: "9:16",
       },
     },
     sections: [
@@ -608,21 +777,21 @@ export const pages: Record<
 
   about: {
     meta: {
-      title: "About — Heirloom Recipe Box | The System of Record for Family Food Culture",
+      title: "About — Heirloom Recipe Box",
       description:
         "The story behind Heirloom Recipe Box. Built by Rationale Studio to preserve family food culture.",
     },
     nav: sharedNav,
     hero: {
-      h1: "The system of record for family food culture",
+      h1: "Recipes worth keeping",
       subhead:
-        "Heirloom is built by Rationale Studio to solve a generational problem: 73% of family recipes are lost when the keeper passes away.",
+        "Heirloom is built by Rationale Studio to solve a simple problem: family recipes shouldn't be lost to time.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       demo: {
-        video: "/assets/video/lp1-save-hero-16x9.mp4",
-        poster: "/assets/posters/lp1-save-hero.jpg",
+        video: "/assets/video/lp-heritage-hero-16x9.mp4",
+        poster: "/assets/posters/lp-heritage-hero.jpg",
         alt: "About Heirloom Recipe Box",
-        aspect: "16:9",
+        aspect: "9:16",
       },
     },
     sections: [
@@ -686,8 +855,8 @@ export const pages: Record<
       {
         kind: "cta",
         id: "download",
-        title: "Start preserving today",
-        body: "50 free credits to start. No subscription required. Your family's recipes deserve better than a screenshot folder.",
+        title: "Try Heirloom today",
+        body: "50 free credits to start. No subscription required.",
         cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       },
     ],
@@ -709,7 +878,7 @@ export const pages: Record<
         video: "/assets/video/lp1-save-hero-16x9.mp4",
         poster: "/assets/posters/lp1-save-hero.jpg",
         alt: "Heirloom technology",
-        aspect: "16:9",
+        aspect: "9:16",
       },
     },
     sections: [
@@ -828,8 +997,8 @@ export const pages: Record<
       {
         kind: "cta",
         id: "download",
-        title: "Heritage-grade technology, free to try",
-        body: "Download Heirloom and experience preservation technology yourself. 50 free credits included.",
+        title: "See it in action",
+        body: "Download Heirloom and try the technology yourself. 50 free credits included.",
         cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       },
     ],

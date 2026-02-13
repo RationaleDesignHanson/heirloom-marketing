@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description: pages.home.meta.description,
 };
 
-export default function HomePage({ searchParams }: { searchParams?: { v?: string } }) {
-  return <MarketingPage page={resolvePage(pages.home, searchParams?.v)} />;
+export default async function HomePage({ searchParams }: { searchParams?: Promise<{ v?: string }> }) {
+  const params = await searchParams;
+  return <MarketingPage page={resolvePage(pages.home, params?.v)} />;
 }
