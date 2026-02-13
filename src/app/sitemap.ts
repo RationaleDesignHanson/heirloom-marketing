@@ -4,6 +4,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomrecipebox.a
 
 const routes = [
   "/",
+  "/how-it-works",
   "/lp/video",
   "/lp/scan",
   "/lp/pdf",

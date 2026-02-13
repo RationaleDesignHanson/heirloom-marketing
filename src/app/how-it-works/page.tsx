@@ -3,10 +3,10 @@ import { pages } from "@/content/content";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: pages.home.meta.title,
-  description: pages.home.meta.description,
+  title: pages.howItWorks.meta.title,
+  description: pages.howItWorks.meta.description,
 };
 
-export default function HomePage() {
-  return <MarketingPage page={pages.home} />;
+export default function HowItWorksPage() {
+  return <MarketingPage page={pages.howItWorks} />;
 }

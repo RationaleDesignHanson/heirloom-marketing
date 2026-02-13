@@ -1,5 +1,26 @@
 import type { FeatureItem } from "@/content/content";
 
+function PhoneFrame({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="mx-auto w-40 sm:w-44">
+      <div className="relative rounded-[1.4rem] border-[5px] border-gray-900 bg-gray-900 shadow-lg">
+        {/* Notch */}
+        <div className="absolute top-1.5 left-1/2 z-10 h-2.5 w-10 -translate-x-1/2 rounded-md bg-gray-800" />
+        {/* Screen */}
+        <div className="overflow-hidden rounded-[1rem] bg-white">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt={alt}
+            className="aspect-[9/16] w-full object-cover object-top"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function FeatureGrid({
   title,
   items,
@@ -18,20 +39,14 @@ export default function FeatureGrid({
         {items.map((it, idx) => (
           <div
             key={idx}
-            className="overflow-hidden rounded-2xl border border-black/10 bg-white/80 shadow-sm backdrop-blur"
+            className="flex flex-col items-center overflow-hidden rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm backdrop-blur"
           >
             {it.image && (
-              <div className="aspect-[9/16] max-h-72 overflow-hidden bg-black/5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={it.image}
-                  alt={it.title}
-                  className="h-full w-full object-cover object-top"
-                  loading="lazy"
-                />
+              <div className="mb-5">
+                <PhoneFrame src={it.image} alt={it.title} />
               </div>
             )}
-            <div className="p-6">
+            <div className="text-center">
               <div className="text-base font-semibold">{it.title}</div>
               <div className="mt-2 text-sm text-black/70">{it.body}</div>
             </div>
