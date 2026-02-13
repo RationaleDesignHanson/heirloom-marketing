@@ -35,7 +35,7 @@ export default function PageHero({
             {/* Copy block — always left-aligned */}
             <div>
               <div className="inline-flex items-center rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/70 shadow-sm backdrop-blur">
-                {isDiagram ? "6 import methods. One Recipe Box." : "One tap. Private by default."}
+                {isDiagram ? "Multiple import methods. One Recipe Box." : "One tap. Private by default."}
               </div>
               <h1 className="mt-4 text-4xl font-semibold tracking-tight text-black sm:text-5xl">
                 {hero.h1}

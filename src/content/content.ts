@@ -403,7 +403,7 @@ export const pages: Record<
     hero: {
       h1: "Save recipes from anywhere in one tap",
       subhead:
-        "Six ways to capture recipes — from any website, video, cookbook, PDF, voice memo, or idea. One structured Recipe Box.",
+        "Multiple ways to capture recipes — from any website, video, cookbook, PDF, voice memo, or idea. One structured Recipe Box.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       secondaryCta: { label: "Watch it in action", href: "#demo" },
       trustLine: "Private by default — Share only when you choose",
