@@ -2,32 +2,26 @@ const spokes = [
   {
     title: "AI Generation",
     body: "Describe a dish — AI writes a complete recipe.",
-    icon: "✨",
   },
   {
     title: "URL Import",
     body: "Paste any recipe link. Clean recipe, instantly.",
-    icon: "🔗",
   },
   {
     title: "Food Stories",
     body: "Speak a recipe aloud — structured into a card.",
-    icon: "🎙️",
   },
   {
     title: "Video Import",
     body: "TikTok, Instagram, YouTube — extracted automatically.",
-    icon: "🎬",
   },
   {
     title: "Cookbook Scan",
     body: "Camera or PDF — OCR + AI structuring.",
-    icon: "📷",
   },
   {
     title: "ASMR Video",
     body: "Silent cooking videos — no narration needed.",
-    icon: "🤫",
   },
 ];
 
@@ -135,13 +129,10 @@ export default function ConversionHub() {
 function SpokeCard({ spoke }: { spoke: (typeof spokes)[number] }) {
   return (
     <div className="group rounded-xl border border-black/[0.08] bg-white/90 px-4 py-3.5 shadow-sm backdrop-blur transition-all hover:border-black/15 hover:shadow-md sm:px-5 sm:py-4">
-      <div className="flex items-center gap-2.5">
-        <span className="text-lg leading-none">{spoke.icon}</span>
-        <span className="text-sm font-semibold tracking-tight text-[var(--ink)]">
-          {spoke.title}
-        </span>
+      <div className="text-sm font-semibold tracking-tight text-[var(--ink)]">
+        {spoke.title}
       </div>
-      <p className="mt-1.5 text-xs leading-relaxed text-black/55">
+      <p className="mt-1 text-xs leading-relaxed text-black/55">
         {spoke.body}
       </p>
     </div>
