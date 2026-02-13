@@ -21,7 +21,7 @@ export default function VideoShowcase({
       )}
 
       {/* Compact phone — smaller than hero PhoneDemo */}
-      <div className="mt-6 w-[200px] sm:w-[220px]">
+      <div className="mx-auto mt-6 w-[200px] sm:w-[220px]">
         <div className="relative rounded-[2rem] border-[5px] border-[#1a1a1a] bg-[#1a1a1a] p-[2px] shadow-lg ring-1 ring-black/10">
           {/* Dynamic Island */}
           <div className="absolute top-0 left-1/2 z-10 h-[18px] w-[64px] -translate-x-1/2 rounded-b-xl bg-[#1a1a1a]" />

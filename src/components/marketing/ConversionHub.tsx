@@ -52,9 +52,14 @@ export default function ConversionHub() {
         <div className="col-span-2 grid grid-cols-[1fr_auto_1fr] items-center gap-2.5 sm:gap-3">
           <SpokeCard spoke={spokes[2]} />
           {/* Center hub — z-20 so it sits above the SVG lines */}
-          <div className="relative z-20 flex h-28 w-28 flex-col items-center justify-center rounded-full border border-black/[0.06] bg-gradient-radial from-white via-[var(--cream)] to-[var(--terracotta)]/20 shadow-lg sm:h-32 sm:w-32">
+          <div className="relative z-20 flex h-28 w-28 flex-col items-center justify-center rounded-full shadow-lg sm:h-32 sm:w-32">
+            {/* Solid opaque background to fully mask connector lines */}
+            <div className="absolute inset-0 rounded-full bg-[var(--cream)]" />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 rounded-full border border-black/[0.06] bg-gradient-radial from-white via-[var(--cream)] to-[var(--terracotta)]/20" />
+            {/* Dashed outer ring */}
             <div className="absolute -inset-2.5 rounded-full border border-dashed border-black/[0.06]" />
-            <div className="text-center text-[11px] font-bold leading-tight tracking-tight text-[var(--ink)] sm:text-xs">
+            <div className="relative text-center text-[11px] font-bold leading-tight tracking-tight text-[var(--ink)] sm:text-xs">
               Structured
               <br />
               Recipe
