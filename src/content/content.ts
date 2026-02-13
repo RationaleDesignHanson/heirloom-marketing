@@ -13,6 +13,7 @@ export type Hero = {
   emailCapture?: { formName: string; placeholder?: string; buttonLabel?: string };
   trustLine?: string;
   demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" };
+  visual?: "phone" | "diagram";
 };
 
 export type PageSection =
@@ -73,7 +74,8 @@ export type PageSection =
   | { kind: "techShowcase"; id: string; title: string; subtitle?: string; items: TechPillarItem[] }
   | { kind: "comparisonTable"; id: string; title: string; subtitle?: string; rows: ComparisonRowItem[] }
   | { kind: "teamSection"; id: string; title: string; subtitle?: string; members: TeamMemberItem[] }
-  | { kind: "metricsBar"; id: string; items: MetricItem[] };
+  | { kind: "metricsBar"; id: string; items: MetricItem[] }
+  | { kind: "videoShowcase"; id: string; title: string; subtitle?: string; demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" } };
 
 export type MarketingPage = {
   meta: { title: string; description: string };
@@ -401,10 +403,11 @@ export const pages: Record<
     hero: {
       h1: "Save recipes from anywhere in one tap",
       subhead:
-        "Heirloom Recipe Box turns links, PDFs, and videos into clean recipes you'll actually cook.",
+        "Six ways to capture recipes — from any website, video, cookbook, PDF, voice memo, or idea. One structured Recipe Box.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
-      secondaryCta: { label: "See all sources", href: "#sources" },
+      secondaryCta: { label: "Watch it in action", href: "#demo" },
       trustLine: "Private by default — Share only when you choose",
+      visual: "diagram",
       demo: {
         video: "/assets/video/CardCapture.mp4",
         poster: "/assets/posters/card-capture-hero.jpg",
@@ -413,6 +416,18 @@ export const pages: Record<
       },
     },
     sections: [
+      {
+        kind: "videoShowcase",
+        id: "demo",
+        title: "See it in action",
+        subtitle: "Save a recipe from Safari in one tap — no copy/paste, no switching apps.",
+        demo: {
+          video: "/assets/video/CardCapture.mp4",
+          poster: "/assets/posters/card-capture-hero.jpg",
+          alt: "Saving a recipe to Heirloom Recipe Box",
+          aspect: "9:16",
+        },
+      },
       {
         kind: "steps",
         id: "how-it-works",

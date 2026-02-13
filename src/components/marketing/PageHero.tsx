@@ -1,5 +1,6 @@
 import CTAButton from "./CTAButton";
 import PhoneDemo from "./PhoneDemo";
+import ConversionHub from "./ConversionHub";
 import EmailCapture from "./EmailCapture";
 
 export default function PageHero({
@@ -13,8 +14,11 @@ export default function PageHero({
     emailCapture?: { formName: string; placeholder?: string; buttonLabel?: string };
     trustLine?: string;
     demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" };
+    visual?: "phone" | "diagram";
   };
 }) {
+  const isDiagram = hero.visual === "diagram";
+
   return (
     <section className="px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl py-10 sm:py-12">
@@ -27,48 +31,56 @@ export default function PageHero({
           <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[var(--tomato)]/10 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-black/5 blur-3xl" />
 
-          <div className="relative grid items-center gap-10 lg:grid-cols-2">
-        <div>
-          <div className="inline-flex items-center rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/70 shadow-sm backdrop-blur">
-            One tap. Private by default.
-          </div>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-black sm:text-5xl">
-            {hero.h1}
-          </h1>
-          <p className="mt-4 max-w-xl text-lg text-black/70">{hero.subhead}</p>
+          <div className={`relative ${isDiagram ? "flex flex-col gap-10" : "grid items-center gap-10 lg:grid-cols-2"}`}>
+            {/* Copy block */}
+            <div className={isDiagram ? "text-center mx-auto max-w-2xl" : ""}>
+              <div className={`inline-flex items-center rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/70 shadow-sm backdrop-blur`}>
+                {isDiagram ? "6 import methods. One Recipe Box." : "One tap. Private by default."}
+              </div>
+              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-black sm:text-5xl">
+                {hero.h1}
+              </h1>
+              <p className={`mt-4 text-lg text-black/70 ${isDiagram ? "mx-auto max-w-xl" : "max-w-xl"}`}>
+                {hero.subhead}
+              </p>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <CTAButton
-              href={hero.primaryCta.href}
-              label={hero.primaryCta.label}
-              eventProps={{ location: "hero" }}
-            />
-            {hero.secondaryCta && (
-              <CTAButton
-                href={hero.secondaryCta.href}
-                label={hero.secondaryCta.label}
-                variant="secondary"
-                eventProps={{ location: "hero" }}
-              />
-            )}
-          </div>
+              <div className={`mt-6 flex flex-col gap-3 sm:flex-row sm:items-center ${isDiagram ? "justify-center" : ""}`}>
+                <CTAButton
+                  href={hero.primaryCta.href}
+                  label={hero.primaryCta.label}
+                  eventProps={{ location: "hero" }}
+                />
+                {hero.secondaryCta && (
+                  <CTAButton
+                    href={hero.secondaryCta.href}
+                    label={hero.secondaryCta.label}
+                    variant="secondary"
+                    eventProps={{ location: "hero" }}
+                  />
+                )}
+              </div>
 
-          {hero.emailCapture && (
-            <div className="mt-6">
-              <EmailCapture
-                formName={hero.emailCapture.formName}
-                placeholder={hero.emailCapture.placeholder}
-                buttonLabel={hero.emailCapture.buttonLabel}
-              />
+              {hero.emailCapture && (
+                <div className={`mt-6 ${isDiagram ? "mx-auto max-w-md" : ""}`}>
+                  <EmailCapture
+                    formName={hero.emailCapture.formName}
+                    placeholder={hero.emailCapture.placeholder}
+                    buttonLabel={hero.emailCapture.buttonLabel}
+                  />
+                </div>
+              )}
+
+              {hero.trustLine && <p className="mt-5 text-sm text-black/60">{hero.trustLine}</p>}
             </div>
-          )}
 
-          {hero.trustLine && <p className="mt-5 text-sm text-black/60">{hero.trustLine}</p>}
-        </div>
-
-        <div className="lg:justify-self-end">
-          <PhoneDemo demo={hero.demo} />
-        </div>
+            {/* Visual */}
+            {isDiagram ? (
+              <ConversionHub />
+            ) : (
+              <div className="lg:justify-self-end">
+                <PhoneDemo demo={hero.demo} />
+              </div>
+            )}
           </div>
         </div>
       </div>

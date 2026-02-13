@@ -6,7 +6,7 @@ import { renderSection } from "./renderSection";
 
 export default function MarketingPage({ page }: { page: MarketingPageType }) {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[var(--cream)]">
       <HeaderNav
         items={page.nav}
         cta={{ label: page.hero.primaryCta.label, href: page.hero.primaryCta.href }}

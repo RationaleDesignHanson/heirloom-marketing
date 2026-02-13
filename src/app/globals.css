@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --color-scheme: light;
+}
+
 :root {
   color-scheme: light;
   --cream: #faf5f0;
@@ -10,6 +14,10 @@
   --ink: #3a2f22;
 }
 
+html {
+  color-scheme: light !important;
+}
+
 html,
 body {
   height: 100%;
@@ -17,8 +25,8 @@ body {
 
 body {
   @apply antialiased;
-  background: var(--cream);
-  color: var(--ink);
+  background: var(--cream) !important;
+  color: var(--ink) !important;
 }
 
 @layer base {

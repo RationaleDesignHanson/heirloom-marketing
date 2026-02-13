@@ -13,6 +13,7 @@ import TechShowcase from "./TechShowcase";
 import ComparisonTable from "./ComparisonTable";
 import TeamSection from "./TeamSection";
 import MetricsBar from "./MetricsBar";
+import VideoShowcase from "./VideoShowcase";
 
 export function renderSection(section: PageSection) {
   switch (section.kind) {
@@ -136,6 +137,17 @@ export function renderSection(section: PageSection) {
       return (
         <Section id={section.id}>
           <MetricsBar items={section.items} />
+        </Section>
+      );
+
+    case "videoShowcase":
+      return (
+        <Section id={section.id}>
+          <VideoShowcase
+            title={section.title}
+            subtitle={section.subtitle}
+            demo={section.demo}
+          />
         </Section>
       );
 
