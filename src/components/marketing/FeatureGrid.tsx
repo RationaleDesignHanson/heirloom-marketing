@@ -5,7 +5,7 @@ function PhoneFrame({ src, alt, images }: { src?: string; alt: string; images?: 
   const hasCycling = images && images.length > 1;
 
   return (
-    <div className="mx-auto w-40 sm:w-44">
+    <div className="mx-auto w-48 sm:w-56">
       <div className="relative rounded-[1.4rem] border-[5px] border-gray-900 bg-gray-900 shadow-lg">
         {/* Notch */}
         <div className="absolute top-1.5 left-1/2 z-10 h-2.5 w-10 -translate-x-1/2 rounded-md bg-gray-800" />
