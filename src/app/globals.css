@@ -29,6 +29,10 @@ body {
   color: var(--ink) !important;
 }
 
+@utility bg-gradient-radial {
+  background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+}
+
 @layer base {
   .legal {
     @apply text-[15px] leading-7 text-[#3A2F22];
