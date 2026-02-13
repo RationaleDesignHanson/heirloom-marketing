@@ -31,20 +31,20 @@ export default function PageHero({
           <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[var(--tomato)]/10 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-black/5 blur-3xl" />
 
-          <div className={`relative ${isDiagram ? "flex flex-col gap-10" : "grid items-center gap-10 lg:grid-cols-2"}`}>
-            {/* Copy block */}
-            <div className={isDiagram ? "text-center mx-auto max-w-2xl" : ""}>
-              <div className={`inline-flex items-center rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/70 shadow-sm backdrop-blur`}>
+          <div className="relative grid items-center gap-10 lg:grid-cols-2">
+            {/* Copy block — always left-aligned */}
+            <div>
+              <div className="inline-flex items-center rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/70 shadow-sm backdrop-blur">
                 {isDiagram ? "6 import methods. One Recipe Box." : "One tap. Private by default."}
               </div>
               <h1 className="mt-4 text-4xl font-semibold tracking-tight text-black sm:text-5xl">
                 {hero.h1}
               </h1>
-              <p className={`mt-4 text-lg text-black/70 ${isDiagram ? "mx-auto max-w-xl" : "max-w-xl"}`}>
+              <p className="mt-4 max-w-xl text-lg text-black/70">
                 {hero.subhead}
               </p>
 
-              <div className={`mt-6 flex flex-col gap-3 sm:flex-row sm:items-center ${isDiagram ? "justify-center" : ""}`}>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <CTAButton
                   href={hero.primaryCta.href}
                   label={hero.primaryCta.label}
@@ -61,7 +61,7 @@ export default function PageHero({
               </div>
 
               {hero.emailCapture && (
-                <div className={`mt-6 ${isDiagram ? "mx-auto max-w-md" : ""}`}>
+                <div className="mt-6">
                   <EmailCapture
                     formName={hero.emailCapture.formName}
                     placeholder={hero.emailCapture.placeholder}
@@ -73,14 +73,14 @@ export default function PageHero({
               {hero.trustLine && <p className="mt-5 text-sm text-black/60">{hero.trustLine}</p>}
             </div>
 
-            {/* Visual */}
-            {isDiagram ? (
-              <ConversionHub />
-            ) : (
-              <div className="lg:justify-self-end">
+            {/* Visual — right column */}
+            <div className="lg:justify-self-end">
+              {isDiagram ? (
+                <ConversionHub />
+              ) : (
                 <PhoneDemo demo={hero.demo} />
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>

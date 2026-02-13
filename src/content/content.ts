@@ -1,5 +1,5 @@
 export type FAQItem = { q: string; a: string };
-export type FeatureItem = { title: string; body: string; icon?: string; image?: string };
+export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[] };
 export type StepItem = { title: string; body?: string };
 export type TechPillarItem = { title: string; body: string; detail: string; icon: string };
 export type ComparisonRowItem = { feature: string; heirloom: boolean | string; others: boolean | string };
@@ -373,7 +373,7 @@ export const pages: Record<
           {
             title: "Dictate from memory",
             body: "Read grandma's recipe aloud. Heirloom transcribes and structures it.",
-            image: "/assets/screens/reada.png",
+            images: ["/assets/screens/reada.png", "/assets/screens/readb.png"],
           },
         ],
       },
@@ -470,12 +470,12 @@ export const pages: Record<
           {
             title: "Read it aloud",
             body: "Dictate a recipe from memory — Heirloom transcribes and structures it.",
-            image: "/assets/screens/reada.png",
+            images: ["/assets/screens/reada.png", "/assets/screens/readb.png"],
           },
           {
             title: "Generate with AI",
             body: "Describe ingredients or a craving. Get a recipe you'll actually cook.",
-            image: "/assets/screens/cap_10_generate_result.png",
+            images: ["/assets/screens/cap_10_gen_read.png", "/assets/screens/cap_10_generate_result.png"],
           },
           {
             title: "Share with family",
@@ -739,17 +739,17 @@ export const pages: Record<
           {
             title: "Describe and generate",
             body: "Tell Heirloom what you have. Get a structured recipe back.",
-            image: "/assets/screens/cap_10_generate_result.png",
+            images: ["/assets/screens/cap_10_gen_read.png", "/assets/screens/cap_10_generate_result.png"],
           },
           {
             title: "Read it aloud",
             body: "Dictate a recipe from memory and let AI turn it into clean steps.",
-            image: "/assets/screens/reada.png",
+            images: ["/assets/screens/reada.png", "/assets/screens/readb.png"],
           },
           {
             title: "Clean recipe card",
             body: "Every generated recipe is structured, editable, and ready to cook.",
-            image: "/assets/screens/readb.png",
+            image: "/assets/screens/cap_11_saved_recipe.png",
           },
         ],
       },
