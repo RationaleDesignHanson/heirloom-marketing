@@ -35,8 +35,8 @@ export default function ConversionHub() {
             x2={x}
             y2={y}
             stroke="#3a2f22"
-            opacity={0.12}
-            strokeWidth={0.3}
+            opacity={0.3}
+            strokeWidth={0.4}
             strokeDasharray="1.5 1"
           />
         ))}
