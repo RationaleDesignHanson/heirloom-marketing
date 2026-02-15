@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const PASSCODE = "heirloom2026";
+const PASSCODE = "123456";
 
 export default function DeckPage() {
   const [input, setInput] = useState("");
