@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large files / decks
+DeckV3/
+*.mp4
+*.gif
+*.pptx
