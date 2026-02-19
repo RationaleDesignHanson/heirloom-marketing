@@ -7,35 +7,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-/* ------------------------------------------------------------------ */
-/*  Placeholder image components – swap <PlaceholderImage> usages      */
-/*  for <img> tags pointing to your AI-generated images in             */
-/*  /public/assets/demo/ when ready.                                   */
-/* ------------------------------------------------------------------ */
-function PlaceholderImage({
-  aspect = "4/3",
-  label,
-  className = "",
-}: {
-  aspect?: string;
-  label?: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-amber-100 via-orange-50 to-amber-200 ${className}`}
-      style={{ aspectRatio: aspect }}
-    >
-      {/* Decorative cookie circles */}
-      <div className="absolute top-[18%] left-[22%] h-5 w-5 rounded-full bg-amber-700/20" />
-      <div className="absolute top-[35%] right-[28%] h-4 w-4 rounded-full bg-amber-800/15" />
-      <div className="absolute bottom-[25%] left-[40%] h-6 w-6 rounded-full bg-amber-600/20" />
-      <div className="absolute bottom-[40%] right-[18%] h-3 w-3 rounded-full bg-amber-900/15" />
-      <div className="absolute top-[55%] left-[15%] h-4 w-4 rounded-full bg-amber-700/15" />
-      {label && <span className="z-10 text-xs font-medium text-amber-800/40">{label}</span>}
-    </div>
-  );
-}
 
 /* ------------------------------------------------------------------ */
 /*  Star rating component                                              */
@@ -167,11 +138,8 @@ export default function DemoRecipePage() {
 
         <main className="pb-16">
           {/* ── Hero Image ───────────────────────────────── */}
-          {/*
-            Replace with: <img src="/assets/demo/cookies-hero.jpg" alt="..." className="w-full" />
-            once you have a generated image.
-          */}
-          <PlaceholderImage aspect="16/10" label="cookies-hero.jpg" className="w-full" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assets/demo/cookies-hero.jpg" alt="A batch of golden brown chocolate chip cookies cooling on parchment paper" className="w-full" />
 
           {/* ── Title & Meta ─────────────────────────────── */}
           <div className="px-4 pt-5">
@@ -248,10 +216,8 @@ export default function DemoRecipePage() {
 
           {/* ── In-article Image ─────────────────────────── */}
           <div className="px-4 pt-4">
-            {/*
-              Replace with: <img src="/assets/demo/cookies-closeup.jpg" alt="..." className="w-full rounded-lg" />
-            */}
-            <PlaceholderImage aspect="3/2" label="cookies-closeup.jpg" className="w-full rounded-lg" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/demo/cookies-closeup.jpg" alt="Close-up of a chocolate chip cookie with golden edges and melty chocolate chips" className="w-full rounded-lg" />
             <p className="mt-1 text-center text-xs text-gray-400">
               Golden edges, soft centers. Gerald&apos;s hand for scale (not pictured).
             </p>
@@ -327,16 +293,10 @@ export default function DemoRecipePage() {
               ))}
             </ol>
 
-            {/* Step photo placeholder */}
+            {/* Step photo */}
             <div className="mt-4">
-              {/*
-                Replace with: <img src="/assets/demo/cookies-baking.jpg" alt="..." className="w-full rounded-lg" />
-              */}
-              <PlaceholderImage
-                aspect="16/9"
-                label="cookies-baking.jpg"
-                className="w-full rounded-lg"
-              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/demo/cookies-baking.jpg" alt="Chocolate chip cookies on a baking sheet fresh from the oven" className="w-full rounded-lg" />
               <p className="mt-1 text-center text-xs text-gray-400">
                 Perfectly golden — you&apos;ll know they&apos;re done when your kitchen smells like a hug.
               </p>
@@ -416,7 +376,7 @@ export default function DemoRecipePage() {
                 { title: "No-Fail Banana Bread", time: "1 hr 10 min" },
               ].map((r) => (
                 <div key={r.title} className="overflow-hidden rounded-lg border border-gray-100">
-                  <PlaceholderImage aspect="4/3" className="w-full" />
+                  <div className="flex items-center justify-center bg-gradient-to-br from-amber-100 via-orange-50 to-amber-200" style={{ aspectRatio: "4/3" }} />
                   <div className="p-2.5">
                     <p className="text-sm font-semibold leading-tight text-gray-800">{r.title}</p>
                     <p className="mt-1 text-xs text-gray-400">{r.time}</p>
