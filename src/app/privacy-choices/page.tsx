@@ -9,9 +9,12 @@ export const metadata: Metadata = {
 
 export default function PrivacyChoicesPage() {
   return (
-    <LegalPage title={meta.title}>
+    <LegalPage
+      title={meta.title}
+      description={meta.description}
+      lastUpdated={meta.lastUpdated}
+    >
       <PrivacyChoicesDoc />
     </LegalPage>
   );
 }
-

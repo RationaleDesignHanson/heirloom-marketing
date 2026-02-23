@@ -9,9 +9,11 @@ export const metadata: Metadata = {
 
 export default function SupportPage() {
   return (
-    <LegalPage title={meta.title}>
+    <LegalPage
+      title={meta.title}
+      description={meta.description}
+    >
       <SupportDoc />
     </LegalPage>
   );
 }
-

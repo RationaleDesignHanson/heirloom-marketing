@@ -9,7 +9,11 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalPage title={meta.title}>
+    <LegalPage
+      title={meta.title}
+      description={meta.description}
+      lastUpdated={meta.lastUpdated}
+    >
       <TermsDoc />
     </LegalPage>
   );
