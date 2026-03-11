@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "SF39D6367Y.com.rationaledesign.heirloom",
+        "paths": ["/share/*", "/connect/*", "/profile/*", "/recipe/*", "/cook/*"]
+      }
+    ]
+  }
+}
