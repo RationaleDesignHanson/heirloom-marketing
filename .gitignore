@@ -42,6 +42,13 @@ next-env.d.ts
 
 # large files / decks
 DeckV3/
-*.mp4
-*.gif
 *.pptx
+
+# large media at root (keep public/assets/video tracked for Netlify)
+/*.mp4
+/*.gif
+
+# non-deploy reference files
+AppStore/
+instructions/
+policyinfo/
