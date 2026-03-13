@@ -14,7 +14,7 @@ export default function HeaderNav({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-[#faf5f0]/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-[#faf5f0]/90 pt-[max(0.75rem,env(safe-area-inset-top,0px))] backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -46,7 +46,7 @@ export default function HeaderNav({
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="inline-flex items-center justify-center rounded-lg p-2 text-black/70 hover:bg-black/5 md:hidden"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg p-3 text-black/70 hover:bg-black/5 md:hidden"
             aria-label="Toggle menu"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,14 +79,17 @@ export default function HeaderNav({
             onClick={() => setMobileMenuOpen(false)}
           />
           {/* Drawer */}
-          <div className="fixed top-[57px] right-0 bottom-0 w-64 border-l border-black/10 bg-[var(--cream)] p-6 shadow-lg md:hidden">
+          <div
+            className="fixed right-0 bottom-0 w-64 border-l border-black/10 bg-[var(--cream)] p-6 shadow-lg md:hidden"
+            style={{ top: "calc(57px + env(safe-area-inset-top, 0px))" }}
+          >
             <nav className="flex flex-col gap-4">
               {items.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-base text-black/70 hover:text-black"
+                  className="min-h-[44px] flex items-center text-base text-black/70 hover:text-black"
                 >
                   {item.label}
                 </Link>

@@ -26,7 +26,7 @@ export default function PricingCredits({
     <div>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">{title}</h2>
           {subtitle && <p className="mt-2 text-sm text-black/70">{subtitle}</p>}
         </div>
         <div className="flex flex-wrap items-center justify-start gap-2 text-xs text-black/70 sm:justify-end">
@@ -66,7 +66,7 @@ export default function PricingCredits({
           </div>
         </div>
 
-        <div className="grid gap-4 lg:col-span-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-3">
           {plans.map((plan) => (
             <div
               key={plan.title}

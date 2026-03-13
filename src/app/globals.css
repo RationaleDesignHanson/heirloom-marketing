@@ -29,6 +29,13 @@ body {
   color: var(--ink) !important;
 }
 
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
 @utility bg-gradient-radial {
   background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
 }

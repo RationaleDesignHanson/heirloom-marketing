@@ -59,7 +59,7 @@ export default function ConversionHub() {
             <div className="absolute inset-0 rounded-full border border-black/[0.06] bg-gradient-radial from-white via-[var(--cream)] to-[var(--terracotta)]/20" />
             {/* Dashed outer ring */}
             <div className="absolute -inset-2.5 rounded-full border border-dashed border-black/[0.06]" />
-            <div className="relative text-center text-[11px] font-bold leading-tight tracking-tight text-[var(--ink)] sm:text-xs">
+            <div className="relative text-center text-xs font-bold leading-tight tracking-tight text-[var(--ink)] sm:text-sm">
               Structured
               <br />
               Recipe
@@ -81,10 +81,10 @@ export default function ConversionHub() {
 function SpokeCard({ spoke }: { spoke: (typeof spokes)[number] }) {
   return (
     <div className="rounded-lg bg-white/30 px-3 py-2.5 backdrop-blur transition-all hover:bg-white/50 sm:px-3.5 sm:py-3">
-      <div className="text-xs font-semibold tracking-tight text-[var(--ink)]">
+      <div className="text-sm font-semibold tracking-tight text-[var(--ink)]">
         {spoke.title}
       </div>
-      <p className="mt-0.5 text-[10px] leading-snug text-black/45 sm:text-[11px]">
+      <p className="mt-0.5 text-xs leading-snug text-black/45 sm:text-sm">
         {spoke.body}
       </p>
     </div>
