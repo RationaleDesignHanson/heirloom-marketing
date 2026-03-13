@@ -10,6 +10,7 @@ const routes = [
   "/lp/pdf",
   "/lp/generate",
   "/lp/share",
+  "/discovery",
   "/about",
   "/technology",
   "/support",

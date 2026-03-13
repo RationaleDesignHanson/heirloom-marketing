@@ -107,6 +107,7 @@ export const urls = {
   lpGenerate: "/lp/generate",
   lpPdf: "/lp/pdf",
   lpShare: "/lp/share",
+  discovery: "/discovery",
   about: "/about",
   technology: "/technology",
   support: "/support",
@@ -122,6 +123,7 @@ const sharedNav = [
   { label: "Scan", href: urls.lpScan },
   { label: "Generate", href: urls.lpGenerate },
   { label: "Share", href: urls.lpShare },
+  { label: "Discover", href: urls.discovery },
   { label: "Technology", href: urls.technology },
   { label: "About", href: urls.about },
 ];
@@ -267,7 +269,18 @@ const sharedComparisonTable: PageSection = {
 };
 
 export const pages: Record<
-  "home" | "howItWorks" | "lpVideo" | "lpScan" | "lpPdf" | "lpGenerate" | "lpShare" | "community" | "presskit" | "about" | "technology",
+  | "home"
+  | "howItWorks"
+  | "lpVideo"
+  | "lpScan"
+  | "lpPdf"
+  | "lpGenerate"
+  | "lpShare"
+  | "discovery"
+  | "community"
+  | "presskit"
+  | "about"
+  | "technology",
   MarketingPage
 > = {
   /* ───────────────────────────────────────────────────────
@@ -765,19 +778,21 @@ export const pages: Record<
 
   lpShare: {
     meta: {
-      title: "Share recipes that stick — Heirloom Recipe Box",
-      description: "Privacy information for Heirloom Recipe Box.",
+      title: "Kitchen Table — Cook with the people closest to you",
+      description:
+        "Cook with the people closest to you. Kitchen Table is your private recipe space for family and close friends — share recipes, coordinate meals, build a shared cookbook.",
     },
     nav: sharedNav,
     hero: {
-      h1: "Share recipes that stick",
-      subhead: "Send recipes to friends and family. They’ll have it forever—organized.",
+      h1: "Cook with the people closest to you",
+      subhead:
+        "Kitchen Table — a private space for up to 8 members. Share recipes, coordinate group meals, and build a shared family cookbook.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       demo: {
         video: "/assets/video/lp2-share-hero-16x9.mp4",
         poster: "/assets/posters/lp2-share-hero.jpg",
-        alt: "Sharing a recipe from Heirloom Recipe Box",
+        alt: "Kitchen Table — shared recipe space in Heirloom Recipe Box",
         aspect: "9:16",
       },
     },
@@ -786,32 +801,38 @@ export const pages: Record<
       {
         kind: "steps",
         id: "how-it-works",
-        title: "Sharing that actually lands",
+        title: "How Kitchen Table works",
         items: [
-          { title: "You send a recipe", body: "Directly from your Recipe Box." },
-          { title: "They tap Accept", body: "It's added instantly—no chasing links." },
-          { title: "You both keep it organized", body: "A shared Recipe Box, built over time." },
+          { title: "Create or join a Table", body: "Family, friends, supper club — up to 8 members." },
+          {
+            title: "Share the recipes you choose",
+            body: "Not your whole library — just what you want your table to see.",
+          },
+          {
+            title: "Use Table Events",
+            body: "Plan meals, suggest dishes from shared recipes, and build a shared shopping list.",
+          },
         ],
       },
       {
         kind: "featureGrid",
-        id: "sharing-ways",
-        title: "Two ways to share",
+        id: "kitchen-table-features",
+        title: "Your Table. Your rules.",
         columns: 3,
         items: [
           {
-            title: "Send to a friend",
-            body: "Share directly — they tap Accept and it's in their Recipe Box.",
+            title: "Your Table, your rules",
+            body: "Members see only what you share. No algorithm, no follower count. Just the recipes you trust with the people you'd invite to dinner.",
             image: "/assets/screens/cap_04_share.png",
           },
           {
-            title: "Share a link",
-            body: "Send a link anyone can open — even if they don't have the app yet.",
-            image: "/assets/screens/cap_04_shareb.png",
+            title: "Table Events",
+            body: "When a meal is coming up, the host kicks off an Event. Members suggest dishes from shared recipes. A shared shopping list assembles automatically.",
+            image: "/assets/screens/cap_11_saved_recipe.png",
           },
           {
-            title: "Accept & save",
-            body: "Tap Accept and the recipe is yours — organized and ready to cook.",
+            title: "1:1 sharing",
+            body: "Send individual recipes to anyone. They tap Accept and it's in their Recipe Box — organized and ready to cook.",
             image: "/assets/screens/cap_04b_accept.png",
           },
         ],
@@ -821,8 +842,73 @@ export const pages: Record<
       {
         kind: "cta",
         id: "download",
-        title: "Make recipe sharing feel easy again",
+        title: "Start your Kitchen Table",
         cta: { label: "Download on the App Store", href: urls.appStore },
+      },
+    ],
+  },
+
+  discovery: {
+    meta: {
+      title: "Curated recipe collections — Heirloom Recipe Box",
+      description:
+        "Browse themed packs: seasonal, cultural, creator-curated. Save any recipe to your collection with one tap.",
+    },
+    nav: sharedNav,
+    hero: {
+      h1: "Discover curated recipe collections",
+      subhead:
+        "Theme Packs from creators, holidays, and cuisines. Save what you love to your Recipe Box.",
+      primaryCta: { label: "Download on the App Store", href: urls.appStore },
+      secondaryCta: { label: "See how it works", href: "#how-it-works" },
+      trustLine: "Full attribution. Every recipe tracks its creator.",
+      demo: {
+        video: "/assets/video/lp-discovery-hero-16x9.mp4",
+        poster: "/assets/posters/lp-discovery-hero.jpg",
+        alt: "Browse Theme Packs in Heirloom Recipe Box",
+        aspect: "9:16",
+      },
+    },
+    sections: [
+      {
+        kind: "steps",
+        id: "how-it-works",
+        title: "How Discovery works",
+        items: [
+          { title: "Browse Theme Packs", body: "Seasonal, cultural, creator-curated collections." },
+          { title: "Save with one tap", body: "Any recipe goes straight into your Recipe Box." },
+          { title: "Full attribution", body: "Every recipe tracks where it came from." },
+        ],
+      },
+      {
+        kind: "featureGrid",
+        id: "pack-types",
+        title: "Theme Packs for every occasion",
+        columns: 3,
+        items: [
+          {
+            title: "First-party curated",
+            body: "Thanksgiving Classics, Mom's Kitchen, Sourdough Deep Dive — Heirloom selections.",
+            image: "/assets/screens/cap_12_video_result.png",
+          },
+          {
+            title: "Creator packs",
+            body: "Partner-published collections with full branding and attribution.",
+            image: "/assets/screens/cap_13_attribution.png",
+          },
+          {
+            title: "Seasonal & cultural",
+            body: "Holiday cookie exchange, West African staples, weeknight Korean.",
+            image: "/assets/screens/cap_11_saved_recipe.png",
+          },
+        ],
+      },
+      sharedPricingSection,
+      {
+        kind: "cta",
+        id: "download",
+        title: "Browse packs in the app",
+        cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       },
     ],
   },
