@@ -31,13 +31,13 @@ export default function PageHero({
           <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[var(--tomato)]/10 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-black/5 blur-3xl" />
 
-          <div className="relative grid items-center gap-10 lg:grid-cols-2">
-            {/* Copy block — always left-aligned */}
-            <div>
+          <div className="relative grid items-center gap-10 lg:grid-cols-[1.35fr_0.65fr]">
+            {/* Copy block — wider column so headlines fit in 2–3 lines */}
+            <div className="min-w-0">
               <div className="inline-flex items-center rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/70 shadow-sm backdrop-blur">
                 {isDiagram ? "Multiple import methods. One Recipe Box." : "One tap. Private by default."}
               </div>
-              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-black sm:text-5xl">
+              <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-black sm:text-5xl lg:text-[2.75rem] lg:leading-tight">
                 {hero.h1}
               </h1>
               <p className="mt-4 max-w-xl text-base text-black/70 sm:text-lg">

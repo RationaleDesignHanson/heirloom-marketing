@@ -143,20 +143,20 @@ const sharedFAQs: FAQItem[] = [
   },
   {
     q: "How do credits and Premium work?",
-    a: "Some imports use credits. Your trial starts with 50 credits, and Premium includes 100 credits/month. You can also buy credit packs when you need a burst.",
+    a: "Some imports use credits. Your trial starts with 50 credits, and Premium includes 100 credits/month. Premium unlocks cookbook scanning and sync—the tools to preserve everything, from any source. You can also buy credit packs when you need a burst.",
   },
   {
     q: "Is saving from websites free?",
-    a: "Yes. Save from Safari with one tap using the Share Sheet. Premium unlocks advanced imports and extras like cookbook scanning and cloud sync.",
+    a: "Yes. Save from Safari with one tap using the Share Sheet. Premium unlocks advanced imports and extras like cookbook scanning and cloud sync. So you can preserve what you find without friction.",
   },
 ];
 
 const sharedPricingSection: PageSection = {
   kind: "pricingCredits",
   id: "pricing",
-  title: "Free to start. Upgrade when you’re ready.",
+  title: "Free to start. Preserve more when you're ready.",
   subtitle:
-    "Your trial starts with 50 credits. Premium includes 100 credits/month — and you can buy more any time.",
+    "Your trial starts with 50 credits. Premium unlocks cookbook scanning and cloud sync—so every recipe, from every source, stays preserved.",
   trialCreditsIncluded: 50,
   premiumMonthlyCredits: 100,
   creditExamples: [
@@ -199,6 +199,26 @@ const sharedProblemSolution: PageSection = {
   solution: {
     title: "The Heirloom way",
     body: "One tap from wherever you find recipes—then cook from clean, structured cards.",
+    bullets: ["Share → Heirloom", "Imports in the background", "Private by default"],
+  },
+};
+
+const sharedProblemSolutionHeritage: PageSection = {
+  kind: "problemSolution",
+  id: "problem-solution",
+  title: "Recipes disappear. Preservation doesn't.",
+  problem: {
+    title: "The loss",
+    body: "When a recipe is lost, it's lost forever. They live scattered across screenshots, Notes, saved videos, and fading index cards—with no system of record.",
+    bullets: [
+      "Bookmarked recipes vanish when sites change",
+      "Video recipes disappear in algorithm feeds",
+      "Handwritten cards fade and get lost",
+    ],
+  },
+  solution: {
+    title: "Heirloom gives you the tools to preserve",
+    body: "Capture from any source in one tap. Every recipe is structured, attributed, and preserved—private by default.",
     bullets: ["Share → Heirloom", "Imports in the background", "Private by default"],
   },
 };
@@ -410,13 +430,13 @@ export const pages: Record<
     meta: {
       title: "How it works — Heirloom Recipe Box",
       description:
-        "Save recipes from anywhere in one tap. Turn links, PDFs, and videos into clean recipes you'll actually cook.",
+        "Every capture method. One preservation system. Turn links, PDFs, and videos into recipes you'll preserve forever.",
     },
     nav: sharedNav,
     hero: {
-      h1: "Save recipes from anywhere in one tap",
+      h1: "Every capture method. One\u00A0preservation\u00A0system.",
       subhead:
-        "Multiple ways to capture recipes — from any website, video, cookbook, PDF, voice memo, or idea. One structured Recipe Box.",
+        "Recipes live everywhere—screenshots, videos, cookbooks, voice. Heirloom captures from any source so nothing slips through.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       secondaryCta: { label: "Watch it in action", href: "#demo" },
       trustLine: "Private by default — Share only when you choose",
@@ -454,7 +474,7 @@ export const pages: Record<
       {
         kind: "featureGrid",
         id: "sources",
-        title: "Save recipes from the internet you already use",
+        title: "From wherever recipes live",
         columns: 3,
         items: [
           {
@@ -504,7 +524,7 @@ export const pages: Record<
       {
         kind: "cta",
         id: "download",
-        title: "Start your Recipe Box today",
+        title: "Start preserving",
         body: "Want launch updates? Join the list.",
         cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
         emailCapture: { formName: "notify", placeholder: "you@domain.com", buttonLabel: "Notify me" },
@@ -514,15 +534,15 @@ export const pages: Record<
 
   lpVideo: {
     meta: {
-      title: "Turn cooking videos into recipes — Heirloom Recipe Box",
+      title: "Preserve recipes from cooking videos — Heirloom Recipe Box",
       description:
-        "TikTok, Instagram, YouTube—extract any recipe in seconds and keep it organized in your Recipe Box.",
+        "Preserve recipes from TikTok, Instagram, YouTube before they disappear. Extract any recipe and keep it forever.",
     },
     nav: sharedNav,
     hero: {
-      h1: "Turn cooking videos into recipes",
+      h1: "Those recipes in your saved videos? Preserve them before they're gone.",
       subhead:
-        "TikTok, Instagram, YouTube—extract any recipe in seconds and keep it organized.",
+        "They vanish when accounts close or feeds change. TikTok, Instagram, YouTube—extract the recipe and keep it forever.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
@@ -534,7 +554,7 @@ export const pages: Record<
       },
     },
     sections: [
-      sharedProblemSolution,
+      sharedProblemSolutionHeritage,
       {
         kind: "steps",
         id: "how-it-works",
@@ -573,7 +593,7 @@ export const pages: Record<
       {
         kind: "cta",
         id: "download",
-        title: "Turn your saved videos into a Recipe Box",
+        title: "Preserve your saved videos",
         cta: { label: "Download on the App Store", href: urls.appStore },
       },
     ],
@@ -581,14 +601,14 @@ export const pages: Record<
 
   lpScan: {
     meta: {
-      title: "Digitize your cookbooks — Heirloom Recipe Box",
+      title: "Preserve handwritten recipe cards — Heirloom Recipe Box",
       description:
-        "Point your camera at any recipe. Turn cookbooks, cards, and handwriting into clean recipes.",
+        "Preserve grandma's handwriting and cookbook pages before they fade. Point your camera—Heirloom captures the recipe.",
     },
     nav: sharedNav,
     hero: {
-      h1: "Digitize your cookbooks",
-      subhead: "Point your camera at any recipe. Instant digital copy in your Recipe Box.",
+      h1: "Grandma's handwriting. Mom's cookbook. The cards in the drawer.",
+      subhead: "Preserve them before they fade. Point your camera at any page—handwritten cards, cookbook pages, clippings.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
@@ -600,7 +620,7 @@ export const pages: Record<
       },
     },
     sections: [
-      sharedProblemSolution,
+      sharedProblemSolutionHeritage,
       {
         kind: "steps",
         id: "how-it-works",
@@ -639,7 +659,7 @@ export const pages: Record<
       {
         kind: "cta",
         id: "download",
-        title: "Digitize your cookbook shelf",
+        title: "Preserve your cookbooks",
         cta: { label: "Download on the App Store", href: urls.appStore },
       },
     ],
@@ -647,14 +667,14 @@ export const pages: Record<
 
   lpPdf: {
     meta: {
-      title: "Import recipes from PDFs — Heirloom Recipe Box",
+      title: "Preserve PDF recipe collections — Heirloom Recipe Box",
       description:
-        "Drop a PDF cookbook, family recipe printout, or scanned page. Heirloom extracts clean recipes automatically.",
+        "Family recipe printouts, scanned cookbook pages. Preserve them in a format that lasts.",
     },
     nav: sharedNav,
     hero: {
-      h1: "Import recipes from any PDF",
-      subhead: "Cookbooks, printouts, scanned pages—drop a PDF and get clean recipes in your Recipe Box.",
+      h1: "Family recipe printouts. Scanned cookbook pages.",
+      subhead: "Preserve them in a format that lasts. Drop a PDF—Heirloom extracts the recipe and adds it to your Recipe Box.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
@@ -666,7 +686,7 @@ export const pages: Record<
       },
     },
     sections: [
-      sharedProblemSolution,
+      sharedProblemSolutionHeritage,
       {
         kind: "steps",
         id: "how-it-works",
@@ -705,7 +725,7 @@ export const pages: Record<
       {
         kind: "cta",
         id: "download",
-        title: "Turn your PDF cookbooks into a Recipe Box",
+        title: "Preserve your PDF recipes",
         cta: { label: "Download on the App Store", href: urls.appStore },
       },
     ],
@@ -713,14 +733,14 @@ export const pages: Record<
 
   lpGenerate: {
     meta: {
-      title: "Tell us what you have. Get a recipe. — Heirloom Recipe Box",
+      title: "Generate and preserve recipes — Heirloom Recipe Box",
       description:
-        "Describe ingredients or a craving. Heirloom generates a recipe you can save and cook.",
+        "Describe a dish, list what's in the fridge, or recreate a memory. AI generates a recipe you can preserve and pass on.",
     },
     nav: sharedNav,
     hero: {
-      h1: "Tell us what you have. Get a recipe.",
-      subhead: "Describe ingredients or a craving. Get a recipe you'll actually cook.",
+      h1: "Describe a dish, list what's in the fridge, or recreate a memory.",
+      subhead: "AI generates a recipe you can preserve and pass on. Every generated recipe is structured, editable, and ready to save to your collection.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Your Recipe Box stays yours",
@@ -732,7 +752,7 @@ export const pages: Record<
       },
     },
     sections: [
-      sharedProblemSolution,
+      sharedProblemSolutionHeritage,
       {
         kind: "steps",
         id: "how-it-works",
@@ -770,7 +790,7 @@ export const pages: Record<
       {
         kind: "cta",
         id: "download",
-        title: "Generate your next favorite recipe",
+        title: "Generate — and preserve — your next recipe",
         cta: { label: "Download on the App Store", href: urls.appStore },
       },
     ],
@@ -850,15 +870,15 @@ export const pages: Record<
 
   discovery: {
     meta: {
-      title: "Curated recipe collections — Heirloom Recipe Box",
+      title: "Recipes that carry culture forward — Heirloom Recipe Box",
       description:
-        "Browse themed packs: seasonal, cultural, creator-curated. Save any recipe to your collection with one tap.",
+        "Theme Packs from holidays, cuisines, and creators. Save any recipe with full attribution—so it becomes part of your food story.",
     },
     nav: sharedNav,
     hero: {
-      h1: "Discover curated recipe collections",
+      h1: "Recipes that carry culture forward",
       subhead:
-        "Theme Packs from creators, holidays, and cuisines. Save what you love to your Recipe Box.",
+        "Theme Packs from holidays, cuisines, and creators. Save any recipe to your collection—with full attribution—so it becomes part of your food story.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Full attribution. Every recipe tracks its creator.",
@@ -907,7 +927,7 @@ export const pages: Record<
       {
         kind: "cta",
         id: "download",
-        title: "Browse packs in the app",
+        title: "Add heritage recipes to your collection",
         cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       },
     ],
@@ -1174,7 +1194,7 @@ export const pages: Record<
         id: "provenance",
         title: "Cryptographic recipe provenance",
         subtitle:
-          "Every recipe has a verifiable, immutable history.",
+          "Every recipe tracks its lineage—who created it, who shared it. That's how preservation becomes a living record.",
         items: [
           {
             title: "SHA256 root hash",
