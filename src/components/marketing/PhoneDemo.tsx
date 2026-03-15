@@ -26,7 +26,7 @@ export default function PhoneDemo({
                 muted
                 loop
                 playsInline
-                preload="auto"
+                preload="metadata"
                 poster={demo.poster}
                 aria-label={demo.alt}
                 onError={() => setVideoFailed(true)}

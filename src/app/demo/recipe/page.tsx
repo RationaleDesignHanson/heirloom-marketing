@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description:
     "These chocolate chip cookies have been delighting family and friends since time immemorial. Soft, chewy, and universally appreciated by nearly everyone.",
   robots: { index: false, follow: false },
+  icons: { icon: "/brand/icon-64.png" },
 };
 
 

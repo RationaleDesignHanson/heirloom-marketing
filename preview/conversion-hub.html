@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ConversionHub Preview — Heirloom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --cream: #faf5f0;
+      --terracotta: #f2d1c5;
+      --tomato: #e05a3a;
+      --ink: #3a2f22;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stagger-1 { animation: fadeInUp 0.5s ease-out 0.1s both; }
+    .stagger-2 { animation: fadeInUp 0.5s ease-out 0.15s both; }
+    .stagger-3 { animation: fadeInUp 0.5s ease-out 0.2s both; }
+    .stagger-4 { animation: fadeInUp 0.5s ease-out 0.25s both; }
+    .stagger-5 { animation: fadeInUp 0.5s ease-out 0.3s both; }
+    .stagger-6 { animation: fadeInUp 0.5s ease-out 0.35s both; }
+    .stagger-hub { animation: fadeInUp 0.5s ease-out 0.05s both; }
+    .spoke-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .spoke-group:hover .spoke-card {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    /* Subtext: fits in 2 lines (no ellipsis); card width accommodates full text wrap */
+    .spoke-subtext {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      line-height: 1.4;
+      transition: max-height 0.25s ease, opacity 0.2s ease;
+    }
+    .spoke-group:hover .spoke-subtext {
+      max-height: 10em;
+      opacity: 1;
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -3; }
+    }
+    .connector-line {
+      stroke-dasharray: 2 1;
+      stroke-dashoffset: 0;
+      animation: dashFlow 3s linear infinite;
+    }
+    @keyframes rippleOut {
+      0% { transform: scale(1); opacity: 0.4; }
+      70% { transform: scale(2.5); opacity: 0; }
+      100% { transform: scale(2.5); opacity: 0; }
+    }
+    .ripple {
+      position: absolute;
+      inset: -20%;
+      border-radius: 50%;
+      border: 1px dashed rgba(242, 209, 197, 0.6);
+      animation: rippleOut 2s ease-out infinite;
+      pointer-events: none;
+    }
+    .ripple:nth-child(1) { animation-delay: 0s; }
+    .ripple:nth-child(2) { animation-delay: 0.5s; }
+    .ripple:nth-child(3) { animation-delay: 1s; }
+    .ripple:nth-child(4) { animation-delay: 1.5s; }
+  </style>
+</head>
+<body class="min-h-screen bg-[var(--cream)] flex items-center justify-center p-6">
+  <div class="relative mx-auto w-full max-w-[520px]">
+    <!-- SVG connectors: card → center so dashes flow toward hub -->
+    <svg class="pointer-events-none absolute inset-0 z-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <line class="connector-line" x1="25" y1="14" x2="50" y2="50" stroke="#3a2f22" opacity="0.2" stroke-width="0.5"/>
+      <line class="connector-line" x1="75" y1="14" x2="50" y2="50" stroke="#3a2f22" opacity="0.2" stroke-width="0.5"/>
+      <line class="connector-line" x1="14" y1="50" x2="50" y2="50" stroke="#3a2f22" opacity="0.2" stroke-width="0.5"/>
+      <line class="connector-line" x1="86" y1="50" x2="50" y2="50" stroke="#3a2f22" opacity="0.2" stroke-width="0.5"/>
+      <line class="connector-line" x1="25" y1="86" x2="50" y2="50" stroke="#3a2f22" opacity="0.2" stroke-width="0.5"/>
+      <line class="connector-line" x1="75" y1="86" x2="50" y2="50" stroke="#3a2f22" opacity="0.2" stroke-width="0.5"/>
+    </svg>
+
+    <div class="relative z-10 grid grid-cols-2 gap-4">
+      <!-- Row 1 -->
+      <div class="spoke-group stagger-1 flex flex-col items-center text-center">
+        <div class="spoke-card flex w-full max-w-[280px] flex-col items-center rounded-xl border border-[var(--terracotta)]/30 bg-white/95 px-3 py-2 shadow-sm">
+          <i data-lucide="sparkles" class="h-5 w-5 shrink-0 text-[var(--tomato)]"></i>
+          <span class="mt-1 text-[13px] font-semibold tracking-tight text-[var(--ink)]">AI Generation</span>
+          <p class="spoke-subtext mt-1 text-center text-xs leading-relaxed text-[var(--ink)]/65">Describe a dish — AI writes a complete recipe.</p>
+        </div>
+      </div>
+      <div class="spoke-group stagger-2 flex flex-col items-center text-center">
+        <div class="spoke-card flex w-full max-w-[280px] flex-col items-center rounded-xl border border-[var(--terracotta)]/30 bg-white/95 px-3 py-2 shadow-sm">
+          <i data-lucide="link" class="h-5 w-5 shrink-0 text-[var(--tomato)]"></i>
+          <span class="mt-1 text-[13px] font-semibold tracking-tight text-[var(--ink)]">URL Import</span>
+          <p class="spoke-subtext mt-1 text-center text-xs leading-relaxed text-[var(--ink)]/65">Paste any recipe link. Clean recipe, instantly.</p>
+        </div>
+      </div>
+
+      <!-- Row 2: cards + center hub -->
+      <div class="col-span-2 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+        <div class="spoke-group stagger-3 flex flex-col items-center text-center">
+          <div class="spoke-card flex w-full max-w-[280px] flex-col items-center rounded-xl border border-[var(--terracotta)]/30 bg-white/95 px-3 py-2 shadow-sm">
+            <i data-lucide="mic" class="h-5 w-5 shrink-0 text-[var(--tomato)]"></i>
+            <span class="mt-1 text-[13px] font-semibold tracking-tight text-[var(--ink)]">Food Stories</span>
+            <p class="spoke-subtext mt-1 text-center text-xs leading-relaxed text-[var(--ink)]/65">Speak a recipe aloud — structured into a card.</p>
+          </div>
+        </div>
+        <!-- Center hub -->
+        <div class="stagger-hub relative z-20 flex h-28 w-28 flex-col items-center justify-center gap-1 rounded-full shadow-lg sm:h-32 sm:w-32 overflow-visible">
+          <div class="ripple"></div>
+          <div class="ripple"></div>
+          <div class="ripple"></div>
+          <div class="ripple"></div>
+          <div class="absolute inset-0 rounded-full bg-[var(--cream)]"></div>
+          <div class="absolute inset-0 rounded-full border border-[var(--terracotta)]/40 bg-[radial-gradient(ellipse_at_center,white,rgba(250,245,240,0.95),rgba(242,209,197,0.4))]"></div>
+          <div class="relative flex flex-col items-center justify-center gap-1 text-center">
+            <div class="flex items-center justify-center text-[var(--tomato)]">
+              <i data-lucide="file-text" class="h-8 w-8 sm:h-10 sm:w-10"></i>
+            </div>
+            <div class="text-[10px] font-semibold uppercase tracking-wider text-[var(--ink)]/90 sm:text-xs">
+              Structured Recipe
+            </div>
+          </div>
+        </div>
+        <div class="spoke-group stagger-4 flex flex-col items-center text-center">
+          <div class="spoke-card flex w-full max-w-[280px] flex-col items-center rounded-xl border border-[var(--terracotta)]/30 bg-white/95 px-3 py-2 shadow-sm">
+            <i data-lucide="video" class="h-5 w-5 shrink-0 text-[var(--tomato)]"></i>
+            <span class="mt-1 text-[13px] font-semibold tracking-tight text-[var(--ink)]">Video Import</span>
+            <p class="spoke-subtext mt-1 text-center text-xs leading-relaxed text-[var(--ink)]/65">TikTok, Instagram, YouTube — extracted automatically.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="spoke-group stagger-5 flex flex-col items-center text-center">
+        <div class="spoke-card flex w-full max-w-[280px] flex-col items-center rounded-xl border border-[var(--terracotta)]/30 bg-white/95 px-3 py-2 shadow-sm">
+          <i data-lucide="scan-line" class="h-5 w-5 shrink-0 text-[var(--tomato)]"></i>
+          <span class="mt-1 text-[13px] font-semibold tracking-tight text-[var(--ink)]">Cookbook Scan</span>
+          <p class="spoke-subtext mt-1 text-center text-xs leading-relaxed text-[var(--ink)]/65">Camera or PDF — OCR + AI structuring.</p>
+        </div>
+      </div>
+      <div class="spoke-group stagger-6 flex flex-col items-center text-center">
+        <div class="spoke-card flex w-full max-w-[280px] flex-col items-center rounded-xl border border-[var(--terracotta)]/30 bg-white/95 px-3 py-2 shadow-sm">
+          <i data-lucide="volume-2" class="h-5 w-5 shrink-0 text-[var(--tomato)]"></i>
+          <span class="mt-1 text-[13px] font-semibold tracking-tight text-[var(--ink)]">ASMR Video</span>
+          <p class="spoke-subtext mt-1 text-center text-xs leading-relaxed text-[var(--ink)]/65">Silent cooking videos — no narration needed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

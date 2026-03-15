@@ -19,7 +19,7 @@ export default function VideoShowcase({
       <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
         {/* Text */}
         <div>
-          <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">{title}</h2>
           {subtitle && (
             <p className="mt-2 max-w-lg text-sm text-black/70">{subtitle}</p>
           )}

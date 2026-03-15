@@ -16,7 +16,7 @@ export default function TechShowcase({
 }) {
   return (
     <div>
-      <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">{title}</h2>
       {subtitle && (
         <p className="mt-2 max-w-2xl text-sm text-black/60">{subtitle}</p>
       )}

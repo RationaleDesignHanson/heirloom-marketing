@@ -19,7 +19,7 @@ export default function CTAButton({
   eventProps?: Record<string, string | number | boolean | undefined>;
 }) {
   const base =
-    "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20";
+    "inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl px-5 py-3 text-sm font-medium shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20";
   const styles =
     variant === "primary"
       ? "bg-[var(--charcoal)] text-[var(--cream)] hover:opacity-95"

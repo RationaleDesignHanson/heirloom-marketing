@@ -30,11 +30,35 @@ export default function ComparisonTable({
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">{title}</h2>
       {subtitle && (
         <p className="mt-2 text-sm text-black/60">{subtitle}</p>
       )}
-      <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+
+      {/* Mobile/tablet: stacked cards */}
+      <div className="mt-6 grid gap-4 lg:hidden">
+        {rows.map((row, idx) => (
+          <div
+            key={idx}
+            className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
+          >
+            <div className="text-sm font-medium text-black/80">{row.feature}</div>
+            <div className="mt-4 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-black/60">Heirloom</span>
+                {renderCell(row.heirloom)}
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-black/60">Other apps</span>
+                {renderCell(row.others)}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: table */}
+      <div className="mt-6 hidden overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm lg:block">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-black/10 bg-[var(--cream)]">

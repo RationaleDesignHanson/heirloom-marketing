@@ -9,7 +9,7 @@ export default function ProblemSolution({
 }) {
   return (
     <div>
-      <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">{title}</h2>
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <div className="rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm backdrop-blur">
           <div className="text-sm font-semibold text-black/80">{problem.title}</div>

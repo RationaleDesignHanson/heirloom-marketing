@@ -45,7 +45,7 @@ export default function FeatureGrid({
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">{title}</h2>
       <div className={`mt-6 grid gap-4 ${cols}`}>
         {items.map((it, idx) => (
           <div
