@@ -1,0 +1,18 @@
+---
+description: ConversionHub diagram design rules
+globs: **/ConversionHub*.tsx,**/conversion-hub*.html
+alwaysApply: false
+---
+
+# ConversionHub Diagram Rules
+
+## Subtext
+
+- Subtext fits in **2 lines** with no truncation/ellipsis.
+- Do NOT use `-webkit-line-clamp`. Card scales to fit (max-height: 10em, max-w: 280px).
+- Use conversionhub-spoke-subtext; expand on group hover.
+
+## Center Hub
+
+- Icon: FileText only (h-8 w-8 / sm:h-10 sm:w-10). Label: "Structured Recipe."
+- Ripple circles animate outward; connector dashes flow card→center.
