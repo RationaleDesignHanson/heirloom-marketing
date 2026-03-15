@@ -314,7 +314,7 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Every recipe worth keeping, in one place",
+      h1: "Every recipe worth keeping, in one\u00A0place",
       subhead:
         "Recipes are cultural heritage — not bookmarks. Heirloom captures, preserves, and shares your family's food culture so nothing is lost.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
@@ -540,9 +540,9 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Those recipes in your saved videos? Preserve them before they're gone.",
+      h1: "Those recipes in your saved videos? Preserve them before they're\u00A0gone.",
       subhead:
-        "They vanish when accounts close or feeds change. TikTok, Instagram, YouTube—extract the recipe and keep it forever.",
+        "They vanish when accounts close or feeds change. TikTok, Instagram, YouTube—download the video, extract the recipe and keep it forever.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
@@ -607,7 +607,7 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Grandma's handwriting. Mom's cookbook. The cards in the drawer.",
+      h1: "Grandma's handwriting. Mom's cookbook. The cards in the\u00A0drawer.",
       subhead: "Preserve them before they fade. Point your camera at any page—handwritten cards, cookbook pages, clippings.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
@@ -673,7 +673,7 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Family recipe printouts. Scanned cookbook pages.",
+      h1: "Family recipe printouts. Scanned cookbook\u00A0pages.",
       subhead: "Preserve them in a format that lasts. Drop a PDF—Heirloom extracts the recipe and adds it to your Recipe Box.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
@@ -739,7 +739,7 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Describe a dish, list what's in the fridge, or recreate a memory.",
+      h1: "Describe a dish, list what's in the fridge, or recreate a\u00A0memory.",
       subhead: "AI generates a recipe you can preserve and pass on. Every generated recipe is structured, editable, and ready to save to your collection.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
@@ -804,7 +804,7 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Cook with the people closest to you",
+      h1: "Cook with the people closest to\u00A0you",
       subhead:
         "Kitchen Table — a private space for up to 8 members. Share recipes, coordinate group meals, and build a shared family cookbook.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
@@ -876,7 +876,7 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Recipes that carry culture forward",
+      h1: "Recipes that carry culture\u00A0forward",
       subhead:
         "Theme Packs from holidays, cuisines, and creators. Save any recipe to your collection—with full attribution—so it becomes part of your food story.",
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
@@ -940,7 +940,7 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Join the Heirloom community",
+      h1: "Join the Heirloom\u00A0community",
       subhead: "Get updates, share feedback, and swap recipes with other testers.",
       primaryCta: { label: "Join Discord", href: urls.support },
       demo: {
@@ -1016,7 +1016,7 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Recipes worth keeping",
+      h1: "Recipes worth\u00A0keeping",
       subhead:
         "Heirloom is built by Rationale Studio to solve a simple problem: family recipes shouldn't be lost to time.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
@@ -1103,7 +1103,7 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Built for trust, not shortcuts",
+      h1: "Built for trust, not\u00A0shortcuts",
       subhead:
         "Heirloom is engineered with the same rigor as enterprise software\u2014because your family recipes deserve it.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
