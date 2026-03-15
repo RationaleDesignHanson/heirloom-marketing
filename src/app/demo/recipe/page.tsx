@@ -35,7 +35,7 @@ const recipeJsonLd = {
   "@context": "https://schema.org",
   "@type": "Recipe",
   name: "The Best Soft & Chewy Chocolate Chip Cookies",
-  author: { "@type": "Person", name: "Cheryl Buttersworth" },
+  author: { "@type": "Person", name: "Colettie spaghetti" },
   datePublished: "2024-03-15",
   description:
     "Perfectly soft and chewy chocolate chip cookies with golden edges and melty chocolate in every bite. A family recipe that has been passed down and slightly improved upon each generation.",
@@ -160,7 +160,7 @@ export default function DemoRecipePage() {
                 CB
               </div>
               <span>
-                By <span className="font-medium text-gray-700">Cheryl Buttersworth</span>
+                By <span className="font-medium text-gray-700">Colettie spaghetti</span>
               </span>
               <span className="text-gray-300">|</span>
               <span>March 15, 2024</span>
