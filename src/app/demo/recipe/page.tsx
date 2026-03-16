@@ -160,7 +160,7 @@ export default function DemoRecipePage() {
         <main className="mx-auto max-w-4xl pb-16 sm:px-6">
           {/* ── Hero Image ───────────────────────────────── */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/demo/cookies-hero.jpg" alt="A batch of golden brown chocolate chip cookies cooling on parchment paper" className="w-full max-h-[320px] rounded-b-2xl object-cover object-center sm:max-h-[400px]" />
+          <img src="/assets/demo/cookies-hero.jpg" alt="A batch of golden brown chocolate chip cookies cooling on parchment paper" className="h-[200px] w-full rounded-b-2xl object-cover object-center" />
 
           {/* ── Title & Meta ─────────────────────────────── */}
           <div className="px-4 pt-5 sm:px-0">
