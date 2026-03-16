@@ -2,7 +2,50 @@
 
 Production checklist for videos, screenshots, posters, and other assets. Use this to plan captures and screen recordings.
 
-**Asset swap:** After capturing, drop files in `./captures/` named by REC_* ID (e.g. `REC_VIDEO_IMPORT.png`) and run `npm run swap-assets -- ./captures/`. See `scripts/asset-mapping.json` for the full mapping.
+---
+
+## How to Use the Capture Swap Script
+
+After capturing screenshots or videos in the simulator (per `heirloom_simulator_captures.pdf`), plug them into the marketing site:
+
+### 1. Create a captures folder
+
+```bash
+mkdir -p captures
+```
+
+(Or use any folder — `captures/` is in `.gitignore` so it won't be committed.)
+
+### 2. Name files by asset ID
+
+Save your captures with the **REC_* ID** from the PDF. The script maps these to the correct marketing paths.
+
+| Type | Naming | Example |
+|------|--------|---------|
+| Screenshots | `REC_*_ID.png` | `REC_VIDEO_IMPORT.png`, `REC_IPAD_COLLECTION.png` |
+| Videos | `Preview*_S*.mp4` | `Preview1_S03.mp4` |
+| Posters | Same as video key | `lp-video-hero.jpg` (see asset-mapping.json) |
+
+### 3. Run the swap script
+
+```bash
+# Preview what would be copied (no changes)
+npm run swap-assets -- --dry-run ./captures/
+
+# Copy files into place
+npm run swap-assets -- ./captures/
+
+# Backup existing files before overwriting
+npm run swap-assets -- --backup ./captures/
+```
+
+### 4. Verify with the audit
+
+```bash
+npm run audit:assets
+```
+
+This checks that required assets exist and meet specs (dimensions, etc.). Missing assets will be reported.
 
 ---
 

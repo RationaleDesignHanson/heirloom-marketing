@@ -183,6 +183,13 @@ const checks = [
   { relPath: "public/assets/screens/reada.png", rules: { kind: "image" } },
   { relPath: "public/assets/screens/readb.png", rules: { kind: "image" } },
 
+  // iPad Pro M4 13" (App Store)
+  { relPath: "public/assets/screens/cap_ipad_collection.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_ipad_split.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_ipad_discovery.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_ipad_scan.png", rules: { kind: "image" } },
+  { relPath: "public/assets/screens/cap_ipad_table.png", rules: { kind: "image" } },
+
   // Backgrounds
   { relPath: "public/assets/bg/landing-hero.png", rules: { kind: "image" } },
   { relPath: "public/assets/bg/screenshot-frame.png", rules: { kind: "image" } },
