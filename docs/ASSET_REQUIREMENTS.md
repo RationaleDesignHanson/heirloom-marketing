@@ -2,6 +2,34 @@
 
 Production checklist for videos, screenshots, posters, and other assets. Use this to plan captures and screen recordings.
 
+**Asset swap:** After capturing, drop files in `./captures/` named by REC_* ID (e.g. `REC_VIDEO_IMPORT.png`) and run `npm run swap-assets -- ./captures/`. See `scripts/asset-mapping.json` for the full mapping.
+
+---
+
+## REC_* Cross-Reference (Simulator Capture PDF)
+
+Map from `heirloom_simulator_captures.pdf` asset IDs to marketing paths. Use these names when saving captures.
+
+| REC_* ID | Marketing Path | Story Beat |
+|----------|----------------|------------|
+| REC_VIDEO_IMPORT | `cap_12_video_result.png` | Capture |
+| REC_COOKBOOK_SCAN | `cap_18_scan_result.png` | Capture |
+| REC_CARD_LOVEMARKS | `cap_18_scan_result.png` | Capture (post-scan) |
+| REC_IMPORT_OPTIONS | `cap_import_sheet.png` | Capture |
+| REC_RECIPE_CARD | `cap_11_saved_recipe.png` | Preserve |
+| REC_KITCHEN_TABLE | `cap_kt_table_view.png` | Share |
+| REC_DISCOVERY | `cap_disc_packs.png` | Discover |
+| REC_VOICE_DICTATION | `reada.png` | Capture |
+| REC_SHOPPING_LIST | `cap_kt_table_events.png` | Share |
+| REC_ASMR_RESULT | `cap_asmr_result.png` | Capture |
+| REC_MULTILINGUAL | `cap_multilingual.png` | Preserve |
+| REC_LINEAGE_TREE | `cap_lineage_tree.png` | Preserve |
+| REC_COLLECTION_OVERVIEW | `cap_collection.png` | Preserve |
+| REC_CARD_STYLE | `cap_card_style.png` | Personalize |
+| REC_THEME_PACK_OPEN | `cap_disc_pack_detail.png` | Discover |
+
+**Videos:** Preview1_S03 → `lp-video-hero`, Preview1_S04 → `read`, Preview3_S03 → `lp-discovery-hero`, etc.
+
 ---
 
 ## Videos (Screen Recordings)

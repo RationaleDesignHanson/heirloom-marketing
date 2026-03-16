@@ -586,6 +586,11 @@ export const pages: Record<
             body: "A Recipe Box you'll actually use.",
             image: "/assets/screens/cap_13_attribution.png",
           },
+          {
+            title: "Silent videos too",
+            body: "ASMR cooking videos with no voice? Heirloom extracts the recipe from visuals alone.",
+            image: "/assets/screens/cap_asmr_result.png",
+          },
         ],
       },
       sharedPricingSection,
@@ -843,12 +848,12 @@ export const pages: Record<
           {
             title: "Your Table, your rules",
             body: "Members see only what you share. No algorithm, no follower count. Just the recipes you trust with the people you'd invite to dinner.",
-            image: "/assets/screens/cap_04_share.png",
+            image: "/assets/screens/cap_kt_table_view.png",
           },
           {
             title: "Table Events",
             body: "When a meal is coming up, the host kicks off an Event. Members suggest dishes from shared recipes. A shared shopping list assembles automatically.",
-            image: "/assets/screens/cap_11_saved_recipe.png",
+            image: "/assets/screens/cap_kt_table_events.png",
           },
           {
             title: "1:1 sharing",
@@ -909,17 +914,17 @@ export const pages: Record<
           {
             title: "First-party curated",
             body: "Thanksgiving Classics, Mom's Kitchen, Sourdough Deep Dive — Heirloom selections.",
-            image: "/assets/screens/cap_12_video_result.png",
+            image: "/assets/screens/cap_disc_packs.png",
           },
           {
             title: "Creator packs",
             body: "Partner-published collections with full branding and attribution.",
-            image: "/assets/screens/cap_13_attribution.png",
+            image: "/assets/screens/cap_disc_pack_detail.png",
           },
           {
             title: "Seasonal & cultural",
             body: "Holiday cookie exchange, West African staples, weeknight Korean.",
-            image: "/assets/screens/cap_11_saved_recipe.png",
+            image: "/assets/screens/cap_disc_pack_detail.png",
           },
         ],
       },

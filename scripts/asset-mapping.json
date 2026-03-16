@@ -1,0 +1,36 @@
+{
+  "screenshots": {
+    "REC_VIDEO_IMPORT": "public/assets/screens/cap_12_video_result.png",
+    "REC_COOKBOOK_SCAN": "public/assets/screens/cap_18_scan_result.png",
+    "REC_CARD_LOVEMARKS": "public/assets/screens/cap_18_scan_result.png",
+    "REC_IMPORT_OPTIONS": "public/assets/screens/cap_import_sheet.png",
+    "REC_RECIPE_CARD": "public/assets/screens/cap_11_saved_recipe.png",
+    "REC_KITCHEN_TABLE": "public/assets/screens/cap_kt_table_view.png",
+    "REC_DISCOVERY": "public/assets/screens/cap_disc_packs.png",
+    "REC_VOICE_DICTATION": "public/assets/screens/reada.png",
+    "REC_SHOPPING_LIST": "public/assets/screens/cap_kt_table_events.png",
+    "REC_ASMR_RESULT": "public/assets/screens/cap_asmr_result.png",
+    "REC_MULTILINGUAL": "public/assets/screens/cap_multilingual.png",
+    "REC_LINEAGE_TREE": "public/assets/screens/cap_lineage_tree.png",
+    "REC_COLLECTION_OVERVIEW": "public/assets/screens/cap_collection.png",
+    "REC_CARD_STYLE": "public/assets/screens/cap_card_style.png",
+    "REC_THEME_PACK_OPEN": "public/assets/screens/cap_disc_pack_detail.png"
+  },
+  "videos": {
+    "Preview1_S03": "public/assets/video/lp-video-hero-16x9.mp4",
+    "Preview1_S04": "public/assets/video/read.mp4",
+    "Preview3_S03": "public/assets/video/lp-discovery-hero-16x9.mp4",
+    "Preview1_S01": "public/assets/video/lp-heritage-hero-16x9.mp4",
+    "Preview1_S06": "public/assets/video/lp-heritage-hero-16x9.mp4",
+    "Preview2_S01": "public/assets/video/lp2-share-hero-16x9.mp4",
+    "Preview3_S01": "public/assets/video/lp-generate-hero-16x9.mp4"
+  },
+  "posters": {
+    "lp-video-hero": "public/assets/posters/lp-video-hero.jpg",
+    "read-hero": "public/assets/posters/read-hero.jpg",
+    "lp-discovery-hero": "public/assets/posters/lp-discovery-hero.jpg",
+    "lp-heritage-hero": "public/assets/posters/lp-heritage-hero.jpg",
+    "lp2-share-hero": "public/assets/posters/lp2-share-hero.jpg",
+    "lp-generate-hero": "public/assets/posters/lp-generate-hero.jpg"
+  }
+}

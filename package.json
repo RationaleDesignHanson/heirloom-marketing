@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "audit:assets": "node scripts/audit-assets.mjs",
+    "swap-assets": "node scripts/swap-assets.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

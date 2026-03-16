@@ -1,11 +1,24 @@
 import type { Metadata } from "next";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomrecipebox.app";
+
 export const metadata: Metadata = {
   title: "The Best Soft & Chewy Chocolate Chip Cookies | The Recipe Chronicle",
   description:
     "These chocolate chip cookies have been delighting family and friends since time immemorial. Soft, chewy, and universally appreciated by nearly everyone.",
   robots: { index: false, follow: false },
-  icons: { icon: "/brand/icon-64.png" },
+  metadataBase: new URL(siteUrl),
+  icons: {
+    icon: "/brand/icon-64.png",
+    apple: "/brand/icon-1024.png",
+  },
+  openGraph: {
+    title: "The Best Soft & Chewy Chocolate Chip Cookies | The Recipe Chronicle",
+    description:
+      "These chocolate chip cookies have been delighting family and friends since time immemorial.",
+    images: ["/assets/demo/cookies-hero.jpg"],
+    type: "article",
+  },
 };
 
 
