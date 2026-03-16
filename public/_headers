@@ -1,2 +1,5 @@
 /.well-known/apple-app-site-association
   Content-Type: application/json
+
+/assets/demo/heirloom-home-kitchen.pdf
+  Content-Disposition: attachment; filename="Heirloom_Home_Kitchen.pdf"
