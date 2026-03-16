@@ -19,6 +19,13 @@ export const metadata: Metadata = {
     images: ["/assets/demo/cookies-hero.jpg"],
     type: "article",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Best Soft & Chewy Chocolate Chip Cookies | The Recipe Chronicle",
+    description:
+      "These chocolate chip cookies have been delighting family and friends since time immemorial.",
+    images: ["/assets/demo/cookies-hero.jpg"],
+  },
 };
 
 
