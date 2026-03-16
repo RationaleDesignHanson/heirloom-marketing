@@ -144,7 +144,7 @@ export default function DemoRecipePage() {
       <div className="min-h-screen bg-white font-[system-ui,sans-serif] text-gray-900">
         {/* ── Header ─────────────────────────────────────── */}
         <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
-          <div className="flex items-center justify-between px-4 py-3">
+          <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3 sm:px-6">
             <div className="flex items-center gap-2">
               <span className="text-xl">🍳</span>
               <span className="text-base font-semibold tracking-tight text-gray-800">
@@ -157,14 +157,14 @@ export default function DemoRecipePage() {
           </div>
         </header>
 
-        <main className="pb-16">
+        <main className="mx-auto max-w-4xl pb-16 sm:px-6">
           {/* ── Hero Image ───────────────────────────────── */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/demo/cookies-hero.jpg" alt="A batch of golden brown chocolate chip cookies cooling on parchment paper" className="w-full" />
+          <img src="/assets/demo/cookies-hero.jpg" alt="A batch of golden brown chocolate chip cookies cooling on parchment paper" className="w-full rounded-b-2xl object-cover object-center" />
 
           {/* ── Title & Meta ─────────────────────────────── */}
-          <div className="px-4 pt-5">
-            <h1 className="text-2xl leading-tight font-bold tracking-tight text-gray-900">
+          <div className="px-4 pt-5 sm:px-0">
+            <h1 className="text-2xl leading-tight font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl">
               The Best Soft &amp; Chewy Chocolate Chip Cookies
             </h1>
 
@@ -188,10 +188,10 @@ export default function DemoRecipePage() {
           </div>
 
           {/* ── Jump to Recipe ────────────────────────────── */}
-          <div className="px-4 pt-4">
+          <div className="px-4 pt-4 sm:px-0">
             <a
               href="#recipe"
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-rose-500 py-3 text-sm font-semibold text-white active:bg-rose-600"
+              className="flex w-full max-w-sm items-center justify-center gap-2 rounded-lg bg-rose-500 py-3 text-sm font-semibold text-white active:bg-rose-600 sm:max-w-xs"
             >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -206,7 +206,7 @@ export default function DemoRecipePage() {
           </div>
 
           {/* ── Satirical Blog Preamble ──────────────────── */}
-          <article className="space-y-4 px-4 pt-6 text-[15px] leading-relaxed text-gray-700">
+          <article className="space-y-4 px-4 pt-6 text-[15px] leading-relaxed text-gray-700 sm:px-0 sm:text-base">
             <p>
               When I first moved to the Pacific Northwest, I never expected that a simple chocolate
               chip cookie would fundamentally redefine my understanding of what baked goods could be.
@@ -236,7 +236,7 @@ export default function DemoRecipePage() {
           </article>
 
           {/* ── In-article Image ─────────────────────────── */}
-          <div className="px-4 pt-4">
+          <div className="px-4 pt-4 sm:px-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/demo/cookies-closeup.jpg" alt="Close-up of a chocolate chip cookie with golden edges and melty chocolate chips" className="w-full rounded-lg" />
             <p className="mt-1 text-center text-xs text-gray-400">
@@ -245,7 +245,7 @@ export default function DemoRecipePage() {
           </div>
 
           {/* ── Recipe Card ──────────────────────────────── */}
-          <div id="recipe" className="mx-4 mt-8 scroll-mt-16 rounded-xl border-2 border-rose-100 bg-rose-50/50 p-5">
+          <div id="recipe" className="mx-4 mt-8 scroll-mt-16 rounded-xl border-2 border-rose-100 bg-rose-50/50 p-5 sm:mx-0 sm:p-6">
             <h2 className="text-xl font-bold text-gray-900">
               The Best Soft &amp; Chewy Chocolate Chip Cookies
             </h2>
@@ -325,7 +325,7 @@ export default function DemoRecipePage() {
           </div>
 
           {/* ── Nutrition Facts ───────────────────────────── */}
-          <div className="mx-4 mt-6 rounded-xl border border-gray-200 bg-gray-50 p-5">
+          <div className="mx-4 mt-6 rounded-xl border border-gray-200 bg-gray-50 p-5 sm:mx-0 sm:p-6">
             <h3 className="text-base font-bold text-gray-900">Nutrition Facts</h3>
             <p className="mt-1 text-xs text-gray-500">Per cookie (approximate)</p>
             <div className="mt-3 divide-y divide-gray-200 text-sm">
@@ -346,7 +346,7 @@ export default function DemoRecipePage() {
           </div>
 
           {/* ── Reviews ──────────────────────────────────── */}
-          <div className="px-4 pt-8">
+          <div className="px-4 pt-8 sm:px-0">
             <h3 className="text-lg font-bold text-gray-900">Reviews</h3>
             <div className="mt-4 space-y-4">
               {[
@@ -389,9 +389,9 @@ export default function DemoRecipePage() {
           </div>
 
           {/* ── "More Recipes" teaser ────────────────────── */}
-          <div className="px-4 pt-8">
+          <div className="px-4 pt-8 sm:px-0">
             <h3 className="text-lg font-bold text-gray-900">You Might Also Like</h3>
-            <div className="mt-3 grid grid-cols-2 gap-3">
+            <div className="mt-3 grid grid-cols-2 gap-3 sm:max-w-md">
               {[
                 { title: "Impossibly Fudgy Brownies", time: "45 min" },
                 { title: "No-Fail Banana Bread", time: "1 hr 10 min" },
@@ -409,7 +409,7 @@ export default function DemoRecipePage() {
         </main>
 
         {/* ── Footer ─────────────────────────────────────── */}
-        <footer className="border-t border-gray-100 px-4 py-6 text-center text-xs text-gray-400">
+        <footer className="border-t border-gray-100 px-4 py-6 text-center text-xs text-gray-400 sm:px-6">
           <p>© 2024 The Recipe Chronicle. All rights reserved.</p>
           <p className="mt-1">This is a demo page. Not a real recipe website.</p>
         </footer>
