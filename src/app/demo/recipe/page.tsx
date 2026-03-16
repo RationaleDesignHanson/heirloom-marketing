@@ -160,7 +160,7 @@ export default function DemoRecipePage() {
         <main className="mx-auto max-w-4xl pb-16 sm:px-6">
           {/* ── Hero Image ───────────────────────────────── */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/demo/cookies-hero.jpg" alt="A batch of golden brown chocolate chip cookies cooling on parchment paper" className="w-full rounded-b-2xl object-cover object-center" />
+          <img src="/assets/demo/cookies-hero.jpg" alt="A batch of golden brown chocolate chip cookies cooling on parchment paper" className="w-full max-h-[320px] rounded-b-2xl object-cover object-center sm:max-h-[400px]" />
 
           {/* ── Title & Meta ─────────────────────────────── */}
           <div className="px-4 pt-5 sm:px-0">
@@ -238,7 +238,7 @@ export default function DemoRecipePage() {
           {/* ── In-article Image ─────────────────────────── */}
           <div className="px-4 pt-4 sm:px-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/demo/cookies-closeup.jpg" alt="Close-up of a chocolate chip cookie with golden edges and melty chocolate chips" className="w-full rounded-lg" />
+            <img src="/assets/demo/cookies-closeup.jpg" alt="Close-up of a chocolate chip cookie with golden edges and melty chocolate chips" className="mx-auto max-h-[280px] w-full max-w-xl rounded-lg object-cover object-center sm:max-h-[340px]" />
             <p className="mt-1 text-center text-xs text-gray-400">
               Golden edges, soft centers. Gerald&apos;s hand for scale (not pictured).
             </p>
@@ -317,7 +317,7 @@ export default function DemoRecipePage() {
             {/* Step photo */}
             <div className="mt-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/demo/cookies-baking.jpg" alt="Chocolate chip cookies on a baking sheet fresh from the oven" className="w-full rounded-lg" />
+              <img src="/assets/demo/cookies-baking.jpg" alt="Chocolate chip cookies on a baking sheet fresh from the oven" className="mx-auto max-h-[280px] w-full max-w-xl rounded-lg object-cover object-center sm:max-h-[340px]" />
               <p className="mt-1 text-center text-xs text-gray-400">
                 Perfectly golden — you&apos;ll know they&apos;re done when your kitchen smells like a hug.
               </p>
