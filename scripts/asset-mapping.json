@@ -14,7 +14,12 @@
     "REC_LINEAGE_TREE": "public/assets/screens/cap_lineage_tree.png",
     "REC_COLLECTION_OVERVIEW": "public/assets/screens/cap_collection.png",
     "REC_CARD_STYLE": "public/assets/screens/cap_card_style.png",
-    "REC_THEME_PACK_OPEN": "public/assets/screens/cap_disc_pack_detail.png"
+    "REC_THEME_PACK_OPEN": "public/assets/screens/cap_disc_pack_detail.png",
+    "REC_IPAD_COLLECTION": "public/assets/screens/cap_ipad_collection.png",
+    "REC_IPAD_SPLIT": "public/assets/screens/cap_ipad_split.png",
+    "REC_IPAD_DISCOVERY": "public/assets/screens/cap_ipad_discovery.png",
+    "REC_IPAD_SCAN": "public/assets/screens/cap_ipad_scan.png",
+    "REC_IPAD_TABLE": "public/assets/screens/cap_ipad_table.png"
   },
   "videos": {
     "Preview1_S03": "public/assets/video/lp-video-hero-16x9.mp4",

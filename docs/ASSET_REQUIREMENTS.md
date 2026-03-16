@@ -27,6 +27,11 @@ Map from `heirloom_simulator_captures.pdf` asset IDs to marketing paths. Use the
 | REC_COLLECTION_OVERVIEW | `cap_collection.png` | Preserve |
 | REC_CARD_STYLE | `cap_card_style.png` | Personalize |
 | REC_THEME_PACK_OPEN | `cap_disc_pack_detail.png` | Discover |
+| **REC_IPAD_COLLECTION** | `cap_ipad_collection.png` | iPad App Store #1 |
+| **REC_IPAD_SPLIT** | `cap_ipad_split.png` | iPad App Store #2 |
+| **REC_IPAD_DISCOVERY** | `cap_ipad_discovery.png` | iPad App Store #3 |
+| **REC_IPAD_SCAN** | `cap_ipad_scan.png` | iPad App Store #4 |
+| **REC_IPAD_TABLE** | `cap_ipad_table.png` | iPad App Store #5 |
 
 **Videos:** Preview1_S03 → `lp-video-hero`, Preview1_S04 → `read`, Preview3_S03 → `lp-discovery-hero`, etc.
 
@@ -93,6 +98,18 @@ Portrait iPhone screens (9:19.5 or 9:16). Save to `public/assets/screens/`.
 | `cap_kt_invite.png` | **NEW** Invite to Table flow | Share LP |
 | `cap_disc_packs.png` | **NEW** Discovery Theme Packs list | Discovery |
 | `cap_disc_pack_detail.png` | **NEW** Single pack / recipe browse | Discovery |
+
+### iPad Pro M4 13" (App Store)
+
+Landscape or portrait. Save to `public/assets/screens/`. Use for App Store iPad product page and marketing device showcase.
+
+| Path | Capture | App Store # |
+|------|---------|-------------|
+| `cap_ipad_collection.png` | iPad Collection Grid — wide recipe library | #1 |
+| `cap_ipad_split.png` | iPad Split View — Collection + Recipe Detail | #2 |
+| `cap_ipad_discovery.png` | iPad Discovery — Wide Editorial Grid | #3 |
+| `cap_ipad_scan.png` | iPad Cookbook Scan | #4 |
+| `cap_ipad_table.png` | iPad Kitchen Table — Bellini Family | #5 |
 
 ---
 
