@@ -74,9 +74,9 @@ const recipeJsonLd = {
     "tarte tatin, tarte aux pommes, dessert français, recette de grand-mère, caramel, pâte feuilletée",
   recipeIngredient: [
     "6 pommes Granny Smith moyennes",
-    "6 cuillères à soupe de beurre doux",
-    "¾ tasse de sucre cristallisé",
-    "1 cuillère à soupe de jus de citron frais",
+    "90 g de beurre doux",
+    "150 g de sucre cristallisé",
+    "15 ml de jus de citron frais",
     "1 feuille de pâte feuilletée, décongelée",
     "1 pincée de fleur de sel",
   ],
@@ -109,7 +109,7 @@ const recipeJsonLd = {
     {
       "@type": "HowToStep",
       position: 6,
-      text: "Enfourner à 200°C pendant 25 à 30 minutes, jusqu'à ce que la pâte soit bien dorée.",
+      text: "Enfourner à 200 °C pendant 25 à 30 minutes, jusqu'à ce que la pâte soit bien dorée.",
     },
     {
       "@type": "HowToStep",
@@ -314,9 +314,9 @@ export default function DemoRecettePage() {
             <ul className="mt-3 space-y-2.5">
               {[
                 "6 pommes Granny Smith moyennes",
-                "6 c. à soupe de beurre doux",
-                "¾ tasse de sucre cristallisé",
-                "1 c. à soupe de jus de citron frais",
+                "90 g de beurre doux",
+                "150 g de sucre cristallisé",
+                "15 ml de jus de citron frais",
                 "1 feuille de pâte feuilletée, décongelée",
                 "1 pincée de fleur de sel",
               ].map((item) => (
@@ -343,7 +343,7 @@ export default function DemoRecettePage() {
                 "Cuire à feu moyen, sans remuer, jusqu'à ce que le caramel prenne une belle couleur ambrée — environ 12 minutes. Résistez à l'envie de touiller. Le caramel sait ce qu'il fait.",
                 "Disposer les quartiers de pommes bien serrés dans le caramel, côté bombé vers le bas. Cuire 5 minutes. Les pommes vont vous dire quand c'est prêt — enfin, c'est ce que disait Mamie.",
                 "Draper la pâte feuilletée par-dessus les pommes en rentrant les bords à l'intérieur du moule, comme si vous bordiez les pommes pour la nuit.",
-                "Enfourner à 200°C (400°F) pendant 25 à 30 minutes, jusqu'à ce que la pâte soit bien dorée et gonflée.",
+                "Enfourner à 200 °C pendant 25 à 30 minutes, jusqu'à ce que la pâte soit bien dorée et gonflée.",
                 "Laisser tiédir 5 minutes dans le moule, puis poser un plat de service dessus et retourner d'un geste franc. Servir tiède, avec une boule de glace à la vanille si le cœur vous en dit.",
               ].map((step, i) => (
                 <li
