@@ -5,7 +5,7 @@ function PhoneFrame({ src, alt, images }: { src?: string; alt: string; images?: 
   const hasCycling = images && images.length > 1;
 
   return (
-    <div className="mx-auto w-48 sm:w-56">
+    <div className="mx-auto w-full max-w-[180px] sm:max-w-[210px]">
       <div className="relative rounded-[1.4rem] border-[5px] border-gray-900 bg-gray-900 shadow-lg">
         {/* Notch */}
         <div className="absolute top-1.5 left-1/2 z-10 h-2.5 w-10 -translate-x-1/2 rounded-md bg-gray-800" />
@@ -50,7 +50,7 @@ export default function FeatureGrid({
         {items.map((it, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center overflow-hidden rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm backdrop-blur"
+            className="flex flex-col items-center overflow-hidden rounded-2xl border border-black/10 bg-white/80 p-4 shadow-sm backdrop-blur sm:p-6"
           >
             {(it.image || it.images) && (
               <div className="mb-5">

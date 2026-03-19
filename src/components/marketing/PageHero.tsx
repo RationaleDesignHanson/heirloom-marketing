@@ -31,7 +31,7 @@ export default function PageHero({
           <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[var(--tomato)]/10 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-black/5 blur-3xl" />
 
-          <div className="relative grid items-center gap-10 lg:grid-cols-[1.35fr_0.65fr]">
+          <div className="relative grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:gap-10">
             {/* Copy block — wider column so headlines fit in 2–3 lines */}
             <div className="min-w-0">
               <div className="inline-flex items-center rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/70 shadow-sm backdrop-blur">
@@ -49,6 +49,7 @@ export default function PageHero({
                   href={hero.primaryCta.href}
                   label={hero.primaryCta.label}
                   eventProps={{ location: "hero" }}
+                  className="w-full sm:w-auto"
                 />
                 {hero.secondaryCta && (
                   <CTAButton
@@ -56,6 +57,7 @@ export default function PageHero({
                     label={hero.secondaryCta.label}
                     variant="secondary"
                     eventProps={{ location: "hero" }}
+                    className="w-full sm:w-auto"
                   />
                 )}
               </div>
@@ -73,8 +75,8 @@ export default function PageHero({
               {hero.trustLine && <p className="mt-5 text-sm text-black/60">{hero.trustLine}</p>}
             </div>
 
-            {/* Visual — right column */}
-            <div className="lg:justify-self-end">
+            {/* Visual — right column, hidden on small screens */}
+            <div className="hidden md:block lg:justify-self-end">
               {isDiagram ? (
                 <ConversionHub />
               ) : (

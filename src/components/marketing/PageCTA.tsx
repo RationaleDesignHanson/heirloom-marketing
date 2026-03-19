@@ -13,8 +13,8 @@ export default function PageCTA({
   emailCapture?: { formName: string; placeholder?: string; buttonLabel?: string };
 }) {
   return (
-    <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+    <div className="rounded-2xl border border-black/10 bg-white p-5 shadow-sm sm:p-8">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
           {body && <p className="mt-2 text-sm text-black/70">{body}</p>}
@@ -23,6 +23,7 @@ export default function PageCTA({
           href={cta.href}
           label={cta.label}
           eventProps={{ location: "section_cta", sectionTitle: title }}
+          className="w-full sm:w-auto shrink-0"
         />
       </div>
 

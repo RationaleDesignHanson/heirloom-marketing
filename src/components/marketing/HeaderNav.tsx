@@ -40,7 +40,9 @@ export default function HeaderNav({
         </nav>
 
         <div className="flex items-center gap-3">
-          <CTAButton href={cta.href} label={cta.label} eventProps={{ location: "header" }} />
+          <div className="hidden sm:block">
+            <CTAButton href={cta.href} label={cta.label} eventProps={{ location: "header" }} />
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -94,6 +96,14 @@ export default function HeaderNav({
                   {item.label}
                 </Link>
               ))}
+              <div className="pt-2 border-t border-black/10">
+                <CTAButton
+                  href={cta.href}
+                  label={cta.label}
+                  eventProps={{ location: "mobile_nav" }}
+                  className="w-full"
+                />
+              </div>
             </nav>
           </div>
         </>

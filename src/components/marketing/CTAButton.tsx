@@ -11,12 +11,14 @@ export default function CTAButton({
   variant = "primary",
   eventName = "cta_click",
   eventProps,
+  className,
 }: {
   href: string;
   label: string;
   variant?: Variant;
   eventName?: string;
   eventProps?: Record<string, string | number | boolean | undefined>;
+  className?: string;
 }) {
   const base =
     "inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl px-5 py-3 text-sm font-medium shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20";
@@ -29,7 +31,7 @@ export default function CTAButton({
     <Link
       href={href}
       onClick={() => track(eventName, { href, label, variant, ...eventProps })}
-      className={`${base} ${styles}`}
+      className={`${base} ${styles}${className ? ` ${className}` : ""}`}
     >
       {label}
     </Link>
