@@ -47,7 +47,7 @@ export default function ComparisonTable({
             <div className="text-sm font-medium text-black/80">{row.feature}</div>
             <div className="mt-3 flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-[var(--tomato)]">Heirloom</span>
+                <span className="font-display text-xs font-semibold text-[var(--tomato)]">Heirloom</span>
                 <Cell value={row.heirloom} />
               </div>
               {hasNamedCols ? (
@@ -79,7 +79,7 @@ export default function ComparisonTable({
             <tr className="border-b border-black/10 bg-[var(--cream)]">
               <th className="px-5 py-3 text-left font-medium text-black/50">Feature</th>
               <th className="px-4 py-3 text-center">
-                <span className="font-semibold text-[var(--tomato)]">Heirloom</span>
+                <span className="font-display font-semibold text-[var(--tomato)]">Heirloom</span>
               </th>
               {hasNamedCols ? (
                 <>

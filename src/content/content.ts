@@ -135,7 +135,7 @@ const sharedNav = [
   { label: "About", href: urls.about },
 ];
 
-const sharedFAQs: FAQItem[] = [
+export const sharedFAQs: FAQItem[] = [
   {
     q: "Does it work from the Share Sheet?",
     a: "Yes—saving from the Share Sheet is the core of Heirloom Recipe Box.",
@@ -304,7 +304,6 @@ const sharedComparisonTable: PageSection = {
     { feature: "Private by default",                       heirloom: true,      paprika: true,      recime: "Varies"  },
     { feature: "On-device audio processing",               heirloom: true,      paprika: false,     recime: false     },
     { feature: "Share with accept/consent",                heirloom: true,      paprika: false,     recime: false     },
-    { feature: "Grocery list & meal planning",             heirloom: "Coming",  paprika: true,      recime: true      },
     { feature: "iOS, Mac, Android, Windows",               heirloom: "iOS",     paprika: "All",     recime: "iOS+Android" },
   ],
 };
@@ -547,7 +546,6 @@ export const pages: Record<
       },
       sharedTechShowcase,
       sharedComparisonTable,
-      sharedSocialProof,
       { kind: "faq", id: "faq", title: "FAQ", items: sharedFAQs },
       {
         kind: "cta",
@@ -564,7 +562,7 @@ export const pages: Record<
     meta: {
       title: "Preserve recipes from cooking videos — Heirloom Recipe Box",
       description:
-        "Preserve recipes from TikTok, Instagram, YouTube before they disappear. Extract any recipe and keep it forever.",
+        "Save recipes from videos — TikTok, Instagram, YouTube — before they disappear. Heirloom extracts any cooking video so you can preserve it forever.",
     },
     nav: sharedNav,
     hero: {
@@ -637,7 +635,7 @@ export const pages: Record<
     meta: {
       title: "Preserve handwritten recipe cards — Heirloom Recipe Box",
       description:
-        "Preserve grandma's handwriting and cookbook pages before they fade. Point your camera—Heirloom captures the recipe.",
+        "Digitize handwritten recipes and scan cookbook pages before they fade. Point your camera—Heirloom captures and preserves every recipe.",
     },
     nav: sharedNav,
     hero: {
@@ -703,7 +701,7 @@ export const pages: Record<
     meta: {
       title: "Preserve PDF recipe collections — Heirloom Recipe Box",
       description:
-        "Family recipe printouts, scanned cookbook pages. Preserve them in a format that lasts.",
+        "Import recipe PDFs — family printouts, scanned cookbook pages. Heirloom extracts each recipe and preserves it in a format that lasts.",
     },
     nav: sharedNav,
     hero: {
@@ -769,7 +767,7 @@ export const pages: Record<
     meta: {
       title: "Generate and preserve recipes — Heirloom Recipe Box",
       description:
-        "Describe a dish, list what's in the fridge, or recreate a memory. AI generates a recipe you can preserve and pass on.",
+        "AI recipe generator — describe a dish, list what's in the fridge, or recreate a memory. Heirloom writes a recipe you can preserve and pass on.",
     },
     nav: sharedNav,
     hero: {
@@ -834,7 +832,7 @@ export const pages: Record<
     meta: {
       title: "Kitchen Table — Cook with the people closest to you",
       description:
-        "Cook with the people closest to you. Kitchen Table is your private recipe space for family and close friends — share recipes, coordinate meals, build a shared cookbook.",
+        "Family recipe sharing app — Kitchen Table is your private space for up to 8 members. Share recipes, coordinate meals, and build a shared cookbook with the people closest to you.",
     },
     nav: sharedNav,
     hero: {

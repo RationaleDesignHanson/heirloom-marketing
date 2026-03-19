@@ -59,6 +59,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  // Smart App Banner — replace app-id with the numeric App Store ID when the app ships
+  other: {
+    "apple-itunes-app": "app-id=000000000",
+  },
 };
 
 export default function RootLayout({

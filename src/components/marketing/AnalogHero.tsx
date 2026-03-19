@@ -10,42 +10,49 @@ import { useState, useEffect } from "react";
 
 // The 3 most evocative recipe card photos from our analog library
 const ANALOG_CARDS = [
-  { src: "/assets/heirloom-demo/cards/RecipeCard_01.jpg", rotate: "-rotate-3", z: "z-10", offset: "translate-x-4 -translate-y-2" },
-  { src: "/assets/heirloom-demo/cards/RecipeCard_05.jpg", rotate: "rotate-2",  z: "z-20", offset: "translate-x-0 translate-y-0" },
-  { src: "/assets/heirloom-demo/cards/RecipeCard_09.jpg", rotate: "rotate-6",  z: "z-10", offset: "-translate-x-4 translate-y-3" },
+  { src: "/assets/heirloom-demo/cards/RecipeCard_01.jpg", rotate: "-rotate-3", z: "z-10", offset: "translate-x-3 -translate-y-1.5" },
+  { src: "/assets/heirloom-demo/cards/RecipeCard_05.jpg", rotate: "rotate-2", z: "z-20", offset: "translate-x-0 translate-y-0" },
+  { src: "/assets/heirloom-demo/cards/RecipeCard_09.jpg", rotate: "rotate-6", z: "z-10", offset: "-translate-x-3 translate-y-2.5" },
 ];
 
 export default function AnalogHero() {
   const [revealed, setRevealed] = useState(false);
 
-  // Animate in after mount
   useEffect(() => {
     const t = setTimeout(() => setRevealed(true), 300);
     return () => clearTimeout(t);
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center gap-5">
-
-      {/* ── Analog cards cluster ─────────────────────────── */}
-      <div className="relative h-52 w-64 sm:h-60 sm:w-72">
-        {ANALOG_CARDS.map((card, i) => (
-          <div
-            key={i}
-            className={`absolute inset-0 transform transition-all duration-700
+    <div className="relative flex w-full max-w-[21rem] flex-col items-center gap-4 overflow-visible px-1 sm:max-w-[22rem] sm:gap-5">
+      {/* Outer cushion so rotated cards are never clipped */}
+      <div className="relative flex min-h-[13rem] w-full items-center justify-center overflow-visible py-2 sm:min-h-[15rem]">
+        <div className="relative h-48 w-60 overflow-visible sm:h-52 sm:w-72">
+          {ANALOG_CARDS.map((card, i) => (
+            <div
+              key={i}
+              className={`absolute inset-0 transform transition-all duration-700
               ${card.rotate} ${card.offset} ${card.z}
               ${revealed ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
-            style={{ transitionDelay: `${i * 120}ms` }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={card.src}
-              alt="Family recipe card"
-              className="h-full w-full rounded-xl border border-black/10 object-cover shadow-md"
-            />
-          </div>
-        ))}
+              style={{ transitionDelay: `${i * 120}ms` }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={card.src}
+                alt="Family recipe card"
+                className="h-full w-full rounded-xl border border-black/10 object-cover shadow-md"
+              />
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Desktop: subtle horizontal connectors */}
+      <div
+        className={`hidden w-full max-w-[12rem] border-t border-black/[0.08] md:block ${revealed ? "opacity-100" : "opacity-0"}`}
+        style={{ transitionDelay: "420ms" }}
+        aria-hidden
+      />
 
       {/* ── Arrow / bridge ───────────────────────────────── */}
       <div
@@ -59,13 +66,18 @@ export default function AnalogHero() {
         </svg>
       </div>
 
+      <div
+        className={`hidden w-full max-w-[12rem] border-t border-black/[0.08] md:block ${revealed ? "opacity-100" : "opacity-0"}`}
+        style={{ transitionDelay: "520ms" }}
+        aria-hidden
+      />
+
       {/* ── App card preview ─────────────────────────────── */}
       <div
-        className={`w-64 sm:w-72 rounded-2xl border border-black/10 bg-white p-4 shadow-lg transition-all duration-700
+        className={`w-full max-w-[18rem] rounded-2xl border border-[var(--terracotta)]/45 bg-white p-4 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12),0_2px_8px_rgba(180,90,60,0.08)] transition-all duration-700 sm:max-w-[18rem]
           ${revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
         style={{ transitionDelay: "600ms" }}
       >
-        {/* Card header */}
         <div className="flex items-center justify-between">
           <div>
             <div className="text-xs text-black/40">Grandma Kay · 1987 · Gen 1</div>
@@ -78,28 +90,24 @@ export default function AnalogHero() {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="my-3 h-px bg-black/6" />
 
-        {/* Ingredients preview */}
         <div className="text-[10px] font-semibold uppercase tracking-wider text-black/40">Ingredients</div>
-        <ul className="mt-1.5 space-y-1">
+        <ul className="mt-1.5 space-y-1 font-sans">
           {["2 lbs Italian sausage", "1 can San Marzano tomatoes", "Fresh basil, torn"].map((ing) => (
             <li key={ing} className="flex items-center gap-1.5 text-xs text-black/70">
-              <span className="h-1 w-1 rounded-full bg-[var(--tomato)]" />
+              <span className="h-1 w-1 shrink-0 rounded-full bg-[var(--tomato)]" />
               {ing}
             </li>
           ))}
         </ul>
 
-        {/* Footer badges */}
-        <div className="mt-3 flex items-center gap-2">
+        <div className="mt-3 flex items-center gap-2 font-sans">
           <span className="rounded-full bg-[var(--cream)] px-2 py-0.5 text-[10px] text-black/50">2h 30m</span>
           <span className="rounded-full bg-[var(--cream)] px-2 py-0.5 text-[10px] text-black/50">Serves 6</span>
           <span className="ml-auto text-[10px] text-black/30">3 generations</span>
         </div>
       </div>
-
     </div>
   );
 }

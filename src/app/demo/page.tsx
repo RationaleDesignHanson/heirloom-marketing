@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { FileText, Link2, Mic, ScanLine, Sparkles, Video } from "lucide-react";
 import { HeirloomDemo } from "@/components/heirloom";
 import { HeirloomDemoMobile } from "@/components/heirloom/HeirloomDemoMobile";
 import HeaderNav from "@/components/marketing/HeaderNav";
 import Footer from "@/components/marketing/Footer";
-import { pages } from "@/content/content";
+import { pages, urls } from "@/content/content";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomrecipebox.app";
 
@@ -52,17 +54,39 @@ export default function DemoPage() {
           <HeirloomDemo />
         </div>
 
-        {/* Callout below */}
-        <div className="mt-12 rounded-2xl border border-black/10 bg-white/80 p-8 text-center shadow-sm backdrop-blur">
-          <p className="text-sm text-black/60">
-            This is just one of six ways Heirloom captures recipes — web, video, PDF, voice, AI generation, and camera scan.
+        <div className="mt-12 rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm backdrop-blur sm:p-8">
+          <p className="text-center text-sm text-black/60">
+            This is just one of six ways Heirloom captures recipes — explore each import path:
           </p>
-          <a
-            href={pages.home.hero.primaryCta.href}
-            className="mt-4 inline-flex items-center gap-2 rounded-full bg-[var(--tomato)] px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-opacity hover:opacity-90"
-          >
-            {pages.home.hero.primaryCta.label}
-          </a>
+          <div className="mt-5 flex flex-wrap justify-center gap-2 sm:gap-2.5">
+            {(
+              [
+                { label: "Video", href: urls.lpVideo, Icon: Video },
+                { label: "Scan", href: urls.lpScan, Icon: ScanLine },
+                { label: "Voice", href: urls.howItWorks, Icon: Mic },
+                { label: "URL", href: "/kitchen-table", Icon: Link2 },
+                { label: "PDF", href: urls.lpPdf, Icon: FileText },
+                { label: "AI generate", href: urls.lpGenerate, Icon: Sparkles },
+              ] as const
+            ).map(({ label, href, Icon }) => (
+              <Link
+                key={label}
+                href={href}
+                className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-2 text-xs font-medium text-black/80 shadow-sm transition-colors hover:border-black/20 hover:bg-[var(--cream)] sm:text-sm"
+              >
+                <Icon className="h-3.5 w-3.5 shrink-0 text-[var(--tomato)] sm:h-4 sm:w-4" aria-hidden />
+                {label}
+              </Link>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <a
+              href={pages.home.hero.primaryCta.href}
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--tomato)] px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-opacity hover:opacity-90"
+            >
+              {pages.home.hero.primaryCta.label}
+            </a>
+          </div>
         </div>
       </main>
 

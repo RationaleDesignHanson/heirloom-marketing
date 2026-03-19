@@ -3,9 +3,12 @@ import { pages } from "@/content/content";
 import { resolvePage } from "@/components/marketing/resolvePage";
 import type { Metadata } from "next";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomrecipebox.app";
+
 export const metadata: Metadata = {
   title: pages.lpGenerate.meta.title,
   description: pages.lpGenerate.meta.description,
+  alternates: { canonical: `${siteUrl}/lp/generate` },
   openGraph: { images: [{ url: "/og/generate.png", width: 1200, height: 630 }] },
 };
 

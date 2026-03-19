@@ -9,6 +9,8 @@ export default function VideoShowcase({
   subtitle?: string;
   demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" };
 }) {
+  const isLandscapeHero = demo.video.includes("16x9");
+
   return (
     <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-[var(--cream)] p-5 shadow-sm sm:p-8 lg:p-10">
       {/* Background texture at low opacity */}
@@ -27,7 +29,7 @@ export default function VideoShowcase({
 
         {/* Phone — hidden on small screens */}
         <div className="hidden md:block lg:justify-self-end">
-          <PhoneDemo demo={demo} />
+          <PhoneDemo demo={demo} videoObjectFit={isLandscapeHero ? "contain" : "cover"} />
         </div>
       </div>
     </div>

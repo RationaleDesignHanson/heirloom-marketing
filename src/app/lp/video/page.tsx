@@ -3,9 +3,12 @@ import { pages } from "@/content/content";
 import { resolvePage } from "@/components/marketing/resolvePage";
 import type { Metadata } from "next";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomrecipebox.app";
+
 export const metadata: Metadata = {
   title: pages.lpVideo.meta.title,
   description: pages.lpVideo.meta.description,
+  alternates: { canonical: `${siteUrl}/lp/video` },
   openGraph: { images: [{ url: "/og/video.png", width: 1200, height: 630 }] },
 };
 

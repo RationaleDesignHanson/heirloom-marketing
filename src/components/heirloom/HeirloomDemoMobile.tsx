@@ -11,6 +11,7 @@
 import { useState, useRef, useCallback } from "react";
 import { SAMPLE_RECIPE_CARDS, SAMPLE_COOKBOOK_PAGES } from "@/lib/heirloom/sample-recipes";
 import { DEMO_STICKERS } from "@/lib/heirloom/demo-stickers";
+import { urls } from "@/content/content";
 
 type Step = "select" | "extracting" | "result";
 
@@ -213,6 +214,20 @@ export function HeirloomDemoMobile() {
               </div>
             ))}
           </div>
+
+          {/* Skeleton preview of the recipe card while extracting */}
+          <div className="mt-6 rounded-xl border border-black/8 bg-white p-4 text-left shadow-sm">
+            <div className="h-5 w-[72%] max-w-[14rem] animate-pulse rounded-md bg-black/[0.08]" />
+            <div className="mt-3 space-y-2">
+              <div className="h-2.5 w-full animate-pulse rounded bg-black/[0.06]" />
+              <div className="h-2.5 w-[88%] animate-pulse rounded bg-black/[0.06]" />
+              <div className="h-2.5 w-[64%] animate-pulse rounded bg-black/[0.06]" />
+            </div>
+            <div className="mt-4 flex gap-2">
+              <div className="h-6 w-16 animate-pulse rounded-full bg-black/[0.06]" />
+              <div className="h-6 w-14 animate-pulse rounded-full bg-black/[0.06]" />
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -338,7 +353,7 @@ export function HeirloomDemoMobile() {
       {/* CTA + try another */}
       <div className="flex gap-2">
         <a
-          href="#"
+          href={urls.appStore}
           className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tomato)] px-4 py-3 text-sm font-semibold text-white shadow-sm active:opacity-90"
         >
           Save in Heirloom

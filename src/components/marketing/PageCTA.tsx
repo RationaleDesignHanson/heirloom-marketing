@@ -1,5 +1,6 @@
 import CTAButton from "./CTAButton";
 import EmailCapture from "./EmailCapture";
+import { urls } from "@/content/content";
 
 export default function PageCTA({
   title,
@@ -27,7 +28,7 @@ export default function PageCTA({
         />
       </div>
 
-      {emailCapture && (
+      {emailCapture && urls.appStore === "#" && (
         <div className="mt-6">
           <EmailCapture
             formName={emailCapture.formName}

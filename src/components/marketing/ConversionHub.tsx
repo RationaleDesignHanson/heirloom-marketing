@@ -31,7 +31,7 @@ const staggerDelays = ["0.1s", "0.15s", "0.2s", "0.25s", "0.3s", "0.35s"];
 
 export default function ConversionHub() {
   return (
-    <div className="relative mx-auto w-full max-w-[520px] lg:max-w-[520px]">
+    <div className="relative mx-auto w-full max-w-[min(100%,28rem)] md:max-w-[30rem] lg:max-w-[520px]">
       {/* SVG connectors: card → center so dashes flow toward hub */}
       <svg
         className="pointer-events-none absolute inset-0 z-0 h-full w-full"
@@ -53,13 +53,13 @@ export default function ConversionHub() {
         ))}
       </svg>
 
-      <div className="relative z-10 grid grid-cols-2 gap-4">
+      <div className="relative z-10 grid grid-cols-2 gap-3 md:gap-3.5 lg:gap-4">
         {/* Row 1 */}
         <SpokeCard spoke={spokes[0]} staggerDelay={staggerDelays[0]} />
         <SpokeCard spoke={spokes[1]} staggerDelay={staggerDelays[1]} />
 
         {/* Row 2: cards + center hub */}
-        <div className="col-span-2 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+        <div className="col-span-2 grid grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-3.5 lg:gap-4">
           <SpokeCard spoke={spokes[2]} staggerDelay={staggerDelays[2]} />
           {/* Center hub */}
           <div
@@ -113,7 +113,7 @@ function SpokeCard({
       className="conversionhub-spoke-group flex flex-col items-center text-center"
       style={{ animation: `fadeInUp 0.5s ease-out ${staggerDelay} both` }}
     >
-      <div className="conversionhub-spoke-card flex w-full max-w-[280px] flex-col items-center rounded-xl border border-[var(--terracotta)]/30 bg-white/95 px-3 py-2 shadow-sm transition-all duration-200 ease-out">
+      <div className="conversionhub-spoke-card flex w-full max-w-[240px] flex-col items-center rounded-xl border border-[var(--terracotta)]/30 bg-white/95 px-2.5 py-2 shadow-sm transition-all duration-200 ease-out md:max-w-[260px] lg:max-w-[280px] md:px-3">
         <Icon
           className="h-5 w-5 shrink-0 text-[var(--tomato)]"
           strokeWidth={2}

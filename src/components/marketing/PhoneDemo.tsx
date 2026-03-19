@@ -4,8 +4,11 @@ import { useState } from "react";
 
 export default function PhoneDemo({
   demo,
+  videoObjectFit = "cover",
 }: {
   demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" };
+  /** Landscape hero videos (16×9) read better with letterboxing inside the phone frame */
+  videoObjectFit?: "cover" | "contain";
 }) {
   const [videoFailed, setVideoFailed] = useState(false);
 
@@ -21,7 +24,7 @@ export default function PhoneDemo({
           <div className="aspect-[9/19.5]">
             {!videoFailed ? (
               <video
-                className="h-full w-full object-cover"
+                className={`h-full w-full ${videoObjectFit === "contain" ? "object-contain" : "object-cover"}`}
                 autoPlay
                 muted
                 loop
@@ -43,7 +46,7 @@ export default function PhoneDemo({
               <img
                 src={demo.poster}
                 alt={demo.alt}
-                className="h-full w-full object-cover"
+                className={`h-full w-full ${videoObjectFit === "contain" ? "object-contain" : "object-cover"}`}
               />
             )}
           </div>

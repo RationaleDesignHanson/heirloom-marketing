@@ -86,11 +86,26 @@ export function SampleRecipeSelector({ onSelectSample, onUploadOwn }: SampleReci
       </div>
 
       {/* Desktop: Grid */}
-      <div className="hidden sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
+      <div className="hidden sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {displaySamples.map((sample) => (
           <RecipeCard key={sample.id} sample={sample} />
         ))}
       </div>
+
+      <p className="mt-5 hidden text-center text-sm text-black/50 sm:block">
+        <span aria-hidden className="text-black/35">
+          ←{" "}
+        </span>
+        Pick a card above to begin, or{" "}
+        <button
+          type="button"
+          onClick={onUploadOwn}
+          className="font-medium text-[var(--tomato)] underline decoration-black/15 underline-offset-2 transition-colors hover:decoration-[var(--tomato)]"
+        >
+          upload your own recipe photo
+        </button>
+        .
+      </p>
     </div>
   );
 }

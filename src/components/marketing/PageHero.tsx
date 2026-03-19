@@ -3,6 +3,7 @@ import PhoneDemo from "./PhoneDemo";
 import ConversionHub from "./ConversionHub";
 import AnalogHero from "./AnalogHero";
 import EmailCapture from "./EmailCapture";
+import { urls } from "@/content/content";
 
 export default function PageHero({
   hero,
@@ -68,7 +69,7 @@ export default function PageHero({
                 )}
               </div>
 
-              {hero.emailCapture && (
+              {hero.emailCapture && urls.appStore === "#" && (
                 <div className="mt-6">
                   <EmailCapture
                     formName={hero.emailCapture.formName}
@@ -88,7 +89,10 @@ export default function PageHero({
               ) : isAnalog ? (
                 <AnalogHero />
               ) : (
-                <PhoneDemo demo={hero.demo} />
+                <PhoneDemo
+                  demo={hero.demo}
+                  videoObjectFit={hero.demo.video.includes("16x9") ? "contain" : "cover"}
+                />
               )}
             </div>
           </div>

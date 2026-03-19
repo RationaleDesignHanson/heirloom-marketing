@@ -84,7 +84,7 @@ export default function PricingCredits({
                   </div>
                 )}
               </div>
-              <div className="mt-2 text-2xl font-semibold tracking-tight">{plan.price}</div>
+              <div className="font-display mt-2 text-2xl font-semibold tracking-tight">{plan.price}</div>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-black/70">
                 {plan.bullets.map((b, i) => (
                   <li key={i}>{b}</li>

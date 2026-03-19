@@ -26,7 +26,7 @@ function FAQRow({ item }: { item: FAQItem }) {
       className="min-h-[44px] w-full px-6 py-4 text-left"
     >
       <div className="flex items-center justify-between gap-6">
-        <div className="text-sm font-semibold text-black">{item.q}</div>
+        <div className="font-display text-sm font-semibold text-black">{item.q}</div>
         <div className="text-black/60">{open ? "−" : "+"}</div>
       </div>
       {open && <div className="mt-3 text-sm text-black/70">{item.a}</div>}

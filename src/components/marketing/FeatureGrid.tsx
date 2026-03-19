@@ -58,7 +58,7 @@ export default function FeatureGrid({
               </div>
             )}
             <div className="text-center">
-              <div className="text-base font-semibold">{it.title}</div>
+              <div className="font-display text-base font-semibold">{it.title}</div>
               <div className="mt-2 text-sm text-black/70">{it.body}</div>
             </div>
           </div>
