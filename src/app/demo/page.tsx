@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HeirloomDemo } from "@/components/heirloom";
+import { HeirloomDemoMobile } from "@/components/heirloom/HeirloomDemoMobile";
 import HeaderNav from "@/components/marketing/HeaderNav";
 import Footer from "@/components/marketing/Footer";
 import { pages } from "@/content/content";
@@ -41,8 +42,15 @@ export default function DemoPage() {
           </p>
         </div>
 
-        {/* Demo component */}
-        <HeirloomDemo />
+        {/* Mobile: snappy 3-step version */}
+        <div className="sm:hidden">
+          <HeirloomDemoMobile />
+        </div>
+
+        {/* Desktop: full interactive version */}
+        <div className="hidden sm:block">
+          <HeirloomDemo />
+        </div>
 
         {/* Callout below */}
         <div className="mt-12 rounded-2xl border border-black/10 bg-white/80 p-8 text-center shadow-sm backdrop-blur">
