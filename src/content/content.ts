@@ -607,13 +607,13 @@ export const pages: Record<
           },
           {
             title: "No copy/paste",
-            body: "Keep browsing while the import runs in the background.",
-            image: "/assets/screens/cap_kt_table_events.png",
+            body: "Keep browsing while the import runs in the background. Heirloom handles extraction quietly.",
+            image: "/assets/screens/cap_collection_overview.png",
           },
           {
             title: "Organized automatically",
-            body: "A Recipe Box you'll actually use.",
-            image: "/assets/screens/cap_13_attribution.png",
+            body: "Every saved video becomes a structured recipe card — title, ingredients, steps, attribution. A Recipe Box you'll actually use.",
+            image: "/assets/screens/cap_disc_pack_detail.png",
           },
           {
             title: "Silent videos too",
@@ -684,9 +684,9 @@ export const pages: Record<
             images: ["/assets/screens/cap_11_saved_recipe.png", "/assets/screens/cap_gravy_diff.png"],
           },
           {
-            title: "Private by default",
-            body: "Your Recipe Box stays yours.",
-            image: "/assets/screens/cap_05_privacy_pills.png",
+            title: "Saved forever",
+            body: "Once scanned, it's yours. Your Recipe Box is private by default — every card stays on your device and in your account only.",
+            image: "/assets/screens/cap_11_saved_recipe.png",
           },
         ],
       },
