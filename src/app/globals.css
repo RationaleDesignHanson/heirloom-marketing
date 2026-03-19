@@ -2,6 +2,7 @@
 
 @theme {
   --color-scheme: light;
+  --font-display: var(--font-lora), Georgia, "Times New Roman", serif;
 }
 
 :root {
@@ -41,6 +42,11 @@ body {
 }
 
 @layer base {
+  /* ── Display serif — matches app's .design(.serif) / New York ── */
+  h1, h2 {
+    font-family: var(--font-display);
+  }
+
   .legal {
     @apply text-[15px] leading-7 text-[var(--ink)];
   }
