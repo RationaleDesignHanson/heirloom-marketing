@@ -38,7 +38,7 @@ export function renderSection(section: PageSection) {
     case "featureGrid":
       return (
         <Section id={section.id}>
-          <FeatureGrid title={section.title} items={section.items} columns={section.columns ?? 3} />
+          <FeatureGrid title={section.title} items={section.items} columns={section.columns ?? 3} layout={section.layout ?? "grid"} />
         </Section>
       );
 

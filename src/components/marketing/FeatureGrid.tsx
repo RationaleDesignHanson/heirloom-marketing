@@ -1,5 +1,6 @@
 import type { FeatureItem } from "@/content/content";
 import CyclingImage from "./CyclingImage";
+import FeatureShowcase from "./FeatureShowcase";
 
 function PhoneFrame({ src, alt, images }: { src?: string; alt: string; images?: string[] }) {
   const hasCycling = images && images.length > 1;
@@ -10,7 +11,7 @@ function PhoneFrame({ src, alt, images }: { src?: string; alt: string; images?: 
         {/* Notch */}
         <div className="absolute top-1.5 left-1/2 z-10 h-2.5 w-10 -translate-x-1/2 rounded-md bg-gray-800" />
         {/* Screen */}
-        <div className="overflow-hidden rounded-[1rem] bg-white">
+        <div className="relative overflow-hidden rounded-[1rem] bg-white">
           {hasCycling ? (
             <CyclingImage
               images={images}
@@ -26,6 +27,12 @@ function PhoneFrame({ src, alt, images }: { src?: string; alt: string; images?: 
               loading="lazy"
             />
           )}
+          {/* Status bar overlay — hides messy status bars / recording dots */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-10 bg-gradient-to-b from-black/25 to-transparent" />
+          {/* Home indicator */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-2 z-10 flex justify-center">
+            <div className="h-1 w-1/3 rounded-full bg-black/20" />
+          </div>
         </div>
       </div>
     </div>
@@ -36,12 +43,21 @@ export default function FeatureGrid({
   title,
   items,
   columns = 3,
+  layout = "grid",
 }: {
   title: string;
   items: FeatureItem[];
   columns?: 3 | 4;
+  layout?: "grid" | "showcase";
 }) {
-  const cols = columns === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-2 lg:grid-cols-3";
+  if (layout === "showcase") {
+    return <FeatureShowcase title={title} items={items} />;
+  }
+
+  const cols =
+    columns === 4
+      ? "sm:grid-cols-2 lg:grid-cols-4"
+      : "sm:grid-cols-2 lg:grid-cols-3";
 
   return (
     <div>

@@ -1,5 +1,5 @@
 export type FAQItem = { q: string; a: string };
-export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[] };
+export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[]; bullets?: string[] };
 export type StepItem = { title: string; body?: string };
 export type TechPillarItem = { title: string; body: string; detail: string; icon: string };
 export type ComparisonRowItem = {
@@ -38,6 +38,7 @@ export type PageSection =
       title: string;
       items: FeatureItem[];
       columns?: 3 | 4;
+      layout?: "grid" | "showcase";
     }
   | {
       kind: "socialProof";
@@ -380,6 +381,7 @@ export const pages: Record<
         id: "preservation",
         title: "Built for preservation, not just saving",
         columns: 3,
+        layout: "showcase",
         items: [
           {
             title: "Capture everything",
@@ -596,6 +598,7 @@ export const pages: Record<
         id: "features",
         title: "Built for video recipes",
         columns: 4,
+        layout: "showcase",
         items: [
           {
             title: "Works across platforms",
@@ -668,6 +671,7 @@ export const pages: Record<
         id: "features",
         title: "Perfect for cookbooks and handwriting",
         columns: 3,
+        layout: "showcase",
         items: [
           {
             title: "Cookbook pages",
@@ -871,6 +875,7 @@ export const pages: Record<
         id: "kitchen-table-features",
         title: "Your Table. Your rules.",
         columns: 3,
+        layout: "showcase",
         items: [
           {
             title: "Your Table, your rules",
