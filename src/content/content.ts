@@ -385,7 +385,7 @@ export const pages: Record<
           {
             title: "Capture everything",
             body: "Websites, videos, cookbooks, PDFs, voice, AI — six ways to save so nothing slips through.",
-            image: "/assets/screens/cap_03_share_to_heirloom.png",
+            images: ["/assets/screens/cap_03_share_to_heirloom.png", "/assets/screens/cap_share_flow_02.png"],
           },
           {
             title: "Know where it came from",
@@ -413,12 +413,12 @@ export const pages: Record<
         kind: "featureGrid",
         id: "heritage-features",
         title: "Not a bookmark. A living record.",
-        columns: 3,
+        columns: 4,
         items: [
           {
             title: "Scan your cookbooks",
             body: "Point your camera at any page — handwritten cards, cookbook pages, clippings.",
-            image: "/assets/screens/cap_18_scan_result.png",
+            images: ["/assets/screens/cap_18_scan_result.png", "/assets/screens/cap_18_scan_extracted.png"],
           },
           {
             title: "Save cooking videos",
@@ -429,6 +429,11 @@ export const pages: Record<
             title: "Dictate from memory",
             body: "Read grandma's recipe aloud. Heirloom transcribes and structures it.",
             images: ["/assets/screens/reada.png", "/assets/screens/readb.png"],
+          },
+          {
+            title: "Make it yours",
+            body: "Restyle recipe cards with illustrated art — watercolor, woodcut, vintage print. Your box, your aesthetic.",
+            images: ["/assets/screens/cap_recipe_card_restyle_before.png", "/assets/screens/cap_recipe_card_styled.png"],
           },
         ],
       },
@@ -503,12 +508,12 @@ export const pages: Record<
           {
             title: "From the web",
             body: "Articles, blogs, newsletters—save and move on.",
-            image: "/assets/screens/cap_03_share_to_heirloom.png",
+            images: ["/assets/screens/cap_03_share_to_heirloom.png", "/assets/screens/cap_share_flow_02.png"],
           },
           {
             title: "From PDFs",
             body: "Cookbooks, printables, family recipes—clean and readable.",
-            image: "/assets/screens/cap_18_scan_result.png",
+            images: ["/assets/screens/cap_18_scan_result.png", "/assets/screens/cap_18_scan_extracted.png"],
           },
           {
             title: "From videos",
@@ -669,12 +674,12 @@ export const pages: Record<
           {
             title: "Cookbook pages",
             body: "Turn printed recipes into clean steps.",
-            image: "/assets/screens/cap_18_scan_result.png",
+            images: ["/assets/screens/cap_18_scan_result.png", "/assets/screens/cap_18_scan_extracted.png"],
           },
           {
             title: "Handwritten cards",
             body: "Capture the recipes you don't want to lose.",
-            image: "/assets/screens/cap_11_saved_recipe.png",
+            images: ["/assets/screens/cap_11_saved_recipe.png", "/assets/screens/cap_gravy_diff.png"],
           },
           {
             title: "Private by default",
@@ -735,12 +740,12 @@ export const pages: Record<
           {
             title: "Digital cookbooks",
             body: "Import from ebook and PDF cookbooks.",
-            image: "/assets/screens/cap_18_scan_result.png",
+            images: ["/assets/screens/cap_18_scan_result.png", "/assets/screens/cap_18_scan_extracted.png"],
           },
           {
             title: "Scanned pages",
             body: "Even photographed or scanned recipe pages work.",
-            image: "/assets/screens/cap_11_saved_recipe.png",
+            images: ["/assets/screens/cap_11_saved_recipe.png", "/assets/screens/cap_gravy_diff.png"],
           },
           {
             title: "Batch-friendly",
@@ -811,7 +816,7 @@ export const pages: Record<
           {
             title: "Clean recipe card",
             body: "Every generated recipe is structured, editable, and ready to cook.",
-            image: "/assets/screens/cap_11_saved_recipe.png",
+            images: ["/assets/screens/cap_11_saved_recipe.png", "/assets/screens/cap_gravy_diff.png"],
           },
         ],
       },
