@@ -2,7 +2,14 @@ export type FAQItem = { q: string; a: string };
 export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[] };
 export type StepItem = { title: string; body?: string };
 export type TechPillarItem = { title: string; body: string; detail: string; icon: string };
-export type ComparisonRowItem = { feature: string; heirloom: boolean | string; others: boolean | string };
+export type ComparisonRowItem = {
+  feature: string;
+  heirloom: boolean | string;
+  paprika?: boolean | string;
+  recime?: boolean | string;
+  /** Legacy fallback when paprika/recime are not set */
+  others?: boolean | string;
+};
 export type TeamMemberItem = { name: string; role: string; bio: string; skills?: string[] };
 export type MetricItem = { value: string; label: string };
 export type Hero = {
@@ -231,6 +238,18 @@ const sharedSocialProof: PageSection = {
   items: [],
 };
 
+const sharedTrustBar: PageSection = {
+  kind: "trustBar",
+  id: "trust",
+  items: [
+    "73% of family recipes lost in one generation",
+    "6 import methods",
+    "50 free credits — no card required",
+    "Private by default",
+    "On-device audio processing",
+  ],
+};
+
 const sharedTechShowcase: PageSection = {
   kind: "techShowcase",
   id: "technology",
@@ -275,16 +294,18 @@ const sharedComparisonTable: PageSection = {
   title: "How Heirloom compares",
   subtitle: "Built different from the start.",
   rows: [
-    { feature: "Save from any URL", heirloom: true, others: true },
-    { feature: "Video-to-recipe (TikTok, YouTube)", heirloom: true, others: "Some" },
-    { feature: "Cookbook scanning (camera + PDF)", heirloom: true, others: "Limited" },
-    { feature: "Voice dictation", heirloom: true, others: false },
-    { feature: "AI recipe generation", heirloom: true, others: false },
-    { feature: "Offline editing with sync", heirloom: true, others: "Limited" },
-    { feature: "Recipe attribution & lineage", heirloom: true, others: false },
-    { feature: "Private by default", heirloom: true, others: "Varies" },
-    { feature: "On-device audio processing", heirloom: true, others: false },
-    { feature: "Share with accept/consent", heirloom: true, others: false },
+    { feature: "Save from any URL",                        heirloom: true,      paprika: true,      recime: true      },
+    { feature: "Video-to-recipe (TikTok, YouTube)",        heirloom: true,      paprika: false,     recime: "Limited" },
+    { feature: "Cookbook scanning (camera + PDF)",         heirloom: true,      paprika: false,     recime: false     },
+    { feature: "Voice dictation",                          heirloom: true,      paprika: false,     recime: false     },
+    { feature: "AI recipe generation",                     heirloom: true,      paprika: false,     recime: "Limited" },
+    { feature: "Offline editing with sync",                heirloom: true,      paprika: true,      recime: true      },
+    { feature: "Recipe attribution & lineage",             heirloom: true,      paprika: false,     recime: false     },
+    { feature: "Private by default",                       heirloom: true,      paprika: true,      recime: "Varies"  },
+    { feature: "On-device audio processing",               heirloom: true,      paprika: false,     recime: false     },
+    { feature: "Share with accept/consent",                heirloom: true,      paprika: false,     recime: false     },
+    { feature: "Grocery list & meal planning",             heirloom: "Coming",  paprika: true,      recime: true      },
+    { feature: "iOS, Mac, Android, Windows",               heirloom: "iOS",     paprika: "All",     recime: "iOS+Android" },
   ],
 };
 
@@ -318,7 +339,7 @@ export const pages: Record<
       subhead:
         "Recipes are cultural heritage — not bookmarks. Heirloom captures, preserves, and shares your family's food culture so nothing is lost.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
-      secondaryCta: { label: "See how it works", href: urls.howItWorks },
+      secondaryCta: { label: "Try the demo →", href: "/demo" },
       emailCapture: { formName: "notify", placeholder: "you@domain.com", buttonLabel: "Notify me" },
       trustLine: "Private by default — Your recipes stay yours",
       demo: {
@@ -410,6 +431,7 @@ export const pages: Record<
           },
         ],
       },
+      sharedTrustBar,
       sharedPricingSection,
       { kind: "faq", id: "faq", title: "FAQ", items: sharedFAQs },
       {
@@ -589,7 +611,8 @@ export const pages: Record<
           {
             title: "Silent videos too",
             body: "ASMR cooking videos with no voice? Heirloom extracts the recipe from visuals alone.",
-            image: "/assets/screens/cap_asmr_result.png",
+            // TODO: replace with cap_asmr_result.png once captured
+            image: "/assets/screens/cap_12_video_result.png",
           },
         ],
       },
@@ -848,12 +871,14 @@ export const pages: Record<
           {
             title: "Your Table, your rules",
             body: "Members see only what you share. No algorithm, no follower count. Just the recipes you trust with the people you'd invite to dinner.",
-            image: "/assets/screens/cap_kt_table_view.png",
+            // TODO: replace with cap_kt_table_view.png once captured
+            image: "/assets/screens/cap_04_share.png",
           },
           {
             title: "Table Events",
             body: "When a meal is coming up, the host kicks off an Event. Members suggest dishes from shared recipes. A shared shopping list assembles automatically.",
-            image: "/assets/screens/cap_kt_table_events.png",
+            // TODO: replace with cap_kt_table_events.png once captured
+            image: "/assets/screens/cap_03b_share_flow.png",
           },
           {
             title: "1:1 sharing",
@@ -888,8 +913,9 @@ export const pages: Record<
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Full attribution. Every recipe tracks its creator.",
       demo: {
-        video: "/assets/video/lp-discovery-hero-16x9.mp4",
-        poster: "/assets/posters/lp-discovery-hero.jpg",
+        // TODO: replace with lp-discovery-hero-16x9.mp4 once captured
+        video: "/assets/video/lp-heritage-hero-16x9.mp4",
+        poster: "/assets/posters/lp-heritage-hero.jpg",
         alt: "Browse Theme Packs in Heirloom Recipe Box",
         aspect: "9:16",
       },
@@ -914,17 +940,20 @@ export const pages: Record<
           {
             title: "First-party curated",
             body: "Thanksgiving Classics, Mom's Kitchen, Sourdough Deep Dive — Heirloom selections.",
-            image: "/assets/screens/cap_disc_packs.png",
+            // TODO: replace with cap_disc_packs.png once captured
+            image: "/assets/screens/cap_11_saved_recipe.png",
           },
           {
             title: "Creator packs",
             body: "Partner-published collections with full branding and attribution.",
-            image: "/assets/screens/cap_disc_pack_detail.png",
+            // TODO: replace with cap_disc_pack_detail.png once captured
+            image: "/assets/screens/cap_13_attribution.png",
           },
           {
             title: "Seasonal & cultural",
             body: "Holiday cookie exchange, West African staples, weeknight Korean.",
-            image: "/assets/screens/cap_disc_pack_detail.png",
+            // TODO: replace with cap_disc_pack_detail.png once captured
+            image: "/assets/screens/cap_12_video_result.png",
           },
         ],
       },

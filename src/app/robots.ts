@@ -7,7 +7,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/demo/",
+      // Keep internal QA/test demo sub-pages out of search
+      disallow: ["/demo/recipe", "/demo/recette", "/demo/handwritten", "/demo/pdf-sample"],
     },
     sitemap: `${siteUrl}/sitemap.xml`,
   };

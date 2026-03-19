@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Lora } from "next/font/google";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomrecipebox.app";
@@ -14,20 +14,50 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Display serif — matches the app's .design(.serif) / New York aesthetic
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "Heirloom Recipe Box",
-  description: "Preserve your family's recipes forever.",
+  title: {
+    default: "Heirloom Recipe Box — Preserve Your Family's Recipes",
+    template: "%s | Heirloom Recipe Box",
+  },
+  description:
+    "73% of family recipes are lost within one generation. Heirloom captures, preserves, and shares recipes from any source — video, scan, voice, URL, PDF, or AI. Free to start.",
   metadataBase: new URL(siteUrl),
+  keywords: [
+    "family recipe app",
+    "preserve family recipes",
+    "recipe heritage app",
+    "save recipes from tiktok",
+    "cookbook scanning app",
+    "recipe organizer ios",
+    "digitize handwritten recipes",
+    "recipe sharing app",
+    "recipe attribution",
+    "family cookbook app",
+  ],
   openGraph: {
-    title: "Heirloom Recipe Box",
-    description: "Preserve your family's recipes forever.",
-    images: ["/og/default.png"],
+    title: "Heirloom Recipe Box — Preserve Your Family's Recipes",
+    description:
+      "73% of family recipes are lost within one generation. Heirloom captures, preserves, and shares recipes from any source — video, scan, voice, URL, PDF, or AI.",
+    images: [{ url: "/og/default.png", width: 1200, height: 630, alt: "Heirloom Recipe Box" }],
+    type: "website",
+    siteName: "Heirloom Recipe Box",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Heirloom Recipe Box",
-    description: "Preserve your family's recipes forever.",
+    title: "Heirloom Recipe Box — Preserve Your Family's Recipes",
+    description:
+      "73% of family recipes are lost within one generation. Heirloom captures and preserves recipes from video, scan, voice, URL, PDF, or AI.",
     images: ["/og/default.png"],
+  },
+  alternates: {
+    canonical: siteUrl,
   },
 };
 
@@ -37,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={lora.variable}>
       <head>
         {/* Privacy-friendly analytics by Plausible */}
         <script async src="https://plausible.io/js/pa-Zzne4uIAt3Bo6bQUgdJOs.js"></script>
@@ -48,6 +78,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+
     </html>
   );
 }
