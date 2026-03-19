@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomrecipebox.app";
 
 export const metadata: Metadata = {
-  title: "Kitchen Table — Cook with the People Closest to You | Heirloom Recipe Box",
+  title: "Kitchen Table — Cook with the People Closest to You",
   description:
     "Kitchen Table is your private shared recipe space for family and close friends. Share recipes, plan meals together, and build a shared family cookbook — up to 8 members, no algorithm.",
   alternates: { canonical: `${siteUrl}/kitchen-table` },

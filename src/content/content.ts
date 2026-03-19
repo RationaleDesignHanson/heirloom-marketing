@@ -457,7 +457,7 @@ export const pages: Record<
    * ─────────────────────────────────────────────────────── */
   howItWorks: {
     meta: {
-      title: "How it works — Heirloom Recipe Box",
+      title: "How it works",
       description:
         "Every capture method. One preservation system. Turn links, PDFs, and videos into recipes you'll preserve forever.",
     },
@@ -562,7 +562,7 @@ export const pages: Record<
 
   lpVideo: {
     meta: {
-      title: "Preserve recipes from cooking videos — Heirloom Recipe Box",
+      title: "Preserve recipes from cooking videos",
       description:
         "Save recipes from videos — TikTok, Instagram, YouTube — before they disappear. Heirloom extracts any cooking video so you can preserve it forever.",
     },
@@ -636,7 +636,7 @@ export const pages: Record<
 
   lpScan: {
     meta: {
-      title: "Preserve handwritten recipe cards — Heirloom Recipe Box",
+      title: "Preserve handwritten recipe cards",
       description:
         "Digitize handwritten recipes and scan cookbook pages before they fade. Point your camera—Heirloom captures and preserves every recipe.",
     },
@@ -703,7 +703,7 @@ export const pages: Record<
 
   lpPdf: {
     meta: {
-      title: "Preserve PDF recipe collections — Heirloom Recipe Box",
+      title: "Preserve PDF recipe collections",
       description:
         "Import recipe PDFs — family printouts, scanned cookbook pages. Heirloom extracts each recipe and preserves it in a format that lasts.",
     },
@@ -769,7 +769,7 @@ export const pages: Record<
 
   lpGenerate: {
     meta: {
-      title: "Generate and preserve recipes — Heirloom Recipe Box",
+      title: "Generate and preserve recipes",
       description:
         "AI recipe generator — describe a dish, list what's in the fridge, or recreate a memory. Heirloom writes a recipe you can preserve and pass on.",
     },
@@ -909,7 +909,7 @@ export const pages: Record<
 
   discovery: {
     meta: {
-      title: "Recipes that carry culture forward — Heirloom Recipe Box",
+      title: "Recipes that carry culture forward",
       description:
         "Theme Packs from holidays, cuisines, and creators. Save any recipe with full attribution—so it becomes part of your food story.",
     },
@@ -978,7 +978,7 @@ export const pages: Record<
 
   community: {
     meta: {
-      title: "Community — Heirloom Recipe Box",
+      title: "Community",
       description: "Join the Heirloom community and beta testing group.",
     },
     nav: sharedNav,
@@ -1016,7 +1016,7 @@ export const pages: Record<
 
   presskit: {
     meta: {
-      title: "Press Kit — Heirloom Recipe Box",
+      title: "Press Kit",
       description: "Press resources for Heirloom Recipe Box.",
     },
     nav: sharedNav,
@@ -1053,7 +1053,7 @@ export const pages: Record<
 
   about: {
     meta: {
-      title: "About — Heirloom Recipe Box",
+      title: "About",
       description:
         "The story behind Heirloom Recipe Box. Built by Rationale Studio to preserve family food culture.",
     },
@@ -1140,7 +1140,7 @@ export const pages: Record<
 
   technology: {
     meta: {
-      title: "Technology — Heirloom Recipe Box",
+      title: "Technology",
       description:
         "How Heirloom works: multi-pass AI, CRDT sync, on-device transcription, and cryptographic provenance.",
     },
