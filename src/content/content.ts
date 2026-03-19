@@ -1,5 +1,5 @@
 export type FAQItem = { q: string; a: string };
-export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[] };
+export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[]; bullets?: string[] };
 export type StepItem = { title: string; body?: string };
 export type TechPillarItem = { title: string; body: string; detail: string; icon: string };
 export type ComparisonRowItem = {
@@ -38,6 +38,7 @@ export type PageSection =
       title: string;
       items: FeatureItem[];
       columns?: 3 | 4;
+      layout?: "grid" | "showcase";
     }
   | {
       kind: "socialProof";
