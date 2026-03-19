@@ -597,7 +597,7 @@ export const pages: Record<
         kind: "featureGrid",
         id: "features",
         title: "Built for video recipes",
-        columns: 3,
+        columns: 4,
         items: [
           {
             title: "Works across platforms",
