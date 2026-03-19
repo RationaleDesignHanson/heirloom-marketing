@@ -163,9 +163,12 @@ Landscape or portrait. Save to `public/assets/screens/`. Use for App Store iPad 
 | `public/brand/icon-64.png` | 64×64 PNG | Export from app icon |
 | `public/brand/icon-1024.png` | 1024×1024 PNG | App Store asset |
 | `public/og/default.png` | 1200×630 | Composited hero for social share |
+| `public/og/how-it-works.png` | 1200×630 | `/how-it-works` — hero (Conversion Hub) crop; re-export from comp when the hero changes |
 | `public/assets/bg/landing-hero.png` | Full-bleed background | Photo or gradient |
 | `public/assets/bg/screenshot-frame.png` | Phone frame mask | Design asset |
 | `public/assets/press/presskit-header.png` | Press hero | Brand composited |
+
+After replacing any `public/og/*.png`, refresh link-preview caches: [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/), [opengraph.xyz](https://www.opengraph.xyz/), or X Card Validator on the deployed URL.
 
 ---
 
