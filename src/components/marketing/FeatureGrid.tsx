@@ -15,14 +15,14 @@ function PhoneFrame({ src, alt, images }: { src?: string; alt: string; images?: 
             <CyclingImage
               images={images}
               alt={alt}
-              className="aspect-[9/16] w-full"
+              className="aspect-[9/19.5] w-full"
             />
           ) : (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={src}
               alt={alt}
-              className="aspect-[9/16] w-full object-cover object-top"
+              className="aspect-[9/19.5] w-full object-cover object-top"
               loading="lazy"
             />
           )}
