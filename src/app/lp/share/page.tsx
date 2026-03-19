@@ -1,14 +1,6 @@
-import MarketingPage from "@/components/marketing/MarketingPage";
-import { pages } from "@/content/content";
-import { resolvePage } from "@/components/marketing/resolvePage";
-import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: pages.lpShare.meta.title,
-  description: pages.lpShare.meta.description,
-};
-
-export default async function ShareLanding({ searchParams }: { searchParams?: Promise<{ v?: string }> }) {
-  const params = await searchParams;
-  return <MarketingPage page={resolvePage(pages.lpShare, params?.v)} />;
+// /lp/share is now /kitchen-table — permanent redirect
+export default function ShareRedirect() {
+  redirect("/kitchen-table");
 }

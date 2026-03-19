@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: pages.lpPdf.meta.title,
   description: pages.lpPdf.meta.description,
+  openGraph: { images: [{ url: "/og/scan.png", width: 1200, height: 630 }] },
 };
 
 export default async function PdfLanding({ searchParams }: { searchParams?: Promise<{ v?: string }> }) {

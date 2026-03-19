@@ -9,7 +9,8 @@ const routes: { path: string; priority: number; changeFrequency: "daily" | "week
   { path: "/lp/scan",      priority: 0.9, changeFrequency: "weekly"  },
   { path: "/lp/pdf",       priority: 0.8, changeFrequency: "weekly"  },
   { path: "/lp/generate",  priority: 0.8, changeFrequency: "weekly"  },
-  { path: "/lp/share",     priority: 0.8, changeFrequency: "weekly"  },
+  { path: "/lp/share",     priority: 0.3, changeFrequency: "monthly" }, // redirects to /kitchen-table
+  { path: "/kitchen-table", priority: 0.9, changeFrequency: "weekly"  },
   { path: "/discovery",    priority: 0.7, changeFrequency: "weekly"  },
   { path: "/demo",         priority: 0.8, changeFrequency: "monthly" },
   { path: "/technology",   priority: 0.7, changeFrequency: "monthly" },

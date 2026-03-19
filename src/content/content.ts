@@ -20,7 +20,7 @@ export type Hero = {
   emailCapture?: { formName: string; placeholder?: string; buttonLabel?: string };
   trustLine?: string;
   demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" };
-  visual?: "phone" | "diagram";
+  visual?: "phone" | "diagram" | "analog";
 };
 
 export type PageSection =
@@ -129,7 +129,7 @@ const sharedNav = [
   { label: "Video", href: urls.lpVideo },
   { label: "Scan", href: urls.lpScan },
   { label: "Generate", href: urls.lpGenerate },
-  { label: "Share", href: urls.lpShare },
+  { label: "Kitchen Table", href: "/kitchen-table" },
   { label: "Discover", href: urls.discovery },
   { label: "Technology", href: urls.technology },
   { label: "About", href: urls.about },
@@ -348,6 +348,7 @@ export const pages: Record<
         alt: "Preserving family recipes in Heirloom Recipe Box",
         aspect: "9:16",
       },
+      visual: "analog",
     },
     sections: [
       {
@@ -394,7 +395,7 @@ export const pages: Record<
           {
             title: "Share with family",
             body: "Send recipes to the people who matter. They tap Accept and it's in their Recipe Box.",
-            image: "/assets/screens/cap_04_share.png",
+            image: "/assets/screens/cap_kt_table_view.png",
           },
         ],
       },
@@ -535,7 +536,7 @@ export const pages: Record<
           {
             title: "Share with family",
             body: "Send recipes to anyone. They tap Accept and it's in their box.",
-            image: "/assets/screens/cap_04_share.png",
+            image: "/assets/screens/cap_kt_table_view.png",
           },
         ],
       },
@@ -601,7 +602,7 @@ export const pages: Record<
           {
             title: "No copy/paste",
             body: "Keep browsing while the import runs in the background.",
-            image: "/assets/screens/cap_03b_share_flow.png",
+            image: "/assets/screens/cap_kt_table_events.png",
           },
           {
             title: "Organized automatically",
@@ -611,7 +612,7 @@ export const pages: Record<
           {
             title: "Silent videos too",
             body: "ASMR cooking videos with no voice? Heirloom extracts the recipe from visuals alone.",
-            // TODO: replace with cap_asmr_result.png once captured
+            
             image: "/assets/screens/cap_12_video_result.png",
           },
         ],
@@ -744,7 +745,7 @@ export const pages: Record<
           {
             title: "Batch-friendly",
             body: "Import multiple recipes from a single PDF.",
-            image: "/assets/screens/cap_03b_share_flow.png",
+            image: "/assets/screens/cap_kt_table_events.png",
           },
         ],
       },
@@ -871,14 +872,14 @@ export const pages: Record<
           {
             title: "Your Table, your rules",
             body: "Members see only what you share. No algorithm, no follower count. Just the recipes you trust with the people you'd invite to dinner.",
-            // TODO: replace with cap_kt_table_view.png once captured
-            image: "/assets/screens/cap_04_share.png",
+            
+            image: "/assets/screens/cap_kt_table_view.png",
           },
           {
             title: "Table Events",
             body: "When a meal is coming up, the host kicks off an Event. Members suggest dishes from shared recipes. A shared shopping list assembles automatically.",
-            // TODO: replace with cap_kt_table_events.png once captured
-            image: "/assets/screens/cap_03b_share_flow.png",
+            
+            image: "/assets/screens/cap_kt_table_events.png",
           },
           {
             title: "1:1 sharing",
@@ -913,9 +914,9 @@ export const pages: Record<
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Full attribution. Every recipe tracks its creator.",
       demo: {
-        // TODO: replace with lp-discovery-hero-16x9.mp4 once captured
-        video: "/assets/video/lp-heritage-hero-16x9.mp4",
-        poster: "/assets/posters/lp-heritage-hero.jpg",
+        
+        video: "/assets/video/lp-discovery-hero-16x9.mp4",
+        poster: "/assets/posters/lp-discovery-hero.jpg",
         alt: "Browse Theme Packs in Heirloom Recipe Box",
         aspect: "9:16",
       },
@@ -940,20 +941,20 @@ export const pages: Record<
           {
             title: "First-party curated",
             body: "Thanksgiving Classics, Mom's Kitchen, Sourdough Deep Dive — Heirloom selections.",
-            // TODO: replace with cap_disc_packs.png once captured
-            image: "/assets/screens/cap_11_saved_recipe.png",
+            
+            image: "/assets/screens/cap_disc_packs.png",
           },
           {
             title: "Creator packs",
             body: "Partner-published collections with full branding and attribution.",
-            // TODO: replace with cap_disc_pack_detail.png once captured
-            image: "/assets/screens/cap_13_attribution.png",
+            
+            image: "/assets/screens/cap_disc_pack_detail.png",
           },
           {
             title: "Seasonal & cultural",
             body: "Holiday cookie exchange, West African staples, weeknight Korean.",
-            // TODO: replace with cap_disc_pack_detail.png once captured
-            image: "/assets/screens/cap_12_video_result.png",
+            
+            image: "/assets/screens/cap_collection_overview.png",
           },
         ],
       },

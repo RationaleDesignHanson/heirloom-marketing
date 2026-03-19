@@ -1,6 +1,7 @@
 import CTAButton from "./CTAButton";
 import PhoneDemo from "./PhoneDemo";
 import ConversionHub from "./ConversionHub";
+import AnalogHero from "./AnalogHero";
 import EmailCapture from "./EmailCapture";
 
 export default function PageHero({
@@ -14,10 +15,11 @@ export default function PageHero({
     emailCapture?: { formName: string; placeholder?: string; buttonLabel?: string };
     trustLine?: string;
     demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" };
-    visual?: "phone" | "diagram";
+    visual?: "phone" | "diagram" | "analog";
   };
 }) {
   const isDiagram = hero.visual === "diagram";
+  const isAnalog = hero.visual === "analog";
 
   return (
     <section className="px-4 sm:px-6 lg:px-8">
@@ -35,7 +37,11 @@ export default function PageHero({
             {/* Copy block — wider column so headlines fit in 2–3 lines */}
             <div className="min-w-0">
               <div className="inline-flex items-center rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/70 shadow-sm backdrop-blur">
-                {isDiagram ? "Multiple import methods. One Recipe Box." : "One tap. Private by default."}
+                {isDiagram
+                  ? "Multiple import methods. One Recipe Box."
+                  : isAnalog
+                  ? "Before they're gone forever."
+                  : "One tap. Private by default."}
               </div>
               <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-black sm:text-5xl lg:text-[2.75rem] lg:leading-tight">
                 {hero.h1}
@@ -79,6 +85,8 @@ export default function PageHero({
             <div className="hidden md:block lg:justify-self-end">
               {isDiagram ? (
                 <ConversionHub />
+              ) : isAnalog ? (
+                <AnalogHero />
               ) : (
                 <PhoneDemo demo={hero.demo} />
               )}
