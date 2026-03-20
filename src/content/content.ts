@@ -1,5 +1,5 @@
 export type FAQItem = { q: string; a: string };
-export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[]; bullets?: string[] };
+export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[]; bullets?: string[]; cardBg?: string; frameStyle?: "phone" | "naked" | "none"; dark?: boolean };
 export type StepItem = { title: string; body?: string };
 export type TechPillarItem = { title: string; body: string; detail: string; icon: string };
 export type ComparisonRowItem = {
@@ -420,21 +420,30 @@ export const pages: Record<
             title: "Scan your cookbooks",
             body: "Point your camera at any page — handwritten cards, cookbook pages, clippings.",
             images: ["/assets/screens/cap_18_scan_result.png", "/assets/screens/cap_18_scan_extracted.png"],
+            cardBg: "bg-[#FBF6EF]",
+            frameStyle: "phone",
           },
           {
             title: "Save cooking videos",
             body: "TikTok, Instagram, YouTube — extract the recipe and keep it forever.",
             image: "/assets/screens/cap_12_video_result.png",
+            cardBg: "bg-[#1C1917]",
+            frameStyle: "naked",
+            dark: true,
           },
           {
             title: "Dictate from memory",
             body: "Read grandma's recipe aloud. Heirloom transcribes and structures it.",
             images: ["/assets/screens/reada.png", "/assets/screens/readb.png"],
+            cardBg: "bg-[#F0F4F8]",
+            frameStyle: "phone",
           },
           {
             title: "Make it yours",
-            body: "Restyle recipe cards with illustrated art — watercolor, woodcut, vintage print. Your box, your aesthetic.",
+            body: "Restyle recipe cards with illustrated art — watercolor, woodcut, vintage print.",
             images: ["/assets/screens/cap_recipe_card_restyle_before.png", "/assets/screens/cap_recipe_card_styled.png"],
+            cardBg: "bg-[#FEF0EC]",
+            frameStyle: "naked",
           },
         ],
       },
