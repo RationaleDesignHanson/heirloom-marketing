@@ -2,6 +2,7 @@
 
 import type { FeatureItem } from "@/content/content";
 import CyclingImage from "./CyclingImage";
+import FeatureInfographic from "./FeatureInfographic";
 
 function ShowcaseImage({
   src,
@@ -132,6 +133,9 @@ export default function FeatureShowcase({
                         </li>
                       ))}
                     </ul>
+                  )}
+                  {item.infographic && (
+                    <FeatureInfographic id={item.infographic} />
                   )}
                 </div>
               </div>

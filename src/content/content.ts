@@ -1,5 +1,5 @@
 export type FAQItem = { q: string; a: string };
-export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[]; bullets?: string[]; cardBg?: string; frameStyle?: "phone" | "naked" | "none"; dark?: boolean };
+export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[]; bullets?: string[]; cardBg?: string; frameStyle?: "phone" | "naked" | "none"; dark?: boolean; infographic?: "capture-methods" | "recipe-lineage" | "share-flow" };
 export type StepItem = { title: string; body?: string };
 export type TechPillarItem = { title: string; body: string; detail: string; icon: string };
 export type ComparisonRowItem = {
@@ -384,19 +384,40 @@ export const pages: Record<
         layout: "showcase",
         items: [
           {
-            title: "Capture everything",
-            body: "Websites, videos, cookbooks, PDFs, voice, AI — six ways to save so nothing slips through.",
+            title: "From anywhere. In one tap.",
+            body: "Recipes live everywhere — tucked in videos, handwritten on cards, bookmarked and forgotten. Heirloom captures from every source so nothing slips through.",
+            bullets: [
+              "Share from Safari, TikTok, or Instagram in one tap",
+              "Camera-scan any cookbook page or handwritten card",
+              "Import from any cooking video — even silent ASMR",
+              "Dictate from memory, drop a PDF, or generate from scratch",
+            ],
             images: ["/assets/screens/cap_03_share_to_heirloom.png", "/assets/screens/cap_share_flow_02.png"],
+            infographic: "capture-methods",
           },
           {
-            title: "Know where it came from",
-            body: "Every recipe tracks its origin, its author, and everyone who's shared it.",
+            title: "Every recipe carries its history.",
+            body: "When you save a recipe, Heirloom records where it came from — the URL, the video, the person who shared it. When it changes hands, the chain stays intact.",
+            bullets: [
+              "Source URL or video preserved with every import",
+              "Family attribution shows who passed it to you",
+              "Version history when a recipe evolves across generations",
+              "No recipe ever loses its story",
+            ],
             image: "/assets/screens/cap_13_attribution.png",
+            infographic: "recipe-lineage",
           },
           {
-            title: "Share with family",
-            body: "Send recipes to the people who matter. They tap Accept and it's in their Recipe Box.",
+            title: "Share with intention, not broadcast.",
+            body: "Recipes go to people, not timelines. Recipients choose whether to accept — it lands in their Recipe Box, credited to you, forever.",
+            bullets: [
+              "Send to one person or your whole Kitchen Table",
+              "They tap Accept — it lands in their Recipe Box",
+              "You stay credited as the source",
+              "Private by default — their box, their rules",
+            ],
             image: "/assets/screens/cap_kt_table_view.png",
+            infographic: "share-flow",
           },
         ],
       },
