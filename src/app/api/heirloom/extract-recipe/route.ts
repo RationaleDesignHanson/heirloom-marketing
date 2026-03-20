@@ -128,7 +128,7 @@ IMPORTANT RULES:
 - INSTRUCTIONS FORMATTING: Each array element must be ONE single action or closely related actions (1–2 sentences max). NEVER combine multiple steps into one paragraph. Split long paragraphs into individual steps.
 - Instructions MUST be complete. If the image shows ingredients but no visible instructions, INFER reasonable cooking steps based on the dish name and ingredients.
 - For handwritten recipes, carefully interpret each word. Use recipe context to resolve ambiguity.
-- If the recipe is in a non-English language, translate to English while preserving original measurements.
+- If the recipe is in a non-English language (French, Italian, Spanish, German, Polish, Portuguese, Dutch, Swedish, Czech, Hungarian, Japanese, Chinese, or any other language), translate the title, ingredients, and instructions to English while preserving original measurements and quantities exactly. Do not convert units.
 - Never return empty instructions or ingredients arrays.
 - If you cannot find a recipe in the image, return: {"error": "Could not extract recipe from image"}`;
 
