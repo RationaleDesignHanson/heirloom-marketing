@@ -118,11 +118,18 @@ export default function FeatureShowcase({
                   <h3 className="font-display text-xl font-semibold tracking-tight sm:text-2xl">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-black/60 sm:text-base">
+                  {/* Short copy on mobile, full copy on sm+ */}
+                  {item.bodyShort && (
+                    <p className="mt-3 text-sm leading-relaxed text-black/60 sm:hidden">
+                      {item.bodyShort}
+                    </p>
+                  )}
+                  <p className={`mt-3 text-sm leading-relaxed text-black/60 sm:text-base ${item.bodyShort ? "hidden sm:block" : ""}`}>
                     {item.body}
                   </p>
+                  {/* Bullets — desktop only */}
                   {item.bullets && item.bullets.length > 0 && (
-                    <ul className="mt-4 space-y-2">
+                    <ul className="mt-4 hidden space-y-2 sm:block">
                       {item.bullets.map((bullet, bi) => (
                         <li
                           key={bi}
@@ -134,8 +141,11 @@ export default function FeatureShowcase({
                       ))}
                     </ul>
                   )}
+                  {/* Infographic — desktop only */}
                   {item.infographic && (
-                    <FeatureInfographic id={item.infographic} />
+                    <div className="hidden sm:block">
+                      <FeatureInfographic id={item.infographic} />
+                    </div>
                   )}
                 </div>
               </div>

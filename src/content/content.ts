@@ -1,5 +1,5 @@
 export type FAQItem = { q: string; a: string };
-export type FeatureItem = { title: string; body: string; icon?: string; image?: string; images?: string[]; bullets?: string[]; cardBg?: string; frameStyle?: "phone" | "naked" | "none"; dark?: boolean; infographic?: "capture-methods" | "recipe-lineage" | "share-flow" };
+export type FeatureItem = { title: string; body: string; bodyShort?: string; icon?: string; image?: string; images?: string[]; bullets?: string[]; cardBg?: string; frameStyle?: "phone" | "naked" | "none"; dark?: boolean; infographic?: "capture-methods" | "recipe-lineage" | "share-flow" };
 export type StepItem = { title: string; body?: string };
 export type TechPillarItem = { title: string; body: string; detail: string; icon: string };
 export type ComparisonRowItem = {
@@ -386,10 +386,11 @@ export const pages: Record<
           {
             title: "From anywhere. In one tap.",
             body: "Recipes live everywhere — tucked in videos, handwritten on cards, bookmarked and forgotten. Heirloom captures from every source so nothing slips through.",
+            bodyShort: "Six ways to save — scan, video, URL, voice, PDF, or generate. One place to keep them.",
             bullets: [
-              "Share from Safari, TikTok, or Instagram in one tap",
+              "Share from Safari or any social app in one tap",
               "Camera-scan any cookbook page or handwritten card",
-              "Import from any cooking video — even silent ASMR",
+              "Import from any cooking video — even silent ones",
               "Dictate from memory, drop a PDF, or generate from scratch",
             ],
             images: ["/assets/screens/cap_03_share_to_heirloom.png", "/assets/screens/cap_share_flow_02.png"],
@@ -398,6 +399,7 @@ export const pages: Record<
           {
             title: "Every recipe carries its history.",
             body: "When you save a recipe, Heirloom records where it came from — the URL, the video, the person who shared it. When it changes hands, the chain stays intact.",
+            bodyShort: "Source, author, and every hand it passed through — recorded automatically.",
             bullets: [
               "Source URL or video preserved with every import",
               "Family attribution shows who passed it to you",
@@ -410,6 +412,7 @@ export const pages: Record<
           {
             title: "Share with intention, not broadcast.",
             body: "Recipes go to people, not timelines. Recipients choose whether to accept — it lands in their Recipe Box, credited to you, forever.",
+            bodyShort: "Send to a person. They accept. It lands in their Recipe Box, credited to you.",
             bullets: [
               "Send to one person or your whole Kitchen Table",
               "They tap Accept — it lands in their Recipe Box",
