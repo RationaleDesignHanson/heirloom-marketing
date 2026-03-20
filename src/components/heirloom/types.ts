@@ -40,6 +40,7 @@ export interface Recipe {
   servings?: string | null;
   prepTime?: string | null;
   cookTime?: string | null;
+  notes?: string | null;
   confidence?: RecipeConfidence;
 }
 
