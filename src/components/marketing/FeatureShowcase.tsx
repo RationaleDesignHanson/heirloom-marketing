@@ -41,7 +41,29 @@ function ShowcaseImage({
   );
 }
 
-const rowBgs = ["bg-white", "bg-[#FAF7F2]"];
+// Alternating warm row backgrounds using brand palette
+const rowStyles = [
+  // Row 0: warm parchment with subtle texture overlay
+  {
+    bg: "bg-[#FBF6EF]",
+    texture: true,
+  },
+  // Row 1: soft cream white
+  {
+    bg: "bg-white",
+    texture: false,
+  },
+  // Row 2: warm terracotta tint
+  {
+    bg: "bg-[#FDF4EE]",
+    texture: true,
+  },
+  // Row 3: lightest warm white
+  {
+    bg: "bg-[#FAFAF8]",
+    texture: false,
+  },
+];
 
 export default function FeatureShowcase({
   title,
@@ -59,12 +81,23 @@ export default function FeatureShowcase({
       <div className="mt-6 overflow-hidden rounded-3xl border border-black/10">
         {items.map((item, idx) => {
           const isFlipped = idx % 2 === 1;
-          const bg = rowBgs[idx % 2];
+          const style = rowStyles[idx % rowStyles.length];
 
           return (
-            <div key={idx} className={`${bg} px-6 py-10 sm:px-12 sm:py-14`}>
+            <div
+              key={idx}
+              className={`relative ${style.bg} px-6 py-10 sm:px-12 sm:py-14`}
+            >
+              {/* Subtle landing-hero texture overlay on warm rows */}
+              {style.texture && (
+                <div
+                  className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.04]"
+                  style={{ backgroundImage: "url(/assets/bg/landing-hero.png)" }}
+                />
+              )}
+
               <div
-                className={`mx-auto grid max-w-4xl grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
+                className={`relative mx-auto grid max-w-4xl grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
                   isFlipped ? "lg:[&>*:first-child]:order-2" : ""
                 }`}
               >

@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 // The 3 most evocative recipe card photos from our analog library
 const ANALOG_CARDS = [
   { src: "/assets/heirloom-demo/cards/RecipeCard_01.jpg", rotate: "-rotate-3", z: "z-10", offset: "translate-x-3 -translate-y-1.5" },
-  { src: "/assets/heirloom-demo/cards/RecipeCard_05.jpg", rotate: "rotate-2", z: "z-20", offset: "translate-x-0 translate-y-0" },
+  { src: "/assets/heirloom-demo/cards/RecipeCard_05.jpeg", rotate: "rotate-2", z: "z-20", offset: "translate-x-0 translate-y-0" },
   { src: "/assets/heirloom-demo/cards/RecipeCard_09.jpg", rotate: "rotate-6", z: "z-10", offset: "-translate-x-3 translate-y-2.5" },
 ];
 
