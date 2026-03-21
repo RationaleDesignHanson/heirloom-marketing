@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   // Smart App Banner — replace app-id with the numeric App Store ID when the app ships
   other: {
-    "apple-itunes-app": "app-id=000000000",
+    "apple-itunes-app": "app-id=6759019723",
   },
 };
 
