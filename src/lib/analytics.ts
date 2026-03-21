@@ -10,12 +10,13 @@ declare global {
 export function track(eventName: string, props?: TrackProps) {
   if (typeof window === "undefined") return;
 
-  if (typeof window.plausible === "function") {
-    window.plausible(eventName, { props });
+  if (window.posthog && typeof window.posthog.capture === "function") {
+    window.posthog.capture(eventName, props);
     return;
   }
 
-  if (window.posthog && typeof window.posthog.capture === "function") {
-    window.posthog.capture(eventName, props);
+  // Fallback: Plausible (if ever re-enabled)
+  if (typeof window.plausible === "function") {
+    window.plausible(eventName, { props });
   }
 }
