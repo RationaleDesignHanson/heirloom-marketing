@@ -40,7 +40,7 @@ export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Rationale Studio",
+    name: "Heirloom Recipe Box",
     url: siteUrl,
     logo: `${siteUrl}/brand/icon-1024.png`,
     contactPoint: {

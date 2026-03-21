@@ -1092,13 +1092,13 @@ export const pages: Record<
     meta: {
       title: "About",
       description:
-        "The story behind Heirloom Recipe Box. Built by Rationale Studio to preserve family food culture.",
+        "The story behind Heirloom Recipe Box — built to preserve family food culture before it's lost.",
     },
     nav: sharedNav,
     hero: {
       h1: "Recipes worth\u00A0keeping",
       subhead:
-        "Heirloom is built by Rationale Studio to solve a simple problem: family recipes shouldn't be lost to time.",
+        "Built to solve a simple problem: family recipes shouldn't be lost to time.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       demo: {
         video: "/assets/video/lp1-save-hero-9x16.mp4",
@@ -1133,27 +1133,7 @@ export const pages: Record<
           ],
         },
       },
-      {
-        kind: "teamSection",
-        id: "team",
-        title: "Built by Rationale Studio",
-        subtitle: "A product studio focused on thoughtful software for real problems.",
-        members: [
-          {
-            name: "Matt Hanson",
-            role: "Founder & Engineer",
-            bio: "Full-stack engineer who built Heirloom from the ground up\u2014iOS app, backend infrastructure, AI pipeline, and marketing site. Previously built Zero Inbox (AI email client). Believes the best software solves real problems with genuine craft.",
-            skills: [
-              "Swift/SwiftUI",
-              "Firebase",
-              "AI/ML",
-              "Distributed Systems",
-              "Next.js",
-              "Product Design",
-            ],
-          },
-        ],
-      },
+
       {
         kind: "metricsBar",
         id: "metrics",
