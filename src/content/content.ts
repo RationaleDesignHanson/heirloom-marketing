@@ -83,7 +83,7 @@ export type PageSection =
   | { kind: "comparisonTable"; id: string; title: string; subtitle?: string; rows: ComparisonRowItem[] }
   | { kind: "teamSection"; id: string; title: string; subtitle?: string; members: TeamMemberItem[] }
   | { kind: "metricsBar"; id: string; items: MetricItem[] }
-  | { kind: "videoShowcase"; id: string; title: string; subtitle?: string; demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" } };
+  | { kind: "videoShowcase"; id: string; title: string; subtitle?: string; body?: string; bullets?: string[]; demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" } };
 
 export type MarketingPage = {
   meta: { title: string; description: string };
@@ -513,6 +513,13 @@ export const pages: Record<
         id: "demo",
         title: "See it in action",
         subtitle: "Save a recipe from Safari in one tap — no copy/paste, no switching apps.",
+        body: "Find a recipe anywhere — a blog, a video, a PDF. Tap Share, choose Heirloom, and it's done. The recipe is extracted, structured, and waiting in your Recipe Box.",
+        bullets: [
+          "Works from Safari, social apps, and your camera roll",
+          "Imports run in the background — keep browsing",
+          "AI extracts title, ingredients, and steps automatically",
+          "Private by default — nothing shared unless you choose",
+        ],
         demo: {
           video: "/assets/video/CardCapture.mp4",
           poster: "/assets/posters/card-capture-hero.jpg",
@@ -576,8 +583,12 @@ export const pages: Record<
           },
         ],
       },
-      sharedTechShowcase,
-      sharedComparisonTable,
+      {
+        kind: "techShowcase",
+        id: "technology",
+        title: "Under the hood",
+        items: sharedTechShowcase.items,
+      },
       { kind: "faq", id: "faq", title: "FAQ", items: sharedFAQs },
       {
         kind: "cta",

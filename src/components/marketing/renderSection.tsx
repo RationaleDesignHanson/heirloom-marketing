@@ -146,6 +146,8 @@ export function renderSection(section: PageSection) {
           <VideoShowcase
             title={section.title}
             subtitle={section.subtitle}
+            body={section.body}
+            bullets={section.bullets}
             demo={section.demo}
           />
         </Section>
