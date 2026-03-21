@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Heirloom Recipe Box — Preserve Your Family's Recipes",
     description:
       "73% of family recipes are lost within one generation. Heirloom captures, preserves, and shares recipes from any source — video, scan, voice, URL, PDF, or AI.",
-    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Heirloom Recipe Box" }],
+    images: [{ url: `${siteUrl}/opengraph-image`, width: 1200, height: 630, alt: "Heirloom Recipe Box" }],
     type: "website",
     siteName: "Heirloom Recipe Box",
   },
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Heirloom Recipe Box — Preserve Your Family's Recipes",
     description:
       "73% of family recipes are lost within one generation. Heirloom captures and preserves recipes from video, scan, voice, URL, PDF, or AI.",
-    images: ["/og/default.png"],
+    images: [`${siteUrl}/opengraph-image`],
   },
   alternates: {
     canonical: siteUrl,

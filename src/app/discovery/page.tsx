@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: pages.discovery.meta.title,
   description: pages.discovery.meta.description,
   alternates: { canonical: `${siteUrl}/discovery` },
-  openGraph: { images: [{ url: "/og/discovery.png", width: 1200, height: 630 }] },
 };
 
 export default function DiscoveryPage() {

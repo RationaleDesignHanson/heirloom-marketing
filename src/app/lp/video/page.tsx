@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: pages.lpVideo.meta.title,
   description: pages.lpVideo.meta.description,
   alternates: { canonical: `${siteUrl}/lp/video` },
-  openGraph: { images: [{ url: "/og/video.png", width: 1200, height: 630 }] },
 };
 
 export default async function VideoLanding({ searchParams }: { searchParams?: Promise<{ v?: string }> }) {

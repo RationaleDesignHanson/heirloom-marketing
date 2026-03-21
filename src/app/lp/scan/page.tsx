@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: pages.lpScan.meta.title,
   description: pages.lpScan.meta.description,
   alternates: { canonical: `${siteUrl}/lp/scan` },
-  openGraph: { images: [{ url: "/og/scan.png", width: 1200, height: 630 }] },
 };
 
 export default function ScanLanding() {

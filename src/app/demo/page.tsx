@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Try the Demo — Heirloom Recipe Box",
     description: "Upload a recipe photo. Watch AI extract and preserve it. Then add stickers and pass it down through generations.",
-    images: [{ url: "/og/demo.png", width: 1200, height: 630 }],
   },
 };
 

@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     title: "Kitchen Table — Heirloom Recipe Box",
     description:
       "A private space for up to 8 members. Share recipes, coordinate group meals, build a shared family cookbook.",
-    images: [{ url: "/og/kitchen-table.png", width: 1200, height: 630 }],
   },
 };
 

@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: pages.lpGenerate.meta.title,
   description: pages.lpGenerate.meta.description,
   alternates: { canonical: `${siteUrl}/lp/generate` },
-  openGraph: { images: [{ url: "/og/generate.png", width: 1200, height: 630 }] },
 };
 
 export default async function GenerateLanding({ searchParams }: { searchParams?: Promise<{ v?: string }> }) {
