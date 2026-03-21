@@ -82,7 +82,7 @@ export default function FeatureGrid({
               }`}
             >
               {(it.image || it.images) && frameStyle !== "none" && (
-                <div className="mb-5">
+                <div className="mb-5 w-full">
                   {frameStyle === "naked" ? (
                     <NakedImage src={it.image} alt={it.title} images={it.images} />
                   ) : (
