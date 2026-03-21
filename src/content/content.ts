@@ -687,7 +687,7 @@ export const pages: Record<
       trustLine: "Private by default — Share only when you choose",
       demo: {
         video: "/assets/video/lp-scan-hero-16x9.mp4",
-        poster: "/assets/posters/read-hero.jpg",
+        poster: "/assets/posters/lp-scan-hero.jpg",
         alt: "Scanning a recipe into Heirloom Recipe Box",
         aspect: "9:16",
       },
@@ -884,8 +884,8 @@ export const pages: Record<
       primaryCta: { label: "Download on the App Store", href: urls.appStore },
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       demo: {
-        video: "/assets/video/lp2-share-hero-16x9.mp4",
-        poster: "/assets/posters/lp2-share-hero.jpg",
+        video: "/assets/video/lp-kt-hero-9x16.mp4",
+        poster: "/assets/posters/lp-kt-hero.jpg",
         alt: "Kitchen Table — shared recipe space in Heirloom Recipe Box",
         aspect: "9:16",
       },
