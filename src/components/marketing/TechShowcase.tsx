@@ -1,7 +1,7 @@
 export type TechPillar = {
   title: string;
   body: string;
-  detail: string;
+  detail?: string;
   icon: string;
 };
 
@@ -33,9 +33,6 @@ export default function TechShowcase({
               <div>
                 <div className="text-base font-semibold">{pillar.title}</div>
                 <p className="mt-1 text-sm text-black/70">{pillar.body}</p>
-                <p className="mt-3 text-xs leading-relaxed text-black/50">
-                  {pillar.detail}
-                </p>
               </div>
             </div>
           </div>
