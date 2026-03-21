@@ -107,7 +107,7 @@ export const brand = {
 };
 
 export const urls = {
-  appStore: "#",
+  appStore: "https://apps.apple.com/app/heirloom-recipe-box/id6759019723",
   download: "#download",
   howItWorks: "/how-it-works",
   lpVideo: "/lp/video",
@@ -393,7 +393,7 @@ export const pages: Record<
               "Import from any cooking video — even silent ones",
               "Dictate from memory, drop a PDF, or generate from scratch",
             ],
-            images: ["/assets/screens/cap_03_share_to_heirloom.png", "/assets/screens/cap_share_flow_02.png"],
+            image: "/assets/screens/cap_share_action.png",
             infographic: "capture-methods",
           },
           {
@@ -406,7 +406,7 @@ export const pages: Record<
               "Version history when a recipe evolves across generations",
               "No recipe ever loses its story",
             ],
-            image: "/assets/screens/cap_13_attribution.png",
+            image: "/assets/screens/cap_gravy_lineage.png",
             infographic: "recipe-lineage",
           },
           {
@@ -419,7 +419,7 @@ export const pages: Record<
               "You stay credited as the source",
               "Private by default — their box, their rules",
             ],
-            image: "/assets/screens/cap_kt_table_view.png",
+            images: ["/assets/screens/cap_04_shareb.png", "/assets/screens/cap_04_sharec.png"],
             infographic: "share-flow",
           },
         ],
@@ -443,14 +443,14 @@ export const pages: Record<
           {
             title: "Scan your cookbooks",
             body: "Point your camera at any page — handwritten cards, cookbook pages, clippings.",
-            images: ["/assets/screens/cap_18_scan_result.png", "/assets/screens/cap_18_scan_extracted.png"],
+            images: ["/assets/screens/cap_scan_camera.png", "/assets/screens/cap_scan_extracted.png", "/assets/screens/cap_03b_share_flow.png"],
             cardBg: "bg-[#FBF6EF]",
             frameStyle: "phone",
           },
           {
             title: "Save cooking videos",
             body: "TikTok, Instagram, YouTube — even ASMR videos with no voiceover. Processing continues in the background.",
-            image: "/assets/screens/cap_video_import_confirm.png",
+            image: "/assets/screens/cap_video_import_hd.png",
             cardBg: "bg-[#1C1917]",
             frameStyle: "naked",
             dark: true,
@@ -458,7 +458,7 @@ export const pages: Record<
           {
             title: "Dictate from memory",
             body: "Read grandma's recipe aloud. Heirloom listens, transcribes, and structures it into a clean recipe card.",
-            images: ["/assets/screens/cap_read_dictate.png", "/assets/screens/cap_read_recipe.png"],
+            images: ["/assets/screens/cap_dictate_active.png", "/assets/screens/cap_dictate_result.png"],
             cardBg: "bg-[#F0F4F8]",
             frameStyle: "phone",
           },
@@ -542,12 +542,12 @@ export const pages: Record<
           {
             title: "From the web",
             body: "Articles, blogs, newsletters—save and move on.",
-            images: ["/assets/screens/cap_03_share_to_heirloom.png", "/assets/screens/cap_share_flow_02.png"],
+            image: "/assets/screens/cap_share_action.png",
           },
           {
             title: "From PDFs",
             body: "Cookbooks, printables, family recipes—clean and readable.",
-            images: ["/assets/screens/cap_18_scan_result.png", "/assets/screens/cap_18_scan_extracted.png"],
+            images: ["/assets/screens/cap_scan_camera.png", "/assets/screens/cap_scan_extracted.png"],
           },
           {
             title: "From videos",
@@ -565,7 +565,7 @@ export const pages: Record<
           {
             title: "Read it aloud",
             body: "Dictate a recipe from memory — Heirloom transcribes and structures it.",
-            images: ["/assets/screens/reada.png", "/assets/screens/readb.png"],
+            images: ["/assets/screens/cap_dictate_active.png", "/assets/screens/cap_dictate_result.png"],
           },
           {
             title: "Generate with AI",
@@ -575,7 +575,7 @@ export const pages: Record<
           {
             title: "Share with family",
             body: "Send recipes to anyone. They tap Accept and it's in their box.",
-            image: "/assets/screens/cap_kt_table_view.png",
+            image: "/assets/screens/cap_kt_event.png",
           },
         ],
       },
@@ -641,18 +641,17 @@ export const pages: Record<
           {
             title: "No copy/paste",
             body: "Keep browsing while the import runs in the background. Heirloom handles extraction quietly.",
-            image: "/assets/screens/cap_collection_overview.png",
+            image: "/assets/screens/cap_03b_share_flow.png",
           },
           {
             title: "Organized automatically",
             body: "Every saved video becomes a structured recipe card — title, ingredients, steps, attribution. A Recipe Box you'll actually use.",
-            image: "/assets/screens/cap_disc_pack_detail.png",
+            image: "/assets/screens/cap_recipe_detail.png",
           },
           {
             title: "Silent videos too",
             body: "ASMR cooking videos with no voice? Heirloom extracts the recipe from visuals alone.",
-            
-            image: "/assets/screens/cap_12_video_result.png",
+            image: "/assets/screens/cap_video_import_hd.png",
           },
         ],
       },
@@ -681,9 +680,9 @@ export const pages: Record<
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
-        video: "/assets/video/read.mp4",
+        video: "/assets/video/lp-scan-hero-16x9.mp4",
         poster: "/assets/posters/read-hero.jpg",
-        alt: "Reading a recipe into Heirloom Recipe Box",
+        alt: "Scanning a recipe into Heirloom Recipe Box",
         aspect: "9:16",
       },
     },
@@ -709,17 +708,17 @@ export const pages: Record<
           {
             title: "Cookbook pages",
             body: "Turn printed recipes into clean steps.",
-            images: ["/assets/screens/cap_18_scan_result.png", "/assets/screens/cap_18_scan_extracted.png"],
+            images: ["/assets/screens/cap_scan_camera.png", "/assets/screens/cap_scan_extracted.png"],
           },
           {
             title: "Handwritten cards",
             body: "Capture the recipes you don't want to lose.",
-            images: ["/assets/screens/cap_11_saved_recipe.png", "/assets/screens/cap_gravy_diff.png"],
+            images: ["/assets/screens/cap_gravy_diff.png", "/assets/screens/cap_gravy_lineage.png"],
           },
           {
             title: "Saved forever",
             body: "Once scanned, it's yours. Your Recipe Box is private by default — every card stays on your device and in your account only.",
-            image: "/assets/screens/cap_11_saved_recipe.png",
+            image: "/assets/screens/cap_recipe_detail.png",
           },
         ],
       },
@@ -775,17 +774,17 @@ export const pages: Record<
           {
             title: "Digital cookbooks",
             body: "Import from ebook and PDF cookbooks.",
-            images: ["/assets/screens/cap_18_scan_result.png", "/assets/screens/cap_18_scan_extracted.png"],
+            images: ["/assets/screens/cap_scan_camera.png", "/assets/screens/cap_scan_extracted.png"],
           },
           {
             title: "Scanned pages",
             body: "Even photographed or scanned recipe pages work.",
-            images: ["/assets/screens/cap_11_saved_recipe.png", "/assets/screens/cap_gravy_diff.png"],
+            images: ["/assets/screens/cap_gravy_diff.png", "/assets/screens/cap_gravy_lineage.png"],
           },
           {
             title: "Batch-friendly",
             body: "Import multiple recipes from a single PDF.",
-            image: "/assets/screens/cap_kt_table_events.png",
+            image: "/assets/screens/cap_collection_overview.png",
           },
         ],
       },
@@ -846,12 +845,12 @@ export const pages: Record<
           {
             title: "Read it aloud",
             body: "Dictate a recipe from memory and let AI turn it into clean steps.",
-            images: ["/assets/screens/reada.png", "/assets/screens/readb.png"],
+            images: ["/assets/screens/cap_dictate_active.png", "/assets/screens/cap_dictate_result.png"],
           },
           {
             title: "Clean recipe card",
             body: "Every generated recipe is structured, editable, and ready to cook.",
-            images: ["/assets/screens/cap_11_saved_recipe.png", "/assets/screens/cap_gravy_diff.png"],
+            images: ["/assets/screens/cap_recipe_detail.png", "/assets/screens/cap_gravy_lineage.png"],
           },
         ],
       },
@@ -907,25 +906,28 @@ export const pages: Record<
         kind: "featureGrid",
         id: "kitchen-table-features",
         title: "Your Table. Your rules.",
-        columns: 3,
+        columns: 4,
         layout: "showcase",
         items: [
           {
             title: "Your Table, your rules",
             body: "Members see only what you share. No algorithm, no follower count. Just the recipes you trust with the people you'd invite to dinner.",
-            
-            image: "/assets/screens/cap_kt_table_view.png",
+            image: "/assets/screens/cap_kt_members.png",
           },
           {
             title: "Table Events",
             body: "When a meal is coming up, the host kicks off an Event. Members suggest dishes from shared recipes. A shared shopping list assembles automatically.",
-            
-            image: "/assets/screens/cap_kt_table_events.png",
+            image: "/assets/screens/cap_kt_event.png",
           },
           {
             title: "1:1 sharing",
             body: "Send individual recipes to anyone. They tap Accept and it's in their Recipe Box — organized and ready to cook.",
-            image: "/assets/screens/cap_04b_accept.png",
+            images: ["/assets/screens/cap_04_shareb.png", "/assets/screens/cap_04b_accept.png"],
+          },
+          {
+            title: "Private by default",
+            body: "Nothing leaves your Recipe Box unless you choose to share it. No algorithm, no feed, no followers. Your recipes stay yours.",
+            image: "/assets/screens/cap_05_privacy_pills.png",
           },
         ],
       },
@@ -977,25 +979,27 @@ export const pages: Record<
         kind: "featureGrid",
         id: "pack-types",
         title: "Theme Packs for every occasion",
-        columns: 3,
+        columns: 4,
         items: [
           {
             title: "First-party curated",
             body: "Thanksgiving Classics, Mom's Kitchen, Sourdough Deep Dive — Heirloom selections.",
-            
             image: "/assets/screens/cap_disc_packs.png",
           },
           {
             title: "Creator packs",
             body: "Partner-published collections with full branding and attribution.",
-            
             image: "/assets/screens/cap_disc_pack_detail.png",
           },
           {
             title: "Seasonal & cultural",
             body: "Holiday cookie exchange, West African staples, weeknight Korean.",
-            
             image: "/assets/screens/cap_collection_overview.png",
+          },
+          {
+            title: "Publish your originals",
+            body: "Your original recipes can go public. You choose exactly what's shared — and you can unpublish anytime.",
+            image: "/assets/screens/cap_04_share.png",
           },
         ],
       },
@@ -1020,9 +1024,9 @@ export const pages: Record<
       subhead: "Get updates, share feedback, and swap recipes with other testers.",
       primaryCta: { label: "Join Discord", href: urls.support },
       demo: {
-        video: "/assets/video/lp1-save-hero-16x9.mp4",
-        poster: "/assets/posters/lp1-save-hero.jpg",
-        alt: "Heirloom community",
+        video: "/assets/video/read.mp4",
+        poster: "/assets/posters/read-hero.jpg",
+        alt: "Cooking from a recipe in Heirloom Recipe Box",
         aspect: "9:16",
       },
     },
@@ -1058,9 +1062,9 @@ export const pages: Record<
       subhead: "Logos, screenshots, and product info for press and partners.",
       primaryCta: { label: "Contact", href: "mailto:admin@rationale.work" },
       demo: {
-        video: "/assets/video/lp-heritage-hero-16x9.mp4",
-        poster: "/assets/posters/lp-heritage-hero.jpg",
-        alt: "Heirloom Recipe Box press kit",
+        video: "/assets/video/lp-COOKBOOK-hero-16x9.mp4",
+        poster: "/assets/posters/lp-cookbook-hero.jpg",
+        alt: "Importing a cookbook into Heirloom Recipe Box",
         aspect: "9:16",
       },
     },
@@ -1070,8 +1074,8 @@ export const pages: Record<
         id: "resources",
         title: "What’s included",
         items: [
-          { title: "Logos", body: "App icon and wordmark (coming soon)." },
-          { title: "Screenshots", body: "High-resolution product shots (coming soon)." },
+          { title: "Logos", body: "App icon and wordmark — contact us for the full brand kit." },
+          { title: "Screenshots", body: "High-resolution product shots available on request." },
           { title: "Product summary", body: "Copy-friendly description and key features." },
         ],
       },
@@ -1097,9 +1101,9 @@ export const pages: Record<
         "Heirloom is built by Rationale Studio to solve a simple problem: family recipes shouldn't be lost to time.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       demo: {
-        video: "/assets/video/lp-heritage-hero-16x9.mp4",
-        poster: "/assets/posters/lp-heritage-hero.jpg",
-        alt: "About Heirloom Recipe Box",
+        video: "/assets/video/lp1-save-hero-9x16.mp4",
+        poster: "/assets/posters/lp1-save-hero-9x16.jpg",
+        alt: "Recipe lineage in Heirloom Recipe Box",
         aspect: "9:16",
       },
     },
@@ -1184,9 +1188,9 @@ export const pages: Record<
         "Heirloom is engineered with the same rigor as enterprise software\u2014because your family recipes deserve it.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       demo: {
-        video: "/assets/video/lp1-save-hero-16x9.mp4",
-        poster: "/assets/posters/lp1-save-hero.jpg",
-        alt: "Heirloom technology",
+        video: "/assets/video/lp-video-hero-16x9.mp4",
+        poster: "/assets/posters/lp-video-hero.jpg",
+        alt: "AI recipe extraction from video in Heirloom Recipe Box",
         aspect: "9:16",
       },
     },
