@@ -357,7 +357,7 @@ export const pages: Record<
             "Bookmarked recipes vanish when sites change",
             "Handwritten cards fade and get lost",
             "Video recipes disappear in algorithm feeds",
-            "Family knowledge dies with the cook",
+            "Family recipes get lost between generations",
           ],
         },
         solution: {
@@ -1121,7 +1121,7 @@ export const pages: Record<
             "Bookmarked recipes vanish when sites change",
             "Handwritten cards fade and get lost",
             "Video recipes disappear in algorithm feeds",
-            "Family knowledge dies with the cook",
+            "Family recipes get lost between generations",
           ],
         },
         solution: {

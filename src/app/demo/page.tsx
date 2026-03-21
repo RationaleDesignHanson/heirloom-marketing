@@ -32,9 +32,7 @@ export default function DemoPage() {
       <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 text-center">
-          <div className="inline-flex items-center rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/70 shadow-sm backdrop-blur">
-            Live demo — powered by Claude AI
-          </div>
+
           <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-black sm:text-4xl">
             See Heirloom extract a recipe
           </h1>
