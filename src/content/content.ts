@@ -176,21 +176,21 @@ const sharedPricingSection: PageSection = {
   plans: [
     {
       title: "Monthly",
-      price: "$4.99 / month",
+      price: "$6.99 / month",
       trial: "7-day trial",
-      bullets: ["Cookbook scan + sync", "Cancel anytime", "Best for short bursts"],
+      bullets: ["Cookbook scan + sync", "Cancel anytime", "Flexible"],
     },
     {
       title: "Annual",
-      price: "$29.99 / year",
+      price: "$39.99 / year",
       trial: "14-day trial",
       highlight: true,
-      bullets: ["Cookbook scan + sync", "Best value", "Cancel anytime"],
+      bullets: ["Cookbook scan + sync", "Save 50% vs monthly", "Cancel anytime"],
     },
     {
       title: "Lifetime",
       price: "$149.99 once",
-      bullets: ["Cookbook scan + sync", "No subscription", "Founding member"],
+      bullets: ["Cookbook scan + sync", "No subscription", "Yours forever"],
     },
   ],
 };

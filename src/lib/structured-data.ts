@@ -16,7 +16,7 @@ export function softwareApplicationJsonLd() {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
-      description: "Free to download. Premium from $4.99/month.",
+      description: "Free to download. Premium from $6.99/month.",
     },
     description:
       "Heirloom captures, preserves, and shares family recipes from any source — video, scan, voice, URL, PDF, or AI. Built for preservation, not just saving.",
