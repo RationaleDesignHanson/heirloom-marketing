@@ -189,7 +189,7 @@ const sharedPricingSection: PageSection = {
     },
     {
       title: "Lifetime",
-      price: "$99 once",
+      price: "$149.99 once",
       bullets: ["Cookbook scan + sync", "No subscription", "Founding member"],
     },
   ],
