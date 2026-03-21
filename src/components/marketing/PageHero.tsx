@@ -1,4 +1,5 @@
 import CTAButton from "./CTAButton";
+import AppStoreBadge from "./AppStoreBadge";
 import PhoneDemo from "./PhoneDemo";
 import ConversionHub from "./ConversionHub";
 import AnalogHero from "./AnalogHero";
@@ -52,12 +53,19 @@ export default function PageHero({
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <CTAButton
-                  href={hero.primaryCta.href}
-                  label={hero.primaryCta.label}
-                  eventProps={{ location: "hero" }}
-                  className="w-full sm:w-auto"
-                />
+                {hero.primaryCta.href.includes("apps.apple.com") ? (
+                  <AppStoreBadge
+                    href={hero.primaryCta.href}
+                    eventProps={{ location: "hero" }}
+                  />
+                ) : (
+                  <CTAButton
+                    href={hero.primaryCta.href}
+                    label={hero.primaryCta.label}
+                    eventProps={{ location: "hero" }}
+                    className="w-full sm:w-auto"
+                  />
+                )}
                 {hero.secondaryCta && (
                   <CTAButton
                     href={hero.secondaryCta.href}

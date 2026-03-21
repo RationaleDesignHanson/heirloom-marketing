@@ -1,4 +1,5 @@
 import CTAButton from "./CTAButton";
+import AppStoreBadge from "./AppStoreBadge";
 import EmailCapture from "./EmailCapture";
 import { urls } from "@/content/content";
 
@@ -20,12 +21,20 @@ export default function PageCTA({
           <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
           {body && <p className="mt-2 text-sm text-black/70">{body}</p>}
         </div>
-        <CTAButton
-          href={cta.href}
-          label={cta.label}
-          eventProps={{ location: "section_cta", sectionTitle: title }}
-          className="w-full sm:w-auto shrink-0"
-        />
+        {cta.href.includes("apps.apple.com") ? (
+          <AppStoreBadge
+            href={cta.href}
+            eventProps={{ location: "section_cta", sectionTitle: title }}
+            className="shrink-0"
+          />
+        ) : (
+          <CTAButton
+            href={cta.href}
+            label={cta.label}
+            eventProps={{ location: "section_cta", sectionTitle: title }}
+            className="w-full sm:w-auto shrink-0"
+          />
+        )}
       </div>
 
       {emailCapture && urls.appStore === "#" && (

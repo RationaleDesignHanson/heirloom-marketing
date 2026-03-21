@@ -1,4 +1,5 @@
 import CTAButton from "./CTAButton";
+import AppStoreBadge from "./AppStoreBadge";
 import { urls } from "@/content/content";
 
 export default function PricingCredits({
@@ -91,10 +92,8 @@ export default function PricingCredits({
                 ))}
               </ul>
               <div className="mt-5">
-                <CTAButton
+                <AppStoreBadge
                   href={urls.appStore}
-                  label="Get Heirloom"
-                  variant={plan.highlight ? "primary" : "secondary"}
                   eventProps={{ location: "pricing" }}
                 />
               </div>
