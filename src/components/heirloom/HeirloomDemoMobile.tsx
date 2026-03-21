@@ -119,9 +119,6 @@ export function HeirloomDemoMobile() {
   if (step === "select") {
     return (
       <div className="rounded-2xl border border-black/10 bg-white/80 p-4 shadow-sm backdrop-blur">
-        <p className="mb-3 text-center text-sm font-medium text-black/60">
-          Pick a recipe to extract
-        </p>
 
         {error && (
           <p className="mb-3 rounded-lg bg-red-50 px-3 py-2 text-center text-xs text-red-600">
@@ -129,7 +126,28 @@ export function HeirloomDemoMobile() {
           </p>
         )}
 
-        {/* 2×3 sample grid */}
+        {/* Primary: upload own */}
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/*"
+          capture="environment"
+          className="hidden"
+          onChange={handleFileChange}
+        />
+        <button
+          onClick={() => fileInputRef.current?.click()}
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--tomato)] px-4 py-3.5 text-sm font-semibold text-white shadow-sm transition-opacity active:scale-95 hover:opacity-90"
+        >
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Try your own recipe
+        </button>
+
+        {/* Secondary: sample grid */}
+        <p className="mt-4 mb-2 text-center text-xs text-black/40">or try a sample</p>
         <div className="grid grid-cols-3 gap-2">
           {GRID_SAMPLES.map((sample) => (
             <button
@@ -146,28 +164,6 @@ export function HeirloomDemoMobile() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             </button>
           ))}
-        </div>
-
-        {/* Upload own */}
-        <div className="mt-3">
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            capture="environment"
-            className="hidden"
-            onChange={handleFileChange}
-          />
-          <button
-            onClick={() => fileInputRef.current?.click()}
-            className="flex w-full items-center justify-center gap-2 rounded-xl border border-dashed border-black/20 bg-[var(--cream)] px-4 py-3 text-sm font-medium text-black/60 transition-colors hover:border-[var(--tomato)] hover:text-[var(--tomato)] active:scale-95"
-          >
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            Use your own photo
-          </button>
         </div>
       </div>
     );

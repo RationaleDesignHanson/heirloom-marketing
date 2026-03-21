@@ -33,12 +33,15 @@ export default function DemoPage() {
         {/* Header */}
         <div className="mb-8 text-center">
 
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs text-black/60 shadow-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+            Live — real AI extraction
+          </div>
           <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-black sm:text-4xl">
-            See Heirloom extract a recipe
+            Upload any recipe. Watch it come alive.
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-base text-black/70">
-            Upload a photo of any handwritten recipe card or cookbook page.
-            Watch it become a structured, shareable recipe card — in seconds.
+            Handwritten card, cookbook page, printed recipe — point your camera and Heirloom extracts it into a clean, shareable recipe card in seconds.
           </p>
         </div>
 
