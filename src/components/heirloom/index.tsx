@@ -26,6 +26,7 @@ import {
 import { DEMO_STICKERS, COLORS, API_ENDPOINT, DETECT_API_ENDPOINT } from './constants';
 import type { SampleRecipe } from '@/lib/heirloom/sample-recipes';
 import Image from 'next/image';
+import { track } from '@/lib/analytics';
 
 export function HeirloomDemo({
   className = '',
@@ -168,6 +169,7 @@ export function HeirloomDemo({
 
       setRecipe(data);
       updateStep('scanned');
+      track('demo_recipe_extracted', { recipe_name: data.title ?? 'unknown' });
       onRecipeExtracted?.(data);
 
       // Prevent scroll jump on mobile
@@ -194,6 +196,7 @@ export function HeirloomDemo({
     }
 
     setShowSampleSelector(false);
+    track('demo_upload', { source: 'own_photo' });
     const reader = new FileReader();
     reader.onload = (e) => {
       const result = e.target?.result as string;
@@ -207,6 +210,7 @@ export function HeirloomDemo({
 
   const handleSampleSelect = (sample: SampleRecipe) => {
     setShowSampleSelector(false);
+    track('demo_upload', { source: 'sample', sample_name: sample.imagePath });
     setImagePreview(sample.imagePath);
     // In production, this would load from the path directly
     // For demo, we'll convert the image to base64

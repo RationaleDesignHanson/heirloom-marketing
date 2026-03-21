@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { track } from "@/lib/analytics";
 
 export default function EmailCapture({
   formName,
@@ -34,8 +35,10 @@ export default function EmailCapture({
       if (!res.ok) throw new Error(`Bad response: ${res.status}`);
 
       setStatus("success");
+      track("email_signup", { form: formName });
     } catch {
       setStatus("error");
+      track("email_signup_failed", { form: formName });
     }
   }
 
