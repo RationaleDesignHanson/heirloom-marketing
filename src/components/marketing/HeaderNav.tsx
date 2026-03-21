@@ -77,13 +77,13 @@ export default function HeaderNav({
         <>
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-[199] bg-black/20 md:hidden"
             onClick={() => setMobileMenuOpen(false)}
           />
           {/* Drawer */}
           <div
-            className="fixed right-0 bottom-0 w-64 border-l border-black/10 bg-[var(--cream)] p-6 shadow-lg md:hidden"
-            style={{ top: "calc(57px + env(safe-area-inset-top, 0px))" }}
+            className="fixed right-0 bottom-0 z-[200] w-64 border-l border-black/10 p-6 shadow-xl md:hidden"
+            style={{ top: "calc(57px + env(safe-area-inset-top, 0px))", backgroundColor: "#faf5f0" }}
           >
             <nav className="flex flex-col gap-4">
               {items.map((item) => (
