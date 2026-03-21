@@ -2,7 +2,7 @@ export type TechPillar = {
   title: string;
   body: string;
   detail?: string;
-  icon: string;
+  icon?: string;
 };
 
 export default function TechShowcase({
