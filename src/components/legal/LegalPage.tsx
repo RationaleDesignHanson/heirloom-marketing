@@ -17,10 +17,10 @@ const headerNav: NavItem[] = [
 ];
 
 const legalPages = [
-  { label: "Support", href: "/support", icon: "💬" },
-  { label: "Privacy Policy", href: "/privacy", icon: "🔒" },
-  { label: "Terms of Service", href: "/terms", icon: "📄" },
-  { label: "Privacy Choices", href: "/privacy-choices", icon: "⚙️" },
+  { label: "Support", href: "/support" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Privacy Choices", href: "/privacy-choices" },
 ];
 
 export default function LegalPage({
@@ -81,7 +81,6 @@ export default function LegalPage({
                       : "border-transparent text-black/50 hover:border-black/10 hover:bg-white/60 hover:text-black/70"
                   }`}
                 >
-                  <span className="text-sm">{page.icon}</span>
                   {page.label}
                 </Link>
               );

@@ -27,9 +27,7 @@ export default function TechShowcase({
             className="group rounded-2xl border border-black/10 bg-white/80 p-6 shadow-sm backdrop-blur transition-shadow hover:shadow-md"
           >
             <div className="flex items-start gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-black/10 bg-[var(--cream)] text-lg">
-                {pillar.icon}
-              </div>
+              <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[var(--terracotta)]" />
               <div>
                 <div className="text-base font-semibold">{pillar.title}</div>
                 <p className="mt-1 text-sm text-black/70">{pillar.body}</p>

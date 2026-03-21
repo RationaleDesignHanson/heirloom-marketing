@@ -1,7 +1,7 @@
 export type FAQItem = { q: string; a: string };
 export type FeatureItem = { title: string; body: string; bodyShort?: string; icon?: string; image?: string; images?: string[]; bullets?: string[]; cardBg?: string; frameStyle?: "phone" | "naked" | "none"; dark?: boolean; infographic?: "capture-methods" | "recipe-lineage" | "share-flow" };
 export type StepItem = { title: string; body?: string };
-export type TechPillarItem = { title: string; body: string; detail: string; icon: string };
+export type TechPillarItem = { title: string; body: string; detail?: string; icon?: string };
 export type ComparisonRowItem = {
   feature: string;
   heirloom: boolean | string;
@@ -263,29 +263,25 @@ const sharedTechShowcase: PageSection = {
       body: "Task-specific model selection across 8 AI task types. Cost-optimized per operation.",
       detail:
         "Fast parsing with Claude Haiku ($0.25/1M tokens), high-quality vision with Claude Sonnet ($3/1M tokens). 5-pass pipeline for silent cooking videos.",
-      icon: "\u2728",
-    },
+          },
     {
       title: "Offline-first sync",
       body: "Edit recipes on any device, even without internet. Changes merge automatically.",
       detail:
         "CRDT merge engine with vector clocks and 3-stage conflict resolution. No data loss during offline edits.",
-      icon: "\u21C4",
-    },
+          },
     {
       title: "Private by architecture",
       body: "No API keys in the app. On-device audio transcription. Your data stays yours.",
       detail:
         "Firebase gateway proxies all AI requests. WhisperKit runs Whisper locally. Two-tier GDPR consent.",
-      icon: "\uD83D\uDD12",
-    },
+          },
     {
       title: "Recipe provenance",
       body: "Every recipe has a verifiable history. Attribution chains track who created and shared what.",
       detail:
         "SHA256 hashing via CryptoKit. Generation tracking across multi-level shares. Aggregated trending metrics.",
-      icon: "\uD83C\uDF33",
-    },
+          },
   ],
 };
 
@@ -1174,9 +1170,9 @@ export const pages: Record<
         "Heirloom is engineered with the same rigor as enterprise software\u2014because your family recipes deserve it.",
       primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
       demo: {
-        video: "/assets/video/lp-video-hero-16x9.mp4",
-        poster: "/assets/posters/lp-video-hero.jpg",
-        alt: "AI recipe extraction from video in Heirloom Recipe Box",
+        video: "/assets/video/lp-technology-hero-9x16.mp4",
+        poster: "/assets/posters/lp-technology-hero.jpg",
+        alt: "Heirloom Recipe Box technology in action",
         aspect: "9:16",
       },
     },
@@ -1193,29 +1189,25 @@ export const pages: Record<
             body: "8 task types, each routed to the optimal model for cost and quality.",
             detail:
               "Text parsing uses fast, affordable models. Vision tasks use high-quality models. Costs stay predictable.",
-            icon: "\u2699\uFE0F",
-          },
+                      },
           {
             title: "5-pass video extraction",
             body: "Silent cooking videos get a dedicated pipeline that watches, identifies, and validates.",
             detail:
               "Identifying \u2192 Detecting \u2192 Inferring \u2192 Analyzing \u2192 Validating. Each pass builds on the last.",
-            icon: "\uD83C\uDFAC",
-          },
+                      },
           {
             title: "On-device transcription",
             body: "WhisperKit runs OpenAI's Whisper model locally. Audio never leaves your phone.",
             detail:
               "Adaptive model selection based on device capability. Zero API cost for voice capture.",
-            icon: "\uD83C\uDF99\uFE0F",
-          },
+                      },
           {
             title: "Structured output",
             body: "AI returns typed JSON matching exact recipe schemas. No guessing, no parsing errors.",
             detail:
               "Schema validation ensures every generated recipe is immediately usable. Iterative image compression for API limits.",
-            icon: "\uD83D\uDCCB",
-          },
+                      },
         ],
       },
       {
@@ -1230,29 +1222,25 @@ export const pages: Record<
             body: "Track causal relationships between edits across devices without relying on wall clocks.",
             detail:
               "Each device maintains a logical timestamp. Concurrent edits are detected precisely, not guessed.",
-            icon: "\u23F1\uFE0F",
-          },
+                      },
           {
             title: "Operation log",
             body: "Every edit is an immutable operation. The full history is preserved and replayable.",
             detail:
               "Operations include: create, update, delete, addIngredient, addInstruction. Each carries device metadata.",
-            icon: "\uD83D\uDCDD",
-          },
+                      },
           {
             title: "3-stage merge",
             body: "Auto-merge handles 80% of conflicts. The remaining 20% get a clear resolution UI.",
             detail:
               "Stage 1: additive operations merge automatically. Stage 2: delete wins. Stage 3: user chooses with full context.",
-            icon: "\uD83D\uDD00",
-          },
+                      },
           {
             title: "Security validation",
             body: "Every operation's field path is validated against a whitelist before application.",
             detail:
               "Prevents injection attacks on CRDT operations. Only title, notes, ingredients, instructions, and time fields are allowed.",
-            icon: "\uD83D\uDEE1\uFE0F",
-          },
+                      },
         ],
       },
       {
@@ -1267,29 +1255,25 @@ export const pages: Record<
             body: "Original recipes get a unique cryptographic fingerprint. All copies inherit it.",
             detail:
               "Generated via CryptoKit from timestamp + UUID. Unforgeable and globally unique.",
-            icon: "#\uFE0F\u20E3",
-          },
+                      },
           {
             title: "Generation tracking",
             body: "Know whether a recipe is original (Gen 0), first share (Gen 1), or a re-share (Gen 2+).",
             detail:
               "Multi-generational chains: A shares to B, B shares to C. Everyone sees the full attribution.",
-            icon: "\uD83C\uDF33",
-          },
+                      },
           {
             title: "Source attribution",
             body: "Imported from a URL? Scanned from a cookbook? AI generated? The source is always tracked.",
             detail:
               "6 source types: userCreated, imported, shared, scanned, ai, video. Social platform detection for video imports.",
-            icon: "\uD83D\uDD17",
-          },
+                      },
           {
             title: "Aggregated metrics",
             body: "Total shares, cooks, ratings, and trending score computed across the entire family tree.",
             detail:
               "Trending threshold: score > 10 and total shares > 5. Metrics refresh from cloud periodically.",
-            icon: "\uD83D\uDCC8",
-          },
+                      },
         ],
       },
       sharedComparisonTable,
