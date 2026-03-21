@@ -15,7 +15,7 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
 function Stat({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
     <div className="flex flex-col gap-0.5">
-      <span className="text-3xl font-semibold tracking-tight">{value}</span>
+      <span className="text-2xl sm:text-3xl font-semibold tracking-tight">{value}</span>
       <span className="text-sm text-black/60">{label}</span>
       {sub && <span className="text-xs text-black/40">{sub}</span>}
     </div>
@@ -25,12 +25,12 @@ function Stat({ label, value, sub }: { label: string; value: string; sub?: strin
 function Bar({ label, value, max, color = "bg-[var(--terracotta)]" }: { label: string; value: number; max: number; color?: string }) {
   const pct = max > 0 ? Math.round((value / max) * 100) : 0;
   return (
-    <div className="flex items-center gap-3">
-      <span className="w-28 shrink-0 text-xs text-black/60 truncate">{label}</span>
+    <div className="flex items-center gap-2 sm:gap-3">
+      <span className="w-20 sm:w-28 shrink-0 text-xs text-black/60 truncate">{label}</span>
       <div className="flex-1 rounded-full bg-black/5 h-2">
         <div className={`h-2 rounded-full ${color}`} style={{ width: `${pct}%` }} />
       </div>
-      <span className="w-8 text-right text-xs font-medium">{value}</span>
+      <span className="w-7 sm:w-8 text-right text-xs font-medium tabular-nums">{value}</span>
     </div>
   );
 }
@@ -213,7 +213,7 @@ export default async function InternalDashboard() {
   const activationRate = activation.total > 0 ? ((activation.activated / activation.total) * 100).toFixed(1) : "—";
 
   return (
-    <div className="min-h-screen bg-[var(--cream)] px-4 py-10 sm:px-8">
+    <div className="min-h-screen bg-[var(--cream)] px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl">
 
         {/* Header */}
@@ -236,7 +236,7 @@ export default async function InternalDashboard() {
 
           {/* Topline */}
           <Card title="Active Users">
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
               <Stat label="DAU (today)" value={String(stats.dau)} />
               <Stat label="WAU" value={String(stats.wau)} />
               <Stat label="MAU" value={String(stats.mau)} />
@@ -245,7 +245,7 @@ export default async function InternalDashboard() {
           </Card>
 
           {/* Paywall + Activation */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <Card title="Paywall Conversion">
               <div className="flex flex-col gap-4">
                 <div className="grid grid-cols-3 gap-4">
