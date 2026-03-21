@@ -52,18 +52,19 @@ export default function PageHero({
                 {hero.subhead}
               </p>
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="mt-6 flex flex-row items-center gap-3">
                 {hero.primaryCta.href.includes("apps.apple.com") ? (
                   <AppStoreBadge
                     href={hero.primaryCta.href}
                     eventProps={{ location: "hero" }}
+                    className={hero.secondaryCta ? "flex-1 sm:flex-none" : ""}
                   />
                 ) : (
                   <CTAButton
                     href={hero.primaryCta.href}
                     label={hero.primaryCta.label}
                     eventProps={{ location: "hero" }}
-                    className="w-full sm:w-auto"
+                    className="flex-1 sm:flex-none"
                   />
                 )}
                 {hero.secondaryCta && (
@@ -72,7 +73,7 @@ export default function PageHero({
                     label={hero.secondaryCta.label}
                     variant="secondary"
                     eventProps={{ location: "hero" }}
-                    className="w-full sm:w-auto"
+                    className="flex-1 sm:flex-none h-[55px] px-5"
                   />
                 )}
               </div>

@@ -26,13 +26,14 @@ export default function AppStoreBadge({
           ...eventProps,
         })
       }
-      className={`inline-block transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30 rounded-xl${className ? ` ${className}` : ""}`}
+      className={`inline-flex items-center justify-center h-[55px] transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30 rounded-xl overflow-hidden${className ? ` ${className}` : ""}`}
     >
       <Image
         src="/app-store-badge.svg"
         alt="Download on the App Store"
         width={165}
         height={55}
+        className="h-full w-full object-contain"
         priority
       />
     </Link>
