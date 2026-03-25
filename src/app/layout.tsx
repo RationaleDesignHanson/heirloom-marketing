@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lora } from "next/font/google";
+import { copy } from "@/content/copy";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomrecipebox.app";
@@ -23,11 +24,10 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: {
-    default: "Heirloom Recipe Box — Preserve Your Family's Recipes",
+    default: copy.siteDefaultTitle,
     template: "%s | Heirloom Recipe Box",
   },
-  description:
-    "73% of family recipes are lost within one generation. Heirloom captures, preserves, and shares recipes from any source — video, scan, voice, URL, PDF, or AI. Free to start.",
+  description: copy.siteDefaultDescription,
   metadataBase: new URL(siteUrl),
   keywords: [
     "family recipe app",
@@ -42,18 +42,16 @@ export const metadata: Metadata = {
     "family cookbook app",
   ],
   openGraph: {
-    title: "Heirloom Recipe Box — Preserve Your Family's Recipes",
-    description:
-      "73% of family recipes are lost within one generation. Heirloom captures, preserves, and shares recipes from any source — video, scan, voice, URL, PDF, or AI.",
+    title: copy.siteDefaultTitle,
+    description: copy.openGraphDescription,
     images: [{ url: `${siteUrl}/opengraph-image`, width: 1200, height: 630, alt: "Heirloom Recipe Box" }],
     type: "website",
     siteName: "Heirloom Recipe Box",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Heirloom Recipe Box — Preserve Your Family's Recipes",
-    description:
-      "73% of family recipes are lost within one generation. Heirloom captures and preserves recipes from video, scan, voice, URL, PDF, or AI.",
+    title: copy.siteDefaultTitle,
+    description: copy.twitterDescription,
     images: [`${siteUrl}/opengraph-image`],
   },
   alternates: {

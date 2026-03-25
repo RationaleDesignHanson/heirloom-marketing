@@ -1,0 +1,11 @@
+---
+description: Marketing copy in content.ts — brevity, single source, legal exclusion
+globs: src/content/content.ts,src/content/copy.ts,src/content/seo-sync.json
+---
+
+When editing marketing copy:
+
+- **Single source:** Global SEO lives in [`src/content/copy.ts`](src/content/copy.ts). Stat line + trust bar use `copy.statShort` / `copy.statProblemSectionTitle`. App Store buttons use `primaryAppCta` or `storeDownloadCta` from [`src/content/content.ts`](src/content/content.ts)—do not repeat label+href literals.
+- **OG script sync:** [`scripts/generate-og-images.mjs`](scripts/generate-og-images.mjs) reads [`src/content/seo-sync.json`](src/content/seo-sync.json). If you change default/home OG headlines or subtext, update that JSON to match.
+- **Brevity:** Prefer short subheads, ≤3–4 bullets per block, and shorter feature bodies on grid layouts. Do not expand legal pages for marketing voice.
+- **Do not edit** `src/content/policy/*` or terms copy in this pass without explicit legal review.
