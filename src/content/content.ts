@@ -21,6 +21,8 @@ export type Hero = {
   secondaryCta?: { label: string; href: string };
   emailCapture?: { formName: string; placeholder?: string; buttonLabel?: string };
   trustLine?: string;
+  /** Optional top pill; when set, replaces the default chip for this hero layout */
+  chip?: string;
   demo: { video: string; poster: string; alt: string; aspect: "16:9" | "9:16" };
   visual?: "phone" | "diagram" | "analog";
 };
@@ -332,6 +334,7 @@ export const pages: Record<
       primaryCta: primaryAppCta,
       secondaryCta: { label: "Try the demo →", href: "/demo" },
       trustLine: "Private by default — Your recipes stay yours",
+      chip: copy.homeHeroChip,
       demo: {
         video: "/assets/video/lp-heritage-hero-16x9.mp4",
         poster: "/assets/posters/lp-heritage-hero.jpg",

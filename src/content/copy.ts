@@ -30,4 +30,7 @@ export const copy = {
 
   jsonLdApplicationDescription:
     "Heirloom preserves family recipes from any source — video, scan, voice, URL, PDF, or AI. Private by default.",
+
+  /** Top pill on home hero when `visual: "analog"` (overrides default via `hero.chip` in content) */
+  homeHeroChip: "A lasting home for every recipe.",
 } as const;
