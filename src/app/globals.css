@@ -206,3 +206,25 @@ body {
   max-height: 10em;
   opacity: 1;
 }
+
+/* Press/deck export: full diagram with every spoke visible, no motion */
+.conversionhub-static-export .conversionhub-connector {
+  animation: none;
+}
+.conversionhub-static-export .conversionhub-ripple {
+  display: none;
+}
+.conversionhub-static-export .conversionhub-spoke-subtext {
+  max-height: 10em;
+  opacity: 1;
+}
+.conversionhub-static-export .conversionhub-spoke-group {
+  animation: none !important;
+}
+.conversionhub-static-export .conversionhub-center-hub {
+  animation: none !important;
+}
+.conversionhub-static-export .conversionhub-spoke-group:hover .conversionhub-spoke-card {
+  transform: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}

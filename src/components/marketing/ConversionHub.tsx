@@ -63,7 +63,7 @@ export default function ConversionHub() {
           <SpokeCard spoke={spokes[2]} staggerDelay={staggerDelays[2]} />
           {/* Center hub */}
           <div
-            className="relative z-20 flex h-28 w-28 flex-col items-center justify-center gap-1 overflow-visible rounded-full shadow-lg sm:h-32 sm:w-32"
+            className="conversionhub-center-hub relative z-20 flex h-28 w-28 flex-col items-center justify-center gap-1 overflow-visible rounded-full shadow-lg sm:h-32 sm:w-32"
             style={{ animation: "fadeInUp 0.5s ease-out 0.05s both" }}
           >
             <div className="conversionhub-ripple" />
