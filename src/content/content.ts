@@ -347,7 +347,7 @@ export const pages: Record<
         title: copy.statProblemSectionTitle,
         problem: {
           title: "Gone for good",
-          body: "No single system of record—so when a recipe slips away, it's gone.",
+          body: "No single system of record—so favorites can slip away without you noticing.",
           bullets: [
             "Sites and links rot",
             "Feeds move on",
@@ -593,7 +593,7 @@ export const pages: Record<
     },
     nav: sharedNav,
     hero: {
-      h1: "Those recipes in your saved videos? Preserve them before they're\u00A0gone.",
+      h1: "Those recipes in your saved videos? Give them a home that\u00A0lasts.",
       subhead:
         "Accounts and feeds change. Pull the recipe into Heirloom—structured, searchable, yours.",
       primaryCta: storeDownloadCta,
@@ -662,12 +662,12 @@ export const pages: Record<
     meta: {
       title: "Preserve handwritten recipe cards",
       description:
-        "Scan cards and cookbook pages before they fade—camera to structured recipe in one flow.",
+        "Scan cards and cookbook pages while they’re still clear—camera to structured recipe in one flow.",
     },
     nav: sharedNav,
     hero: {
       h1: "Grandma's handwriting. Mom's cookbook. The cards in the\u00A0drawer.",
-      subhead: "Point the camera; Heirloom extracts text and structure before ink or paper is gone.",
+      subhead: "Point the camera; Heirloom turns every line into a structured recipe card you can keep.",
       primaryCta: storeDownloadCta,
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
