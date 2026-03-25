@@ -3,6 +3,8 @@
  * Improves SEO rich results for FAQ, app store, and organization
  */
 
+import { copy } from "@/content/copy";
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomrecipebox.app";
 
 export function softwareApplicationJsonLd() {
@@ -18,8 +20,7 @@ export function softwareApplicationJsonLd() {
       priceCurrency: "USD",
       description: "Free to download. Premium from $6.99/month.",
     },
-    description:
-      "Heirloom captures, preserves, and shares family recipes from any source — video, scan, voice, URL, PDF, or AI. Built for preservation, not just saving.",
+    description: copy.jsonLdApplicationDescription,
     url: siteUrl,
     screenshot: `${siteUrl}/og/default.png`,
     featureList: [

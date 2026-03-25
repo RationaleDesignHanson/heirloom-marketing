@@ -1,3 +1,5 @@
+import { copy } from "./copy";
+
 export type FAQItem = { q: string; a: string };
 export type FeatureItem = { title: string; body: string; bodyShort?: string; icon?: string; image?: string; images?: string[]; bullets?: string[]; cardBg?: string; frameStyle?: "phone" | "naked" | "none"; dark?: boolean; infographic?: "capture-methods" | "recipe-lineage" | "share-flow" };
 export type StepItem = { title: string; body?: string };
@@ -125,6 +127,10 @@ export const urls = {
   terms: "/terms",
 };
 
+/** App Store CTAs — use instead of repeating label + href */
+export const primaryAppCta = { label: copy.ctaPrimary, href: urls.appStore };
+export const storeDownloadCta = { label: copy.ctaStoreDownload, href: urls.appStore };
+
 const sharedNav = [
   { label: "How it works", href: urls.howItWorks },
   { label: "Video", href: urls.lpVideo },
@@ -139,32 +145,31 @@ const sharedNav = [
 export const sharedFAQs: FAQItem[] = [
   {
     q: "Does it work from the Share Sheet?",
-    a: "Yes—saving from the Share Sheet is the core of Heirloom Recipe Box.",
+    a: "Yes. Share Sheet → Heirloom is the main way to save.",
   },
   {
     q: "Are my recipes public?",
-    a: "No. Your Recipe Box is private by default. Sharing and publishing are optional.",
+    a: "No. Private by default. Sharing and publishing are optional.",
   },
   {
     q: "Can I share recipes with friends?",
-    a: "Yes—send recipes directly, and they can tap to accept into their Recipe Box.",
+    a: "Yes. They tap Accept and it lands in their Recipe Box.",
   },
   {
     q: "How do credits and Premium work?",
-    a: "Some imports use credits. Your trial starts with 50 credits, and Premium includes 100 credits/month. Premium unlocks cookbook scanning and sync—the tools to preserve everything, from any source. You can also buy credit packs when you need a burst.",
+    a: "Trial includes 50 credits. Premium adds 100/month plus cookbook scanning and cloud sync. Credit packs are available when you need more.",
   },
   {
     q: "Is saving from websites free?",
-    a: "Yes. Save from Safari with one tap using the Share Sheet. Premium unlocks advanced imports and extras like cookbook scanning and cloud sync. So you can preserve what you find without friction.",
+    a: "Yes for Share Sheet saves from Safari. Premium adds scanning, sync, and heavier imports.",
   },
 ];
 
 const sharedPricingSection: PageSection = {
   kind: "pricingCredits",
   id: "pricing",
-  title: "Free to start. Preserve more when you're ready.",
-  subtitle:
-    "Your trial starts with 50 credits. Premium unlocks cookbook scanning and cloud sync—so every recipe, from every source, stays preserved.",
+  title: "Free to start. Go further with Premium.",
+  subtitle: "50 trial credits. Premium: 100/month, cookbook scanning, and cloud sync.",
   trialCreditsIncluded: 50,
   premiumMonthlyCredits: 100,
   creditExamples: [
@@ -198,16 +203,16 @@ const sharedPricingSection: PageSection = {
 const sharedProblemSolution: PageSection = {
   kind: "problemSolution",
   id: "problem-solution",
-  title: "Stop losing recipes to bookmarks",
+  title: "Recipes scatter. Heirloom gathers them.",
   problem: {
     title: "The problem",
-    body: "Recipes end up scattered across Safari tabs, Notes, screenshots, and saved videos.",
-    bullets: ["You can’t find what you saved", "Copy/paste breaks your flow", "Sharing becomes link-chasing"],
+    body: "Tabs, Notes, screenshots, saved videos—recipes get lost in the noise.",
+    bullets: ["Hard to find later", "Copy/paste friction", "Links break or disappear"],
   },
   solution: {
     title: "The Heirloom way",
-    body: "One tap from wherever you find recipes—then cook from clean, structured cards.",
-    bullets: ["Share → Heirloom", "Imports in the background", "Private by default"],
+    body: "Share → Heirloom. Clean cards, background imports, private by default.",
+    bullets: ["One tap from almost anywhere", "Structured automatically", "Yours until you share"],
   },
 };
 
@@ -217,17 +222,13 @@ const sharedProblemSolutionHeritage: PageSection = {
   title: "Recipes disappear. Preservation doesn't.",
   problem: {
     title: "The loss",
-    body: "When a recipe is lost, it's lost forever. They live scattered across screenshots, Notes, saved videos, and fading index cards—with no system of record.",
-    bullets: [
-      "Bookmarked recipes vanish when sites change",
-      "Video recipes disappear in algorithm feeds",
-      "Handwritten cards fade and get lost",
-    ],
+    body: "Screenshots, feeds, and fading cards—no single place that lasts.",
+    bullets: ["Sites and accounts change", "Feeds move on", "Paper doesn't last forever"],
   },
   solution: {
-    title: "Heirloom gives you the tools to preserve",
-    body: "Capture from any source in one tap. Every recipe is structured, attributed, and preserved—private by default.",
-    bullets: ["Share → Heirloom", "Imports in the background", "Private by default"],
+    title: "Preserve with Heirloom",
+    body: "One tap from almost any source. Structured, attributed, private until you share.",
+    bullets: ["Share → Heirloom", "Background imports", "Private by default"],
   },
 };
 
@@ -243,7 +244,7 @@ const sharedTrustBar: PageSection = {
   kind: "trustBar",
   id: "trust",
   items: [
-    "73% of family recipes lost in one generation",
+    copy.statShort,
     "6 import methods",
     "50 free credits — no card required",
     "Private by default",
@@ -255,33 +256,28 @@ const sharedTechShowcase: PageSection = {
   kind: "techShowcase",
   id: "technology",
   title: "Under the hood",
-  subtitle:
-    "Heirloom is built on production-grade infrastructure designed for privacy, reliability, and scale.",
+  subtitle: "Privacy, reliability, and scale—without sacrificing craft.",
   items: [
     {
       title: "Multi-pass AI",
-      body: "Task-specific model selection across 8 AI task types. Cost-optimized per operation.",
-      detail:
-        "Fast parsing with Claude Haiku ($0.25/1M tokens), high-quality vision with Claude Sonnet ($3/1M tokens). 5-pass pipeline for silent cooking videos.",
-          },
+      body: "Right model per task—fast text, strong vision when it matters.",
+      detail: "Tiered models plus a 5-pass pipeline for silent cooking videos.",
+    },
     {
       title: "Offline-first sync",
-      body: "Edit recipes on any device, even without internet. Changes merge automatically.",
-      detail:
-        "CRDT merge engine with vector clocks and 3-stage conflict resolution. No data loss during offline edits.",
-          },
+      body: "Edit anywhere. Changes merge when you're back online.",
+      detail: "CRDT engine with vector clocks and staged conflict resolution.",
+    },
     {
       title: "Private by architecture",
-      body: "No API keys in the app. On-device audio transcription. Your data stays yours.",
-      detail:
-        "Firebase gateway proxies all AI requests. WhisperKit runs Whisper locally. Two-tier GDPR consent.",
-          },
+      body: "No API keys in the client. Sensitive audio stays on-device.",
+      detail: "Gatewayed AI requests, WhisperKit locally, clear consent flows.",
+    },
     {
       title: "Recipe provenance",
-      body: "Every recipe has a verifiable history. Attribution chains track who created and shared what.",
-      detail:
-        "SHA256 hashing via CryptoKit. Generation tracking across multi-level shares. Aggregated trending metrics.",
-          },
+      body: "Know where a recipe came from—and how it traveled.",
+      detail: "Hashes, generation tracking, and attribution across shares.",
+    },
   ],
 };
 
@@ -289,7 +285,7 @@ const sharedComparisonTable: PageSection = {
   kind: "comparisonTable",
   id: "compare",
   title: "How Heirloom compares",
-  subtitle: "Built different from the start.",
+  subtitle: "Same job, different depth.",
   rows: [
     { feature: "Save from any URL",                        heirloom: true,      paprika: true,      recime: true      },
     { feature: "Video-to-recipe (TikTok, YouTube)",        heirloom: true,      paprika: false,     recime: "Limited" },
@@ -325,16 +321,15 @@ export const pages: Record<
    * ─────────────────────────────────────────────────────── */
   home: {
     meta: {
-      title: "Heirloom Recipe Box — Preserve your family's food culture",
-      description:
-        "73% of family recipes are lost within one generation. Heirloom is the system of record for family food culture — capture, preserve, and share recipes from any source.",
+      title: copy.metaHomeTitle,
+      description: copy.metaHomeDescription,
     },
     nav: sharedNav,
     hero: {
       h1: "Every recipe worth keeping, in one\u00A0place",
       subhead:
-        "Recipes are cultural heritage — not bookmarks. Heirloom captures, preserves, and shares your family's food culture so nothing is lost.",
-      primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
+        "Heritage—not bookmarks. Capture your family's food culture in one private Recipe Box.",
+      primaryCta: primaryAppCta,
       secondaryCta: { label: "Try the demo →", href: "/demo" },
       trustLine: "Private by default — Your recipes stay yours",
       demo: {
@@ -349,70 +344,65 @@ export const pages: Record<
       {
         kind: "problemSolution",
         id: "the-problem",
-        title: "73% of family recipes are lost within one generation",
+        title: copy.statProblemSectionTitle,
         problem: {
-          title: "The loss is permanent",
-          body: "Recipes live scattered across screenshots, Notes apps, iMessage threads, saved videos, and fading index cards. There is no system of record — and when a recipe disappears, it disappears forever.",
+          title: "Gone for good",
+          body: "No single system of record—so when a recipe slips away, it's gone.",
           bullets: [
-            "Bookmarked recipes vanish when sites change",
-            "Handwritten cards fade and get lost",
-            "Video recipes disappear in algorithm feeds",
-            "Family recipes get lost between generations",
+            "Sites and links rot",
+            "Feeds move on",
+            "Paper fades or disappears",
           ],
         },
         solution: {
-          title: "Recipes deserve what photos already have",
-          body: "Photos have iCloud. Documents have cloud storage. Genealogy has Ancestry.com. But recipes — the most practiced form of cultural heritage, cooked daily and shared at every gathering — have nothing. Until now.",
+          title: "A real home for food culture",
+          body: "Like photos and files, recipes deserve a durable archive. Heirloom is that place—structured, attributed, private until you choose to share.",
           bullets: [
-            "Capture from any source in one tap",
-            "Every recipe tracks where it came from",
-            "Share with intention, not broadcast",
-            "Private by default, always",
+            "One tap from almost any source",
+            "Lineage and attribution built in",
+            "Private by default",
           ],
         },
       },
       {
         kind: "featureGrid",
         id: "preservation",
-        title: "Built for preservation, not just saving",
+        title: "Preservation—not piles of links",
         columns: 3,
         layout: "showcase",
         items: [
           {
             title: "From anywhere. In one tap.",
-            body: "Recipes live everywhere — tucked in videos, handwritten on cards, bookmarked and forgotten. Heirloom captures from every source so nothing slips through.",
-            bodyShort: "Six ways to save — scan, video, URL, voice, PDF, or generate. One place to keep them.",
+            body: "Video, cards, URLs, PDFs, voice, or AI—captured into one Recipe Box.",
+            bodyShort: "Six capture paths. One home for every recipe.",
             bullets: [
-              "Share from Safari or any social app in one tap",
-              "Camera-scan any cookbook page or handwritten card",
-              "Import from any cooking video — even silent ones",
-              "Dictate from memory, drop a PDF, or generate from scratch",
+              "Share Sheet from Safari and social apps",
+              "Scan cookbooks and handwriting",
+              "Video imports—including silent ASMR",
             ],
             image: "/assets/screens/cap_share_action.png",
             infographic: "capture-methods",
           },
           {
             title: "Every recipe carries its history.",
-            body: "When you save a recipe, Heirloom records where it came from — the URL, the video, the person who shared it. When it changes hands, the chain stays intact.",
-            bodyShort: "Source, author, and every hand it passed through — recorded automatically.",
+            body: "Source, sharer, and edits—preserved as the recipe moves.",
+            bodyShort: "Attribution and lineage, automatic.",
             bullets: [
-              "Source URL or video preserved with every import",
-              "Family attribution shows who passed it to you",
-              "Version history when a recipe evolves across generations",
-              "No recipe ever loses its story",
+              "URLs and videos kept with the card",
+              "See who shared what",
+              "Track how recipes evolve",
             ],
             image: "/assets/screens/cap_gravy_lineage.png",
             infographic: "recipe-lineage",
           },
           {
             title: "Share with intention, not broadcast.",
-            body: "Recipes go to people, not timelines. Recipients choose whether to accept — it lands in their Recipe Box, credited to you, forever.",
-            bodyShort: "Send to a person. They accept. It lands in their Recipe Box, credited to you.",
+            body: "Send to people you choose. They accept into their own box—you stay credited.",
+            bodyShort: "Person-to-person sharing with credit.",
             bullets: [
-              "Send to one person or your whole Kitchen Table",
-              "They tap Accept — it lands in their Recipe Box",
-              "You stay credited as the source",
-              "Private by default — their box, their rules",
+              "Kitchen Table or 1:1",
+              "Accept flow, not a public feed",
+              "Their box, their rules",
             ],
             images: ["/assets/screens/cap_04_shareb.png", "/assets/screens/cap_04_sharec.png"],
             infographic: "share-flow",
@@ -424,27 +414,27 @@ export const pages: Record<
         id: "how-preservation-works",
         title: "Capture. Structure. Preserve.",
         items: [
-          { title: "Save from anywhere", body: "Web, video, camera, PDF, voice, or AI — one tap from wherever you find recipes." },
-          { title: "AI structures it", body: "Ingredients, steps, times, and attribution — automatically organized." },
-          { title: "Preserved forever", body: "In your Recipe Box — private, searchable, and ready to share when you choose." },
+          { title: "Save from anywhere", body: "Web, video, scan, PDF, voice, or AI—one tap." },
+          { title: "AI structures it", body: "Ingredients, steps, and attribution—organized for you." },
+          { title: "Yours to keep", body: "Private Recipe Box. Share only when you want." },
         ],
       },
       {
         kind: "featureGrid",
         id: "heritage-features",
-        title: "Not a bookmark. A living record.",
+        title: "Not a bookmark—a record",
         columns: 4,
         items: [
           {
             title: "Scan your cookbooks",
-            body: "Point your camera at any page — handwritten cards, cookbook pages, clippings.",
+            body: "Handwritten cards, cookbook pages, clippings—camera in, structured card out.",
             images: ["/assets/screens/cap_scan_camera.png", "/assets/screens/cap_scan_extracted.png", "/assets/screens/cap_03b_share_flow.png"],
             cardBg: "bg-[#FBF6EF]",
             frameStyle: "phone",
           },
           {
             title: "Save cooking videos",
-            body: "TikTok, Instagram, YouTube — even ASMR videos with no voiceover. Processing continues in the background.",
+            body: "TikTok, Instagram, YouTube—including silent ASMR. Imports run in the background.",
             image: "/assets/screens/cap_video_import_hd.png",
             cardBg: "bg-[#1C1917]",
             frameStyle: "naked",
@@ -452,14 +442,14 @@ export const pages: Record<
           },
           {
             title: "Dictate from memory",
-            body: "Read grandma's recipe aloud. Heirloom listens, transcribes, and structures it into a clean recipe card.",
+            body: "Speak it; on-device transcription turns it into a clean card.",
             images: ["/assets/screens/cap_dictate_active.png", "/assets/screens/cap_dictate_result.png"],
             cardBg: "bg-[#F0F4F8]",
             frameStyle: "phone",
           },
           {
             title: "Make it yours",
-            body: "Restyle recipe cards with illustrated art — watercolor, woodcut, vintage print.",
+            body: "Restyle cards—watercolor, woodcut, vintage print.",
             images: ["/assets/screens/cap_recipe_card_restyle_before.png", "/assets/screens/cap_recipe_card_styled.png"],
             cardBg: "bg-[#FEF0EC]",
             frameStyle: "naked",
@@ -473,7 +463,7 @@ export const pages: Record<
         kind: "cta",
         id: "download",
         title: "Start preserving your family's recipes",
-        cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
+        cta: primaryAppCta,
       },
     ],
   },
@@ -485,14 +475,14 @@ export const pages: Record<
     meta: {
       title: "How it works",
       description:
-        "Every capture method. One preservation system. Turn links, PDFs, and videos into recipes you'll preserve forever.",
+        "Every capture method, one Recipe Box—links, PDFs, video, scan, voice, and AI.",
     },
     nav: sharedNav,
     hero: {
       h1: "Every capture method. One\u00A0preservation\u00A0system.",
       subhead:
-        "Recipes live everywhere—screenshots, videos, cookbooks, voice. Heirloom captures from any source so nothing slips through.",
-      primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
+        "Screenshots, video, cookbooks, voice—Heirloom pulls them into structured cards.",
+      primaryCta: primaryAppCta,
       secondaryCta: { label: "Watch it in action", href: "#demo" },
       trustLine: "Private by default — Share only when you choose",
       visual: "diagram",
@@ -508,13 +498,13 @@ export const pages: Record<
         kind: "videoShowcase",
         id: "demo",
         title: "See it in action",
-        subtitle: "Save a recipe from Safari in one tap — no copy/paste, no switching apps.",
-        body: "Find a recipe anywhere — a blog, a video, a PDF. Tap Share, choose Heirloom, and it's done. The recipe is extracted, structured, and waiting in your Recipe Box.",
+        subtitle: "Safari → Share → Heirloom. No copy/paste.",
+        body: "Blog, video, or PDF—Share Sheet hands it off; Heirloom structures it in the background.",
         bullets: [
-          "Works from Safari, social apps, and your camera roll",
-          "Imports run in the background — keep browsing",
-          "AI extracts title, ingredients, and steps automatically",
-          "Private by default — nothing shared unless you choose",
+          "Safari, social apps, camera roll",
+          "Background imports",
+          "Structured ingredients and steps",
+          "Private until you share",
         ],
         demo: {
           video: "/assets/video/CardCapture.mp4",
@@ -528,9 +518,9 @@ export const pages: Record<
         id: "how-it-works",
         title: "The fastest way to save recipes",
         items: [
-          { title: "Tap Share", body: "On a recipe anywhere—web, PDF, or video." },
-          { title: "Save to Heirloom", body: 'Choose "Save to Heirloom Recipe Box".' },
-          { title: "Cook from a clean recipe", body: "Ingredients and steps, ready to go." },
+          { title: "Tap Share", body: "From web, PDF, or video." },
+          { title: "Save to Heirloom", body: 'Pick "Save to Heirloom Recipe Box".' },
+          { title: "Cook", body: "Ingredients and steps, ready." },
         ],
       },
       {
@@ -590,7 +580,7 @@ export const pages: Record<
         kind: "cta",
         id: "download",
         title: "Start preserving",
-        cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
+        cta: primaryAppCta,
       },
     ],
   },
@@ -599,14 +589,14 @@ export const pages: Record<
     meta: {
       title: "Preserve recipes from cooking videos",
       description:
-        "Save recipes from videos — TikTok, Instagram, YouTube — before they disappear. Heirloom extracts any cooking video so you can preserve it forever.",
+        "TikTok, Instagram, YouTube—extract cooking videos into lasting recipe cards before feeds change.",
     },
     nav: sharedNav,
     hero: {
       h1: "Those recipes in your saved videos? Preserve them before they're\u00A0gone.",
       subhead:
-        "They vanish when accounts close or feeds change. TikTok, Instagram, YouTube—download the video, extract the recipe and keep it forever.",
-      primaryCta: { label: "Download on the App Store", href: urls.appStore },
+        "Accounts and feeds change. Pull the recipe into Heirloom—structured, searchable, yours.",
+      primaryCta: storeDownloadCta,
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
@@ -637,22 +627,22 @@ export const pages: Record<
         items: [
           {
             title: "Works across platforms",
-            body: "TikTok, Instagram, YouTube—save what you find.",
+            body: "TikTok, Instagram, YouTube—same flow.",
             image: "/assets/screens/cap_12_video_result.png",
           },
           {
             title: "No copy/paste",
-            body: "Keep browsing while the import runs in the background. Heirloom handles extraction quietly.",
+            body: "Share to Heirloom; keep scrolling while it imports.",
             image: "/assets/screens/cap_03b_share_flow.png",
           },
           {
             title: "Organized automatically",
-            body: "Every saved video becomes a structured recipe card — title, ingredients, steps, attribution. A Recipe Box you'll actually use.",
+            body: "Title, ingredients, steps, attribution—ready to cook.",
             image: "/assets/screens/cap_recipe_detail.png",
           },
           {
             title: "Silent videos too",
-            body: "ASMR cooking videos with no voice? Heirloom extracts the recipe from visuals alone.",
+            body: "ASMR and no-voice cooks—vision pipeline fills the card.",
             image: "/assets/screens/cap_video_import_hd.png",
           },
         ],
@@ -663,7 +653,7 @@ export const pages: Record<
         kind: "cta",
         id: "download",
         title: "Preserve your saved videos",
-        cta: { label: "Download on the App Store", href: urls.appStore },
+        cta: storeDownloadCta,
       },
     ],
   },
@@ -672,13 +662,13 @@ export const pages: Record<
     meta: {
       title: "Preserve handwritten recipe cards",
       description:
-        "Digitize handwritten recipes and scan cookbook pages before they fade. Point your camera—Heirloom captures and preserves every recipe.",
+        "Scan cards and cookbook pages before they fade—camera to structured recipe in one flow.",
     },
     nav: sharedNav,
     hero: {
       h1: "Grandma's handwriting. Mom's cookbook. The cards in the\u00A0drawer.",
-      subhead: "Preserve them before they fade. Point your camera at any page—handwritten cards, cookbook pages, clippings.",
-      primaryCta: { label: "Download on the App Store", href: urls.appStore },
+      subhead: "Point the camera; Heirloom extracts text and structure before ink or paper is gone.",
+      primaryCta: storeDownloadCta,
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
@@ -719,7 +709,7 @@ export const pages: Record<
           },
           {
             title: "Saved forever",
-            body: "Once scanned, it's yours. Your Recipe Box is private by default — every card stays on your device and in your account only.",
+            body: "Private Recipe Box—yours until you choose to share.",
             image: "/assets/screens/cap_recipe_detail.png",
           },
         ],
@@ -730,7 +720,7 @@ export const pages: Record<
         kind: "cta",
         id: "download",
         title: "Preserve your cookbooks",
-        cta: { label: "Download on the App Store", href: urls.appStore },
+        cta: storeDownloadCta,
       },
     ],
   },
@@ -739,13 +729,13 @@ export const pages: Record<
     meta: {
       title: "Preserve PDF recipe collections",
       description:
-        "Import recipe PDFs — family printouts, scanned cookbook pages. Heirloom extracts each recipe and preserves it in a format that lasts.",
+        "Family printouts and scanned pages—Heirloom pulls recipes into structured cards that last.",
     },
     nav: sharedNav,
     hero: {
       h1: "Family recipe printouts. Scanned cookbook\u00A0pages.",
-      subhead: "Preserve them in a format that lasts. Drop a PDF—Heirloom extracts the recipe and adds it to your Recipe Box.",
-      primaryCta: { label: "Download on the App Store", href: urls.appStore },
+      subhead: "Drop a PDF; Heirloom extracts recipes into your private Recipe Box.",
+      primaryCta: storeDownloadCta,
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Share only when you choose",
       demo: {
@@ -796,7 +786,7 @@ export const pages: Record<
         kind: "cta",
         id: "download",
         title: "Preserve your PDF recipes",
-        cta: { label: "Download on the App Store", href: urls.appStore },
+        cta: storeDownloadCta,
       },
     ],
   },
@@ -805,13 +795,13 @@ export const pages: Record<
     meta: {
       title: "Generate and preserve recipes",
       description:
-        "AI recipe generator — describe a dish, list what's in the fridge, or recreate a memory. Heirloom writes a recipe you can preserve and pass on.",
+        "Describe a dish or what's in the fridge—get a structured recipe you can edit, save, and share.",
     },
     nav: sharedNav,
     hero: {
       h1: "Describe a dish, list what's in the fridge, or recreate a\u00A0memory.",
-      subhead: "AI generates a recipe you can preserve and pass on. Every generated recipe is structured, editable, and ready to save to your collection.",
-      primaryCta: { label: "Download on the App Store", href: urls.appStore },
+      subhead: "AI drafts the card; you edit, save, and keep it like any other recipe.",
+      primaryCta: storeDownloadCta,
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Private by default — Your Recipe Box stays yours",
       demo: {
@@ -861,7 +851,7 @@ export const pages: Record<
         kind: "cta",
         id: "download",
         title: "Generate — and preserve — your next recipe",
-        cta: { label: "Download on the App Store", href: urls.appStore },
+        cta: storeDownloadCta,
       },
     ],
   },
@@ -870,14 +860,14 @@ export const pages: Record<
     meta: {
       title: "Kitchen Table — Cook with the people closest to you",
       description:
-        "Family recipe sharing app — Kitchen Table is your private space for up to 8 members. Share recipes, coordinate meals, and build a shared cookbook with the people closest to you.",
+        "Private space for up to 8 people—share recipes, plan meals, and cook together without a public feed.",
     },
     nav: sharedNav,
     hero: {
       h1: "Cook with the people closest to\u00A0you",
       subhead:
-        "Kitchen Table — a private space for up to 8 members. Share recipes, coordinate group meals, and build a shared family cookbook.",
-      primaryCta: { label: "Download on the App Store", href: urls.appStore },
+        "Kitchen Table: up to 8 members, shared recipes, meal planning—no algorithms.",
+      primaryCta: storeDownloadCta,
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       demo: {
         video: "/assets/video/lp-kt-hero-9x16.mp4",
@@ -913,22 +903,22 @@ export const pages: Record<
         items: [
           {
             title: "Your Table, your rules",
-            body: "Members see only what you share. No algorithm, no follower count. Just the recipes you trust with the people you'd invite to dinner.",
+            body: "Share only what you want—no feed, no follower count.",
             image: "/assets/screens/cap_kt_members.png",
           },
           {
             title: "Table Events",
-            body: "When a meal is coming up, the host kicks off an Event. Members suggest dishes from shared recipes. A shared shopping list assembles automatically.",
+            body: "Plan a meal, suggest dishes, auto-build a shared list.",
             image: "/assets/screens/cap_kt_event.png",
           },
           {
             title: "1:1 sharing",
-            body: "Send individual recipes to anyone. They tap Accept and it's in their Recipe Box — organized and ready to cook.",
+            body: "Send a recipe; they tap Accept into their box.",
             images: ["/assets/screens/cap_04_shareb.png", "/assets/screens/cap_04b_accept.png"],
           },
           {
             title: "Private by default",
-            body: "Nothing leaves your Recipe Box unless you choose to share it. No algorithm, no feed, no followers. Your recipes stay yours.",
+            body: "Nothing leaves your box without an explicit share.",
             image: "/assets/screens/cap_05_privacy_pills.png",
           },
         ],
@@ -939,7 +929,7 @@ export const pages: Record<
         kind: "cta",
         id: "download",
         title: "Start your Kitchen Table",
-        cta: { label: "Download on the App Store", href: urls.appStore },
+        cta: storeDownloadCta,
       },
     ],
   },
@@ -948,14 +938,14 @@ export const pages: Record<
     meta: {
       title: "Recipes that carry culture forward",
       description:
-        "Theme Packs from holidays, cuisines, and creators. Save any recipe with full attribution—so it becomes part of your food story.",
+        "Theme Packs—holidays, cuisines, creators. Save with attribution into your own story.",
     },
     nav: sharedNav,
     hero: {
       h1: "Recipes that carry culture\u00A0forward",
       subhead:
-        "Theme Packs from holidays, cuisines, and creators. Save any recipe to your collection—with full attribution—so it becomes part of your food story.",
-      primaryCta: { label: "Download on the App Store", href: urls.appStore },
+        "Curated packs. One tap to save—with credit to the source.",
+      primaryCta: storeDownloadCta,
       secondaryCta: { label: "See how it works", href: "#how-it-works" },
       trustLine: "Full attribution. Every recipe tracks its creator.",
       demo: {
@@ -1000,7 +990,7 @@ export const pages: Record<
           },
           {
             title: "Publish your originals",
-            body: "Your original recipes can go public. You choose exactly what's shared — and you can unpublish anytime.",
+            body: "You choose what's public—and can pull it back anytime.",
             image: "/assets/screens/cap_04_share.png",
           },
         ],
@@ -1010,7 +1000,7 @@ export const pages: Record<
         kind: "cta",
         id: "download",
         title: "Add heritage recipes to your collection",
-        cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
+        cta: primaryAppCta,
       },
     ],
   },
@@ -1018,12 +1008,12 @@ export const pages: Record<
   community: {
     meta: {
       title: "Community",
-      description: "Join the Heirloom community and beta testing group.",
+      description: "Discord for updates, feedback, and early testers.",
     },
     nav: sharedNav,
     hero: {
       h1: "Join the Heirloom\u00A0community",
-      subhead: "Get updates, share feedback, and swap recipes with other testers.",
+      subhead: "Updates, bugs, ideas—and recipes—with people building alongside us.",
       primaryCta: { label: "Join Discord", href: urls.support },
       demo: {
         video: "/assets/video/read.mp4",
@@ -1039,9 +1029,9 @@ export const pages: Record<
         title: "What to expect",
         columns: 3,
         items: [
-          { title: "Bug reports", body: "Share steps and screenshots so we can fix fast." },
-          { title: "Feature requests", body: "Tell us what would make Heirloom magical for you." },
-          { title: "Recipe sharing", body: "Swap recipes and workflows with other cooks." },
+          { title: "Bug reports", body: "Repro steps and screenshots welcome." },
+          { title: "Feature requests", body: "Tell us what you need to preserve more." },
+          { title: "Recipe sharing", body: "Swap saves and workflows with other cooks." },
         ],
       },
       {
@@ -1056,12 +1046,12 @@ export const pages: Record<
   presskit: {
     meta: {
       title: "Press Kit",
-      description: "Press resources for Heirloom Recipe Box.",
+      description: "Logos, screenshots, and product facts for Heirloom Recipe Box.",
     },
     nav: sharedNav,
     hero: {
       h1: "Press Kit",
-      subhead: "Logos, screenshots, and product info for press and partners.",
+      subhead: "Logos, shots, and copy-friendly product summary—email for the full kit.",
       primaryCta: { label: "Contact", href: "mailto:admin@rationale.work" },
       demo: {
         video: "/assets/video/lp-COOKBOOK-hero-16x9.mp4",
@@ -1076,9 +1066,9 @@ export const pages: Record<
         id: "resources",
         title: "What’s included",
         items: [
-          { title: "Logos", body: "App icon and wordmark — contact us for the full brand kit." },
-          { title: "Screenshots", body: "High-resolution product shots available on request." },
-          { title: "Product summary", body: "Copy-friendly description and key features." },
+          { title: "Logos", body: "Icon and wordmark; full kit on request." },
+          { title: "Screenshots", body: "Hi-res product shots by request." },
+          { title: "Product summary", body: "Short description and feature list for editors." },
         ],
       },
       {
@@ -1094,14 +1084,14 @@ export const pages: Record<
     meta: {
       title: "About",
       description:
-        "The story behind Heirloom Recipe Box — built to preserve family food culture before it's lost.",
+        "Why we built Heirloom—to keep family food culture from disappearing between generations.",
     },
     nav: sharedNav,
     hero: {
       h1: "Recipes worth\u00A0keeping",
       subhead:
-        "Built to solve a simple problem: family recipes shouldn't be lost to time.",
-      primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
+        "Family recipes shouldn't vanish between generations—we're building the archive they deserve.",
+      primaryCta: primaryAppCta,
       demo: {
         video: "/assets/video/lp1-save-hero-9x16.mp4",
         poster: "/assets/posters/lp1-save-hero-9x16.jpg",
@@ -1116,22 +1106,20 @@ export const pages: Record<
         title: "Why we built Heirloom",
         problem: {
           title: "The loss",
-          body: "73% of family recipes are lost within one generation. They exist as screenshots, bookmarks, handwritten cards, and memories\u2014scattered across devices and drawers.",
+          body: copy.statProblemSectionTitle + ". Most live as screenshots, cards, and memories—scattered and fragile.",
           bullets: [
-            "Bookmarked recipes vanish when sites change",
-            "Handwritten cards fade and get lost",
-            "Video recipes disappear in algorithm feeds",
-            "Family recipes get lost between generations",
+            "Bookmarks break",
+            "Paper fades",
+            "Feeds move on",
           ],
         },
         solution: {
           title: "The mission",
-          body: "Heirloom treats recipes as what they are\u2014cultural heritage. We built technology that preserves, organizes, and attributes them properly.",
+          body: "Treat recipes as heritage: preserve, organize, and attribute them in one private system.",
           bullets: [
-            "Save from any source in one tap",
-            "Track where every recipe comes from",
-            "Share with intention, not broadcast",
-            "Private by default, always",
+            "One-tap capture",
+            "Lineage you can trust",
+            "Share deliberately",
           ],
         },
       },
@@ -1152,7 +1140,7 @@ export const pages: Record<
         id: "download",
         title: "Try Heirloom today",
         body: "50 free credits to start. No subscription required.",
-        cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
+        cta: primaryAppCta,
       },
     ],
   },
@@ -1161,14 +1149,14 @@ export const pages: Record<
     meta: {
       title: "Technology",
       description:
-        "How Heirloom works: multi-pass AI, CRDT sync, on-device transcription, and cryptographic provenance.",
+        "Multi-pass AI, offline-first CRDT sync, on-device audio, and provenance you can verify.",
     },
     nav: sharedNav,
     hero: {
       h1: "Built for trust, not\u00A0shortcuts",
       subhead:
-        "Heirloom is engineered with the same rigor as enterprise software\u2014because your family recipes deserve it.",
-      primaryCta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
+        "Serious infrastructure for something personal—your family's recipes.",
+      primaryCta: primaryAppCta,
       demo: {
         video: "/assets/video/lp-technology-hero-9x16.mp4",
         poster: "/assets/posters/lp-technology-hero.jpg",
@@ -1181,99 +1169,84 @@ export const pages: Record<
         kind: "techShowcase",
         id: "ai-pipeline",
         title: "Multi-pass AI pipeline",
-        subtitle:
-          "Every import type gets the right model at the right cost. No one-size-fits-all prompts.",
+        subtitle: "Right model per import—cost-aware, not one giant prompt.",
         items: [
           {
             title: "Tiered model selection",
-            body: "8 task types, each routed to the optimal model for cost and quality.",
-            detail:
-              "Text parsing uses fast, affordable models. Vision tasks use high-quality models. Costs stay predictable.",
-                      },
+            body: "Eight task types routed to fast text or stronger vision as needed.",
+            detail: "Predictable cost: quick models for parsing, premium where quality matters.",
+          },
           {
             title: "5-pass video extraction",
-            body: "Silent cooking videos get a dedicated pipeline that watches, identifies, and validates.",
-            detail:
-              "Identifying \u2192 Detecting \u2192 Inferring \u2192 Analyzing \u2192 Validating. Each pass builds on the last.",
-                      },
+            body: "Silent cooks get a watch→validate pipeline, not a single guess.",
+            detail: "Identify → detect → infer → analyze → validate.",
+          },
           {
             title: "On-device transcription",
-            body: "WhisperKit runs OpenAI's Whisper model locally. Audio never leaves your phone.",
-            detail:
-              "Adaptive model selection based on device capability. Zero API cost for voice capture.",
-                      },
+            body: "WhisperKit keeps voice capture off the wire.",
+            detail: "Device-aware model pick; no API meter for dictation.",
+          },
           {
             title: "Structured output",
-            body: "AI returns typed JSON matching exact recipe schemas. No guessing, no parsing errors.",
-            detail:
-              "Schema validation ensures every generated recipe is immediately usable. Iterative image compression for API limits.",
-                      },
+            body: "Typed JSON to recipe schema—validated before it hits your box.",
+            detail: "Tight schemas plus image compression where APIs cap payload size.",
+          },
         ],
       },
       {
         kind: "techShowcase",
         id: "sync-engine",
         title: "Offline-first sync engine",
-        subtitle:
-          "Real CRDT-based conflict resolution\u2014not last-write-wins.",
+        subtitle: "CRDT merges—not naive last-write-wins.",
         items: [
           {
             title: "Vector clocks",
-            body: "Track causal relationships between edits across devices without relying on wall clocks.",
-            detail:
-              "Each device maintains a logical timestamp. Concurrent edits are detected precisely, not guessed.",
-                      },
+            body: "Order edits logically across devices.",
+            detail: "Concurrent changes surface explicitly instead of silently clobbering.",
+          },
           {
             title: "Operation log",
-            body: "Every edit is an immutable operation. The full history is preserved and replayable.",
-            detail:
-              "Operations include: create, update, delete, addIngredient, addInstruction. Each carries device metadata.",
-                      },
+            body: "Immutable ops you can replay for history and recovery.",
+            detail: "Creates, edits, ingredient/line changes—each tagged with device context.",
+          },
           {
             title: "3-stage merge",
-            body: "Auto-merge handles 80% of conflicts. The remaining 20% get a clear resolution UI.",
-            detail:
-              "Stage 1: additive operations merge automatically. Stage 2: delete wins. Stage 3: user chooses with full context.",
-                      },
+            body: "Most conflicts auto-resolve; edge cases get a clear UI.",
+            detail: "Additive merges first, then deletes, then human choice with full context.",
+          },
           {
             title: "Security validation",
-            body: "Every operation's field path is validated against a whitelist before application.",
-            detail:
-              "Prevents injection attacks on CRDT operations. Only title, notes, ingredients, instructions, and time fields are allowed.",
-                      },
+            body: "Whitelist field paths before CRDT apply.",
+            detail: "Blocks odd operations; only recipe-safe fields are mutable.",
+          },
         ],
       },
       {
         kind: "techShowcase",
         id: "provenance",
         title: "Cryptographic recipe provenance",
-        subtitle:
-          "Every recipe tracks its lineage—who created it, who shared it. That's how preservation becomes a living record.",
+        subtitle: "Lineage you can trace—creator, shares, and source type.",
         items: [
           {
             title: "SHA256 root hash",
-            body: "Original recipes get a unique cryptographic fingerprint. All copies inherit it.",
-            detail:
-              "Generated via CryptoKit from timestamp + UUID. Unforgeable and globally unique.",
-                      },
+            body: "Fingerprint originals; copies inherit the chain.",
+            detail: "CryptoKit-backed IDs from timestamp + UUID.",
+          },
           {
             title: "Generation tracking",
-            body: "Know whether a recipe is original (Gen 0), first share (Gen 1), or a re-share (Gen 2+).",
-            detail:
-              "Multi-generational chains: A shares to B, B shares to C. Everyone sees the full attribution.",
-                      },
+            body: "See Gen 0 originals vs re-shares down the tree.",
+            detail: "A→B→C chains keep attribution visible to everyone involved.",
+          },
           {
             title: "Source attribution",
-            body: "Imported from a URL? Scanned from a cookbook? AI generated? The source is always tracked.",
-            detail:
-              "6 source types: userCreated, imported, shared, scanned, ai, video. Social platform detection for video imports.",
-                      },
+            body: "URL, scan, AI, video—source type never gets lost.",
+            detail: "Six source enums plus platform hints on video pulls.",
+          },
           {
             title: "Aggregated metrics",
-            body: "Total shares, cooks, ratings, and trending score computed across the entire family tree.",
-            detail:
-              "Trending threshold: score > 10 and total shares > 5. Metrics refresh from cloud periodically.",
-                      },
+            body: "Shares, cooks, and trending roll up across the tree.",
+            detail: "Trending when engagement crosses simple thresholds—refreshed from cloud.",
+          },
         ],
       },
       sharedComparisonTable,
@@ -1281,9 +1254,11 @@ export const pages: Record<
         kind: "cta",
         id: "download",
         title: "See it in action",
-        body: "Download Heirloom and try the technology yourself. 50 free credits included.",
-        cta: { label: "Get Heirloom Recipe Box", href: urls.appStore },
+        body: "50 free credits to try the stack yourself.",
+        cta: primaryAppCta,
       },
     ],
   },
 };
+
+export { copy };

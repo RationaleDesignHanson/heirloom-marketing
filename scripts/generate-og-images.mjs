@@ -17,6 +17,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const OUT_DIR = path.join(ROOT, "public/og");
 
+/** Keep in sync with src/content/seo-sync.json */
+const seoSync = JSON.parse(
+  fs.readFileSync(path.join(ROOT, "src/content/seo-sync.json"), "utf8"),
+);
+
 const REPLICATE_TOKEN = process.env.REPLICATE_API_TOKEN;
 if (!REPLICATE_TOKEN) {
   console.error("❌  Set REPLICATE_API_TOKEN env var first");
@@ -27,14 +32,14 @@ if (!REPLICATE_TOKEN) {
 const PAGES = [
   {
     slug: "default",
-    headline: "Preserve Your Family's Recipes",
-    subtext: "Capture, preserve, and share recipes from any source.",
+    headline: seoSync.defaultHeadline,
+    subtext: seoSync.defaultSubtext,
     theme: "warm",
   },
   {
     slug: "home",
-    headline: "Every Recipe Worth Keeping",
-    subtext: "73% of family recipes are lost in one generation. Not yours.",
+    headline: seoSync.homeHeadline,
+    subtext: seoSync.homeSubtext,
     theme: "warm",
   },
   {
